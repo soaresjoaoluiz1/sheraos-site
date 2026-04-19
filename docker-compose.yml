@@ -1,0 +1,29 @@
+services:
+  sheraos-web:
+    image: nginx:alpine
+    container_name: sheraos-web
+    restart: unless-stopped
+    volumes:
+      - .:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    labels:
+      - "traefik.enable=true"
+      # HTTP router (Traefik ja redireciona pra HTTPS automaticamente)
+      - "traefik.http.routers.sheraos.rule=Host(`sheraos.com.br`) || Host(`www.sheraos.com.br`)"
+      - "traefik.http.routers.sheraos.entrypoints=web,websecure"
+      - "traefik.http.routers.sheraos.tls=true"
+      - "traefik.http.routers.sheraos.tls.certresolver=letsencrypt"
+      # Redirecionar www → sem www
+      - "traefik.http.middlewares.sheraos-redirect-www.redirectregex.regex=^https://www.sheraos.com.br/(.*)"
+      - "traefik.http.middlewares.sheraos-redirect-www.redirectregex.replacement=https://sheraos.com.br/$${1}"
+      - "traefik.http.middlewares.sheraos-redirect-www.redirectregex.permanent=true"
+      - "traefik.http.routers.sheraos.middlewares=sheraos-redirect-www"
+      # Porta interna
+      - "traefik.http.services.sheraos.loadbalancer.server.port=80"
+    networks:
+      - web
+
+networks:
+  web:
+    name: web
+    external: false

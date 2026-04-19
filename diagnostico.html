@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Diagnostico Gratuito de Marketing — Sheraos</title>
+<meta name="description" content="Descubra em 30 minutos onde sua empresa esta perdendo vendas. Auditoria completa gratuita feita por especialistas Sheraos.">
+<link rel="icon" href="logo-sheraos.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F172A;
+  --navy-2:#1A2340;
+  --blue:#2563EB;
+  --blue-2:#3B82F6;
+  --blue-soft:#EFF6FF;
+  --blue-border:#DBEAFE;
+  --white:#FFFFFF;
+  --off-white:#FAFBFC;
+  --gray-50:#F8FAFC;
+  --gray-100:#F1F5F9;
+  --gray-200:#E2E8F0;
+  --gray-300:#CBD5E1;
+  --gray-400:#94A3B8;
+  --gray-500:#64748B;
+  --gray-600:#475569;
+  --gray-700:#334155;
+  --green:#10B981;
+  --amber:#F59E0B;
+  --red:#EF4444;
+  --shadow-sm:0 1px 2px rgba(15,23,41,.05);
+  --shadow:0 4px 12px rgba(15,23,41,.08);
+  --shadow-md:0 10px 30px rgba(15,23,41,.08);
+  --shadow-blue:0 10px 30px rgba(37,99,235,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--white);color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:.25rem 1.5rem;max-width:1200px;margin:0 auto;gap:2rem}
+.logo-img{height:128px;width:auto;display:block}
+@media(max-width:900px){.logo-img{height:108px}}
+@media(max-width:640px){.logo-img{height:120px}}
+.back{font-size:.88rem;color:var(--gray-600);font-weight:500;display:flex;align-items:center;gap:.3rem;transition:color .2s}
+.back:hover{color:var(--navy)}
+
+/* MAIN */
+main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
+.bg-orb{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08),transparent 60%);top:-100px;right:-200px;filter:blur(60px);z-index:0;pointer-events:none}
+.bg-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.06),transparent 60%);bottom:-100px;left:-150px;filter:blur(60px);z-index:0;pointer-events:none}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--gray-100) 1px,transparent 1px),linear-gradient(90deg,var(--gray-100) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,black,transparent);pointer-events:none;opacity:.5;z-index:0}
+
+.wrap{position:relative;z-index:1}
+
+/* HEADER */
+.hdr{text-align:center;margin-bottom:3rem}
+.hdr-tag{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1rem;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:100px;font-size:.72rem;font-weight:600;color:var(--blue);margin-bottom:1.5rem}
+.hdr-tag .d{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 10px rgba(16,185,129,.4);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+.hdr h1{font-size:clamp(1.9rem,5.5vw,3.25rem);font-weight:800;line-height:1.08;margin-bottom:1rem;letter-spacing:-.025em;color:var(--navy)}
+.hdr h1 .gr{background:linear-gradient(135deg,var(--blue),var(--navy));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hdr p{font-size:1.05rem;color:var(--gray-600);max-width:640px;margin:0 auto;line-height:1.65}
+
+/* LAYOUT 2 COL */
+.grid2{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start}
+@media(max-width:900px){.grid2{grid-template-columns:1fr;gap:2rem}}
+
+/* VALUE LEFT */
+.value h2{font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;color:var(--navy);letter-spacing:-.02em}
+.value-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.value-ic{width:44px;height:44px;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0}
+.value-ic svg{width:22px;height:22px}
+.value-item h4{font-size:.95rem;font-weight:700;margin-bottom:.3rem;color:var(--navy)}
+.value-item p{font-size:.88rem;color:var(--gray-600);line-height:1.55}
+
+.testimonial-mini{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow-sm)}
+.testimonial-mini .stars{color:var(--amber);margin-bottom:.6rem}
+.testimonial-mini p{font-size:.88rem;color:var(--gray-700);font-style:italic;margin-bottom:.85rem;line-height:1.6}
+.testimonial-mini .author{font-size:.8rem;font-weight:700;color:var(--navy)}
+.testimonial-mini .role{font-size:.72rem;color:var(--gray-500);margin-top:.1rem}
+
+/* FORM RIGHT */
+.form-wrap{background:var(--white);border:1px solid var(--gray-200);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--navy))}
+
+.form-head{margin-bottom:1.75rem}
+.form-head h3{font-size:1.35rem;font-weight:800;margin-bottom:.35rem;color:var(--navy);letter-spacing:-.02em}
+.form-head p{font-size:.85rem;color:var(--gray-500)}
+
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.75rem;font-weight:600;margin-bottom:.45rem;color:var(--gray-700);text-transform:uppercase;letter-spacing:.05em}
+.field label span{color:var(--red)}
+.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;background:var(--off-white);border:1px solid var(--gray-200);border-radius:10px;color:var(--navy);font-size:.9rem;font-family:inherit;transition:all .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:var(--white);box-shadow:0 0 0 3px var(--blue-soft)}
+.field input::placeholder,.field textarea::placeholder{color:var(--gray-400)}
+.field textarea{min-height:90px;resize:vertical}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media(max-width:480px){.field-row{grid-template-columns:1fr}}
+
+.radio-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.radio-card{cursor:pointer;padding:.75rem .85rem;background:var(--off-white);border:1px solid var(--gray-200);border-radius:10px;text-align:center;font-size:.82rem;font-weight:500;transition:all .2s;color:var(--gray-700)}
+.radio-card input{display:none}
+.radio-card:hover{border-color:var(--blue);background:var(--white)}
+.radio-card.selected{background:var(--blue);border-color:var(--blue);color:var(--white);font-weight:700;box-shadow:var(--shadow-blue)}
+
+.submit-btn{width:100%;padding:1.05rem;background:var(--navy);color:var(--white);border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .2s;font-family:inherit;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.submit-btn:hover{background:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow-blue)}
+
+.form-foot{font-size:.72rem;color:var(--gray-500);text-align:center;margin-top:1rem;line-height:1.5}
+.form-foot a{color:var(--blue)}
+
+.trust{display:flex;justify-content:center;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}
+.trust-item{font-size:.7rem;color:var(--gray-500);display:flex;align-items:center;gap:.35rem;font-weight:500}
+.trust-item::before{content:'✓';color:var(--green);font-weight:900}
+
+/* SUCCESS STATE */
+.success{display:none;text-align:center;padding:2rem}
+.success.show{display:block}
+.success-ic{width:80px;height:80px;margin:0 auto 1.5rem;background:rgba(16,185,129,.12);border:2px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--green)}
+.success-ic svg{width:40px;height:40px}
+.success h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--navy);letter-spacing:-.02em}
+.success p{color:var(--gray-600);font-size:.95rem;line-height:1.6;margin-bottom:1.5rem}
+.success .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.85rem;background:#25D366;color:var(--white);border-radius:10px;font-weight:700;text-decoration:none;font-size:.9rem;transition:transform .2s,box-shadow .2s}
+.success .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.35)}
+
+/* BELOW */
+.below{margin-top:5rem;text-align:center;position:relative;z-index:1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:800px;margin:0 auto 3rem}
+.stat{text-align:center}
+.stat .n{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.stat .l{font-size:.72rem;color:var(--gray-500);margin-top:.45rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+.partners-line{padding:2.5rem 0;border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);margin:3rem 0;background:var(--off-white)}
+.partners-line-title{font-size:.7rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.14em;margin-bottom:1.25rem;font-weight:600}
+.partners-line-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem}
+.partners-line-logos .item{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.88rem;color:var(--navy);opacity:.75}
+.partners-line-logos .dot{width:7px;height:7px;background:var(--blue);border-radius:50%}
+
+/* FOOT */
+.foot{text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--gray-200);font-size:.78rem;color:var(--gray-500);background:var(--off-white)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" aria-label="Sheraos">
+      <img src="logo-sheraos.png" alt="Sheraos" class="logo-img">
+    </a>
+    <a href="index.html" class="back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Voltar ao site
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="grid-bg"></div>
+  <div class="bg-orb"></div>
+  <div class="bg-orb2"></div>
+
+  <div class="wrap">
+    <!-- HEADER -->
+    <div class="hdr">
+      <span class="hdr-tag"><span class="d"></span> 100% Gratuito &bull; Sem compromisso</span>
+      <h1>Descubra em 30 min<br>onde sua empresa esta <span class="gr">perdendo vendas.</span></h1>
+      <p>Auditoria completa feita por um especialista Sheraos: analisamos seus ads, site, CRM e funil de vendas. Entregamos um plano claro de como escalar.</p>
+    </div>
+
+    <!-- GRID 2 COL -->
+    <div class="grid2">
+
+      <!-- LEFT: VALUE -->
+      <div class="value">
+        <h2>O que voce recebe:</h2>
+
+        <div class="value-item">
+          <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div>
+            <h4>Auditoria completa do marketing</h4>
+            <p>Analisamos suas campanhas de Google, Meta, TikTok, seu site, funil e CRM atual.</p>
+          </div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div>
+            <h4>Relatorio com dados reais</h4>
+            <p>Mostramos metricas, pontos de perda e comparamos com concorrentes do seu mercado.</p>
+          </div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div>
+            <h4>Plano estrategico personalizado</h4>
+            <p>Saia da call com um mapa claro: o que mudar, onde investir e como medir resultado.</p>
+          </div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div>
+            <h4>3 acoes imediatas pra aplicar</h4>
+            <p>Mesmo que voce nao feche com a gente, sai com 3 mudancas de alto impacto pra aplicar na semana.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-mini">
+          <div class="stars">★★★★★</div>
+          <p>"Em 30 minutos identificaram 4 pontos que estavam me custando R$ 40k por mes. So com as acoes sugeridas ja recuperei o investimento. Depois contratei a agencia."</p>
+          <div class="author">Carlos Mendes</div>
+          <div class="role">CEO, E-commerce de moda</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="form-wrap">
+        <form id="diag-form" onsubmit="submitForm(event)">
+          <div class="form-head">
+            <h3>Agende seu diagnostico</h3>
+            <p>Respondemos em menos de 1h em dia util.</p>
+          </div>
+
+          <div class="field">
+            <label>Seu nome <span>*</span></label>
+            <input type="text" name="nome" required placeholder="Como voce se chama?">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>Email <span>*</span></label>
+              <input type="email" name="email" required placeholder="voce@empresa.com">
+            </div>
+            <div class="field">
+              <label>WhatsApp <span>*</span></label>
+              <input type="tel" name="telefone" required placeholder="(48) 9 9999-9999">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Nome da empresa <span>*</span></label>
+            <input type="text" name="empresa" required placeholder="Empresa/Marca">
+          </div>
+
+          <div class="field">
+            <label>Site (se tiver)</label>
+            <input type="url" name="site" placeholder="https://suaempresa.com.br">
+          </div>
+
+          <div class="field">
+            <label>Qual seu faturamento mensal atual? <span>*</span></label>
+            <div class="radio-grid">
+              <label class="radio-card"><input type="radio" name="faturamento" value="ate-10k" required>Ate R$ 10k</label>
+              <label class="radio-card"><input type="radio" name="faturamento" value="10-50k">R$ 10k a R$ 50k</label>
+              <label class="radio-card"><input type="radio" name="faturamento" value="50-200k">R$ 50k a R$ 200k</label>
+              <label class="radio-card"><input type="radio" name="faturamento" value="200k+">R$ 200k+</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Quanto investe em ads por mes?</label>
+            <div class="radio-grid">
+              <label class="radio-card"><input type="radio" name="ads" value="nada">Nada ainda</label>
+              <label class="radio-card"><input type="radio" name="ads" value="ate-2k">Ate R$ 2k</label>
+              <label class="radio-card"><input type="radio" name="ads" value="2-10k">R$ 2k a R$ 10k</label>
+              <label class="radio-card"><input type="radio" name="ads" value="10k+">R$ 10k+</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Qual seu maior desafio hoje?</label>
+            <textarea name="desafio" placeholder="Ex: investe em ads mas nao sabe o que vira venda, nao tem presenca digital, quer escalar..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Quero meu diagnostico gratuito
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+
+          <div class="form-foot">
+            Ao enviar, voce concorda com nossa <a href="#">politica de privacidade</a>.<br>
+            Seus dados sao seguros e nao sao compartilhados.
+          </div>
+        </form>
+
+        <div class="success" id="success">
+          <div class="success-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Recebido!</h3>
+          <p>Em menos de 1 hora (dia util) um especialista da Sheraos vai entrar em contato no seu WhatsApp pra agendar o diagnostico.</p>
+          <a href="https://wa.me/5548999999999?text=Acabei+de+preencher+o+diagnostico+da+Sheraos" class="btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            Falar agora no WhatsApp
+          </a>
+        </div>
+
+        <div class="trust">
+          <span class="trust-item">Resposta em 1h</span>
+          <span class="trust-item">100% gratis</span>
+          <span class="trust-item">Sem compromisso</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BELOW -->
+    <div class="below">
+      <div class="stats">
+        <div class="stat"><div class="n">+R$34M</div><div class="l">Gerado em vendas</div></div>
+        <div class="stat"><div class="n">+R$20M</div><div class="l">Em ads gerenciados</div></div>
+        <div class="stat"><div class="n">+300</div><div class="l">Empresas no mundo</div></div>
+        <div class="stat"><div class="n">+8 anos</div><div class="l">De mercado</div></div>
+      </div>
+
+      <div class="partners-line">
+        <div class="partners-line-title">Parceiros oficiais certificados</div>
+        <div class="partners-line-logos">
+          <span class="item"><span class="dot"></span>META Partner</span>
+          <span class="item"><span class="dot"></span>GOOGLE Partner</span>
+          <span class="item"><span class="dot"></span>SHOPIFY Partner</span>
+          <span class="item"><span class="dot"></span>TIKTOK Partner</span>
+          <span class="item"><span class="dot"></span>CLUTCH 4.9★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="foot">© 2026 Sheraos Marketing. Todos os direitos reservados.</div>
+
+<script>
+document.querySelectorAll('.radio-card').forEach(c=>{
+  c.addEventListener('click',()=>{
+    const name=c.querySelector('input').name;
+    document.querySelectorAll(`.radio-card input[name="${name}"]`).forEach(i=>i.parentElement.classList.remove('selected'));
+    c.classList.add('selected');
+    c.querySelector('input').checked=true;
+  });
+});
+
+function submitForm(e){
+  e.preventDefault();
+  const form=e.target;
+  const data=new FormData(form);
+  console.log('Dados do diagnostico:',Object.fromEntries(data));
+  form.style.display='none';
+  document.getElementById('success').classList.add('show');
+  document.querySelector('.form-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+
+</body>
+</html>

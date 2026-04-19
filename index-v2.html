@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sheraos — Pare de queimar dinheiro em marketing que nao vende</title>
+<meta name="description" content="Seus anuncios viram vendas de verdade. CRM + WhatsApp + acompanhamento comercial. +R$34M gerados, +300 empresas. Vagas abertas.">
+<link rel="icon" href="logo-sheraos.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F172A;
+  --navy-2:#1A2340;
+  --blue:#2563EB;
+  --blue-soft:#EFF6FF;
+  --blue-border:#DBEAFE;
+  --green:#10B981;
+  --green-2:#059669;
+  --green-soft:#ECFDF5;
+  --green-border:#A7F3D0;
+  --red:#EF4444;
+  --red-soft:#FEF2F2;
+  --amber:#F59E0B;
+  --white:#FFFFFF;
+  --off-white:#FAFBFC;
+  --gray-50:#F8FAFC;
+  --gray-100:#F1F5F9;
+  --gray-200:#E2E8F0;
+  --gray-300:#CBD5E1;
+  --gray-400:#94A3B8;
+  --gray-500:#64748B;
+  --gray-600:#475569;
+  --gray-700:#334155;
+  --gray-800:#1E293B;
+  --shadow-sm:0 1px 2px rgba(15,23,41,.05);
+  --shadow:0 4px 12px rgba(15,23,41,.08);
+  --shadow-md:0 10px 30px rgba(15,23,41,.08);
+  --shadow-lg:0 20px 50px rgba(15,23,41,.12);
+  --shadow-green:0 10px 30px rgba(16,185,129,.3);
+  --shadow-blue:0 10px 30px rgba(37,99,235,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--white);color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+svg{display:block}
+.c{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.c-narrow{max-width:820px;margin:0 auto;padding:0 1.5rem}
+
+/* ═══════════════════════════════════════
+   TOP BAR (vagas abertas)
+═══════════════════════════════════════ */
+.topbar{background:var(--green);color:var(--white);text-align:center;padding:.55rem 1rem;font-size:.82rem;font-weight:600;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.topbar .dot{width:8px;height:8px;background:var(--white);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+.nav{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:.25rem 1.5rem;max-width:1200px;margin:0 auto;gap:2rem}
+.logo-img{height:120px;width:auto;display:block}
+@media(max-width:900px){.logo-img{height:100px}}
+@media(max-width:640px){.logo-img{height:110px}}
+.nav-links{display:flex;gap:2rem;align-items:center;flex:1;justify-content:center}
+.nav-links a{color:var(--gray-600);font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{padding:.7rem 1.3rem;background:var(--green);color:var(--white);border-radius:10px;font-weight:700;font-size:.85rem;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;box-shadow:var(--shadow)}
+.nav-cta:hover{background:var(--green-2);transform:translateY(-1px);box-shadow:var(--shadow-green)}
+.menu-btn{display:none;width:40px;height:40px;align-items:center;justify-content:center;color:var(--navy);background:none;border:none}
+@media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}.nav>.nav-in>.nav-cta{display:none}.nav-in{gap:1rem}}
+
+/* ═══════════════════════════════════════
+   HERO - sales page style
+═══════════════════════════════════════ */
+.hero{position:relative;padding:4rem 1.5rem 3rem;overflow:hidden;background:var(--white)}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--gray-100) 1px,transparent 1px),linear-gradient(90deg,var(--gray-100) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 70% 50% at 50% 40%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 40%,black,transparent);pointer-events:none;opacity:.5}
+.hero-in{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;background:var(--green-soft);border:1px solid var(--green-border);border-radius:100px;font-size:.72rem;font-weight:700;color:var(--green-2);margin-bottom:1.5rem;letter-spacing:.06em;text-transform:uppercase}
+.hero-pill .dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+
+.hero h1{font-size:clamp(2.25rem,6.5vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-.035em;margin-bottom:1.25rem;color:var(--navy)}
+.hero h1 .italic{font-style:italic;font-weight:800}
+.hero h1 .hl{color:var(--green-2)}
+.hero h1 .strike{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:3px;color:var(--gray-500)}
+
+.hero-sub{font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--gray-700);max-width:680px;margin:0 auto 2.5rem;line-height:1.5;font-weight:500}
+
+.hero-ctas{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:1.1rem 2rem;border-radius:12px;font-weight:700;font-size:1rem;transition:all .25s;cursor:pointer;border:none;letter-spacing:.005em}
+.btn-cta{background:var(--green);color:var(--white);box-shadow:var(--shadow-green);font-size:1.05rem;padding:1.2rem 2.5rem}
+.btn-cta:hover{background:var(--green-2);transform:translateY(-2px);box-shadow:0 20px 40px rgba(16,185,129,.4)}
+.btn-cta .price-mini{display:block;font-size:.7rem;opacity:.85;margin-top:.1rem;font-weight:600;letter-spacing:.04em}
+
+.btn-ghost{background:var(--white);color:var(--navy);border:1px solid var(--gray-200);box-shadow:var(--shadow-sm)}
+.btn-ghost:hover{border-color:var(--gray-300);background:var(--gray-50)}
+
+.hero-trust{display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+.hero-trust span{font-size:.78rem;color:var(--gray-500);display:flex;align-items:center;gap:.35rem;font-weight:500}
+.hero-trust span::before{content:'✓';color:var(--green);font-weight:900}
+
+/* Hero Big Stat */
+.hero-stat-big{margin:2.5rem auto 0;max-width:680px;background:var(--navy);color:var(--white);border-radius:20px;padding:2rem;text-align:center;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.hero-stat-big::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse at center,black,transparent);-webkit-mask-image:radial-gradient(ellipse at center,black,transparent);opacity:.4}
+.hero-stat-big>*{position:relative;z-index:1}
+.hero-stat-big .label{font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem;font-weight:600}
+.hero-stat-big .big-num{font-size:clamp(2.5rem,7vw,4rem);font-weight:900;line-height:1;letter-spacing:-.03em;background:linear-gradient(135deg,#fff,#93C5FD);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:.3rem}
+.hero-stat-big .sub{font-size:.9rem;color:rgba(255,255,255,.7);font-weight:500}
+
+/* ═══════════════════════════════════════
+   VIDEO SECTION (placeholder)
+═══════════════════════════════════════ */
+.video-sec{padding:3rem 1.5rem 5rem;background:var(--white)}
+.video-wrap{max-width:820px;margin:0 auto;text-align:center}
+.video-label{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem 1rem;background:var(--amber);color:var(--white);border-radius:100px;font-size:.72rem;font-weight:700;margin-bottom:1rem;letter-spacing:.05em}
+.video-label .dot{width:7px;height:7px;background:var(--white);border-radius:50%;animation:pulse 2s infinite}
+.video-title{font-size:1.3rem;font-weight:800;margin-bottom:1.5rem;color:var(--navy);letter-spacing:-.02em}
+.video-box{aspect-ratio:16/9;background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:18px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);cursor:pointer;border:1px solid var(--gray-200)}
+.video-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,.3),transparent 60%);opacity:.6}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,.4);transition:transform .3s}
+.video-box:hover .play-btn{transform:translate(-50%,-50%) scale(1.1)}
+.play-btn::after{content:'';width:0;height:0;border-left:22px solid var(--navy);border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+.video-caption{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;color:var(--white);text-align:left}
+.video-caption .t{font-size:1rem;font-weight:700;margin-bottom:.25rem}
+.video-caption .d{font-size:.8rem;color:rgba(255,255,255,.7)}
+
+/* ═══════════════════════════════════════
+   SECTIONS BASE
+═══════════════════════════════════════ */
+section{padding:6rem 1.5rem;position:relative}
+.sec-tag{display:inline-block;padding:.35rem .85rem;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:100px;font-size:.7rem;font-weight:700;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+.sec-tag.red{background:var(--red-soft);border-color:#FCA5A5;color:#DC2626}
+.sec-tag.green{background:var(--green-soft);border-color:var(--green-border);color:var(--green-2)}
+h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin-bottom:1rem;color:var(--navy)}
+h2 .gr{background:linear-gradient(135deg,var(--green),var(--blue));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+h2 .red{color:var(--red)}
+.sec-desc{font-size:1.05rem;color:var(--gray-600);max-width:640px;margin:0 auto 3rem;line-height:1.65}
+.sec-head{text-align:center;margin-bottom:3rem}
+
+/* ═══════════════════════════════════════
+   CENARIO ATUAL (dores com X vermelho)
+═══════════════════════════════════════ */
+.cenario{background:var(--off-white)}
+.dor-grid{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
+.dor{background:var(--white);border:1px solid #FCA5A5;border-left:4px solid var(--red);border-radius:12px;padding:1rem 1.25rem 1rem 3.25rem;font-size:1rem;color:var(--gray-700);position:relative;font-weight:500;transition:transform .2s}
+.dor:hover{transform:translateX(4px)}
+.dor::before{content:'';position:absolute;left:1rem;top:50%;transform:translateY(-50%);width:24px;height:24px;background:#FEE2E2;border-radius:50%}
+.dor::after{content:'✕';position:absolute;left:1.45rem;top:50%;transform:translateY(-50%);color:var(--red);font-weight:900;font-size:.95rem;line-height:1}
+
+/* ═══════════════════════════════════════
+   ROADMAP / SOLUCAO (checks verdes)
+═══════════════════════════════════════ */
+.roadmap{background:var(--white)}
+.map-grid{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
+.map-item{background:var(--white);border:1px solid var(--green-border);border-left:4px solid var(--green);border-radius:12px;padding:1rem 1.25rem 1rem 3.25rem;font-size:1rem;color:var(--gray-700);position:relative;font-weight:500;transition:transform .2s;box-shadow:var(--shadow-sm)}
+.map-item:hover{transform:translateX(4px)}
+.map-item::before{content:'';position:absolute;left:1rem;top:50%;transform:translateY(-50%);width:24px;height:24px;background:var(--green-soft);border-radius:50%}
+.map-item::after{content:'✓';position:absolute;left:1.48rem;top:50%;transform:translateY(-50%);color:var(--green);font-weight:900;font-size:.85rem;line-height:1}
+.map-item strong{color:var(--navy);font-weight:700}
+
+/* ═══════════════════════════════════════
+   QUEM SOMOS (autoridade + numeros)
+═══════════════════════════════════════ */
+.autoridade{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
+.autoridade::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at center,black,transparent);-webkit-mask-image:radial-gradient(ellipse at center,black,transparent);opacity:.4}
+.autoridade::after{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.2),transparent 60%);filter:blur(60px)}
+.autoridade>*{position:relative;z-index:1}
+.autoridade .sec-tag{background:rgba(37,99,235,.15);border-color:rgba(37,99,235,.3);color:#93C5FD}
+.autoridade h2{color:var(--white)}
+.autoridade h2 .gr{background:linear-gradient(135deg,#93C5FD,#06B6D4);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.autoridade .sec-desc{color:rgba(255,255,255,.7)}
+
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1000px;margin:0 auto}
+.num{text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px}
+.num .n{font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1;letter-spacing:-.03em;background:linear-gradient(135deg,#fff,#93C5FD);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.num .l{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:.6rem;font-weight:500}
+@media(max-width:640px){.numbers{grid-template-columns:repeat(2,1fr);gap:1rem}}
+
+/* ═══════════════════════════════════════
+   CASES (mesma estrutura)
+═══════════════════════════════════════ */
+.cases-sec{background:var(--off-white)}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1100px;margin:0 auto}
+.case{background:var(--white);border:1px solid var(--gray-200);border-radius:18px;overflow:hidden;transition:all .35s;box-shadow:var(--shadow-sm)}
+.case:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:var(--shadow-md)}
+.case-head{padding:1.75rem;background:linear-gradient(135deg,var(--green-soft),transparent);border-bottom:1px solid var(--gray-200)}
+.case-logo{width:72px;height:72px;background:var(--white);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;border:1px solid var(--gray-200);box-shadow:var(--shadow-sm);overflow:hidden;padding:8px}
+.case-logo.dark{background:var(--navy);border-color:var(--navy)}
+.case-logo.nopad{padding:0}
+.case-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.case h3{font-size:1.05rem;font-weight:700;margin-bottom:.25rem;color:var(--navy)}
+.case-niche{font-size:.7rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.case-body{padding:1.5rem 1.75rem 1.75rem}
+.case-result{font-size:2rem;font-weight:900;color:var(--green);line-height:1;margin-bottom:.4rem;letter-spacing:-.02em}
+.case-result-lbl{font-size:.72rem;color:var(--gray-500);margin-bottom:1.25rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;padding-top:1.25rem;border-top:1px solid var(--gray-200)}
+.case-metric{text-align:center}
+.case-metric .v{font-size:.95rem;font-weight:700;color:var(--navy)}
+.case-metric .l{font-size:.58rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem;font-weight:600}
+@media(max-width:900px){.cases{grid-template-columns:1fr;max-width:440px}}
+
+/* ═══════════════════════════════════════
+   PRA QUEM E / NAO E
+═══════════════════════════════════════ */
+.publico-sec{background:var(--white)}
+.pub-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;max-width:1000px;margin:0 auto}
+.pub{background:var(--white);border:1px solid var(--gray-200);border-radius:20px;padding:2rem;box-shadow:var(--shadow-sm)}
+.pub.yes{border-color:var(--green-border);background:linear-gradient(180deg,var(--green-soft) 0%,var(--white) 30%)}
+.pub.no{border-color:#FCA5A5;background:linear-gradient(180deg,var(--red-soft) 0%,var(--white) 30%)}
+.pub h3{font-size:1.1rem;font-weight:800;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
+.pub.yes h3{color:var(--green-2)}
+.pub.no h3{color:#DC2626}
+.pub-ic{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9rem}
+.pub.yes .pub-ic{background:var(--green);color:var(--white)}
+.pub.no .pub-ic{background:var(--red);color:var(--white)}
+.pub ul{list-style:none}
+.pub li{padding:.65rem 0 .65rem 1.75rem;position:relative;font-size:.92rem;color:var(--gray-700);border-bottom:1px solid var(--gray-100);line-height:1.5}
+.pub li:last-child{border-bottom:none}
+.pub.yes li::before{content:'✓';position:absolute;left:0;top:.6rem;color:var(--green);font-weight:900;font-size:.95rem}
+.pub.no li::before{content:'✕';position:absolute;left:0;top:.6rem;color:var(--red);font-weight:900;font-size:.95rem}
+@media(max-width:768px){.pub-grid{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════
+   METODO (numeracao sequencial 01-04)
+═══════════════════════════════════════ */
+.metodo-sec{background:var(--off-white)}
+.metodo{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.met{background:var(--white);border:1px solid var(--gray-200);border-radius:16px;padding:1.75rem;display:flex;gap:1.5rem;align-items:flex-start;box-shadow:var(--shadow-sm);transition:all .25s}
+.met:hover{border-color:var(--blue);transform:translateX(4px);box-shadow:var(--shadow-md)}
+.met-n{font-size:2.5rem;font-weight:900;color:var(--gray-200);line-height:.9;flex-shrink:0;min-width:60px;letter-spacing:-.03em}
+.met:hover .met-n{color:var(--blue)}
+.met-c h3{font-size:1.1rem;font-weight:800;margin-bottom:.4rem;color:var(--navy)}
+.met-c p{font-size:.92rem;color:var(--gray-600);line-height:1.6}
+
+/* ═══════════════════════════════════════
+   FUNDADOR
+═══════════════════════════════════════ */
+.fundador-sec{background:var(--white);padding:6rem 1.5rem}
+.fund-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:center;max-width:1000px;margin:0 auto}
+.fund-img{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:20px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);display:flex;align-items:center;justify-content:center}
+.fund-img::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:30px 30px;opacity:.5}
+.fund-img .placeholder{position:relative;z-index:1;text-align:center;color:rgba(255,255,255,.3);font-size:.85rem;font-weight:500}
+.fund-img .placeholder svg{width:80px;height:80px;margin:0 auto .75rem;opacity:.3}
+.fund-text .quote{font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:1.5rem;letter-spacing:-.02em}
+.fund-text .quote::before{content:'"';font-size:3rem;color:var(--blue);line-height:0;vertical-align:-.6rem;margin-right:.2rem}
+.fund-text p{font-size:.95rem;color:var(--gray-600);line-height:1.65;margin-bottom:1rem}
+.fund-text .sig{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--gray-200)}
+.fund-text .sig strong{font-size:1rem;color:var(--navy);display:block}
+.fund-text .sig span{font-size:.82rem;color:var(--gray-500)}
+@media(max-width:768px){.fund-grid{grid-template-columns:1fr;gap:2rem}.fund-img{max-width:340px;margin:0 auto}}
+
+/* ═══════════════════════════════════════
+   OFERTA (preco grande)
+═══════════════════════════════════════ */
+.oferta-sec{background:linear-gradient(180deg,var(--off-white),var(--white));padding:6rem 1.5rem}
+.oferta-card{max-width:720px;margin:0 auto;background:var(--white);border:2px solid var(--green);border-radius:24px;padding:3rem 2rem;text-align:center;position:relative;box-shadow:0 30px 80px rgba(16,185,129,.15)}
+.oferta-card::before{content:'VAGAS ABERTAS';position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:.4rem 1.2rem;background:var(--green);color:var(--white);border-radius:100px;font-size:.7rem;font-weight:800;letter-spacing:.12em;white-space:nowrap;box-shadow:var(--shadow-green)}
+.oferta-card h2{margin-bottom:1rem}
+.oferta-desc{font-size:1rem;color:var(--gray-600);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto}
+.oferta-price{margin:1.5rem 0}
+.oferta-price .from{font-size:.85rem;color:var(--gray-400);text-decoration:line-through;margin-bottom:.35rem}
+.oferta-price .big{font-size:clamp(2.5rem,6vw,3.5rem);font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.03em}
+.oferta-price .per{font-size:1rem;color:var(--gray-500);font-weight:500}
+.oferta-price .total{font-size:.85rem;color:var(--gray-500);margin-top:.4rem}
+.oferta-price .total strong{color:var(--navy);font-weight:700}
+.oferta-card .btn-cta{width:100%;max-width:380px;margin-top:1rem}
+.oferta-features{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin:2rem 0 1.5rem;text-align:left;max-width:500px;margin-left:auto;margin-right:auto}
+.oferta-features li{font-size:.85rem;color:var(--gray-700);padding:.5rem 0 .5rem 1.6rem;position:relative;list-style:none;line-height:1.4}
+.oferta-features li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:900;font-size:.9rem;top:.55rem}
+.garantia{margin-top:1.5rem;padding:1rem 1.25rem;background:var(--green-soft);border:1px solid var(--green-border);border-radius:12px;display:flex;align-items:center;justify-content:center;gap:.75rem;font-size:.85rem;color:var(--green-2);font-weight:600}
+.garantia svg{width:20px;height:20px;flex-shrink:0}
+@media(max-width:500px){.oferta-features{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════
+   ATENCAO BOX (pra quem NAO e)
+═══════════════════════════════════════ */
+.atencao{background:var(--white);padding:4rem 1.5rem}
+.atencao-box{max-width:720px;margin:0 auto;background:var(--red-soft);border:1px solid #FCA5A5;border-radius:16px;padding:1.75rem;display:flex;gap:1rem;align-items:flex-start}
+.atencao-ic{width:40px;height:40px;background:var(--red);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;flex-shrink:0}
+.atencao-c h4{font-size:1rem;font-weight:800;color:#DC2626;margin-bottom:.5rem}
+.atencao-c p{font-size:.88rem;color:var(--gray-700);line-height:1.6}
+
+/* ═══════════════════════════════════════
+   PARTNERS
+═══════════════════════════════════════ */
+.partners{padding:3rem 1.5rem;background:var(--off-white);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.partners-title{text-align:center;font-size:.7rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.14em;margin-bottom:1.5rem}
+.partners-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2.5rem}
+.partner{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.92rem;color:var(--navy);opacity:.7}
+.partner-dot{width:8px;height:8px;background:var(--blue);border-radius:50%}
+@media(max-width:640px){.partners-logos{gap:1.25rem 2rem}}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:3rem 1.5rem 2rem;text-align:center}
+.foot-logo img{height:80px;margin:0 auto 1rem;filter:brightness(0) invert(1)}
+.foot-text{font-size:.85rem;margin-bottom:1rem}
+.foot-text a{color:#93C5FD}
+.foot-copy{font-size:.75rem;color:rgba(255,255,255,.4);padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);margin-top:1.5rem}
+
+/* WHATSAPP */
+.wa{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.4),0 0 0 8px rgba(37,211,102,.1);z-index:99;transition:transform .2s;color:var(--white)}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:26px;height:26px}
+
+/* MOBILE MENU */
+.mm{position:fixed;inset:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);z-index:200;display:none;flex-direction:column;padding:5.5rem 1.5rem 2rem}
+.mm.open{display:flex}
+.mm a{display:block;padding:1.1rem 0;font-size:1.15rem;color:var(--navy);border-bottom:1px solid var(--gray-200);font-weight:500}
+.mm .close{position:absolute;top:1.1rem;right:1.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:2rem;background:none;border:none;color:var(--navy);font-weight:300}
+.mm .nav-cta{margin-top:auto;width:100%;justify-content:center;padding:1rem;font-size:1rem}
+
+/* ANIMATIONS */
+.fi{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.fi.v{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="dot"></span>
+  Vagas abertas - Aceitamos 8 novos clientes por mes
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#" aria-label="Sheraos">
+      <img src="logo-sheraos.png" alt="Sheraos" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="#cenario">O Problema</a>
+      <a href="#roadmap">Solucao</a>
+      <a href="#cases">Cases</a>
+      <a href="#oferta">Investimento</a>
+    </div>
+    <a href="#oferta" class="nav-cta">Quero comecar →</a>
+    <button class="menu-btn" onclick="document.getElementById('mm').classList.add('open')" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mm" id="mm">
+  <button class="close" onclick="document.getElementById('mm').classList.remove('open')" aria-label="Fechar">×</button>
+  <a href="#cenario" onclick="document.getElementById('mm').classList.remove('open')">O Problema</a>
+  <a href="#roadmap" onclick="document.getElementById('mm').classList.remove('open')">Solucao</a>
+  <a href="#cases" onclick="document.getElementById('mm').classList.remove('open')">Cases</a>
+  <a href="#oferta" onclick="document.getElementById('mm').classList.remove('open')">Investimento</a>
+  <a href="#oferta" class="nav-cta" onclick="document.getElementById('mm').classList.remove('open')">Quero comecar →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in fi">
+    <span class="hero-pill"><span class="dot"></span> Vagas abertas pra 2026</span>
+    <h1>Pare de <span class="strike">queimar</span> <span class="hl italic">dinheiro</span><br>em marketing que<br><span class="hl">nao vende.</span></h1>
+    <p class="hero-sub">Voce investe em ads, posta no Instagram, paga agencia, mas no final do mes nao sabe se virou venda. A gente resolve isso.</p>
+    <div class="hero-ctas">
+      <a href="#oferta" class="btn btn-cta">
+        Quero entrar agora
+        <span class="price-mini">A partir de R$ 1.500/mes</span>
+      </a>
+      <a href="#roadmap" class="btn btn-ghost">Ver como funciona</a>
+    </div>
+    <div class="hero-trust">
+      <span>+R$34M gerado</span>
+      <span>+300 empresas</span>
+      <span>+8 anos de mercado</span>
+      <span>4.9★ Clutch</span>
+    </div>
+
+    <div class="hero-stat-big">
+      <div class="label">Em 8 anos de operacao</div>
+      <div class="big-num">R$ 34.120.000</div>
+      <div class="sub">Gerado em vendas pra mais de 300 empresas no Brasil e no mundo</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-sec">
+  <div class="video-wrap fi">
+    <div class="video-label"><span class="dot"></span> Assista antes de fechar</div>
+    <div class="video-title">Em 3 min voce entende o metodo Sheraos</div>
+    <div class="video-box" onclick="alert('Link do video do YouTube aqui')">
+      <div class="play-btn"></div>
+      <div class="video-caption">
+        <div class="t">Como a Sheraos transforma ads em venda</div>
+        <div class="d">Caso real: de R$ 0 a R$ 2.1M em 12 meses</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CENARIO ATUAL (Dores) -->
+<section class="cenario" id="cenario">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag red">Cenario atual</span>
+      <h2>Se voce se <span class="red">identifica com isso</span>,<br>a gente precisa conversar.</h2>
+      <p class="sec-desc">E muito provavel que voce ja passou (ou esta passando) por isso agora:</p>
+    </div>
+    <div class="dor-grid fi">
+      <div class="dor">Voce paga ads no Google e no Meta mas nao sabe quanto virou venda de verdade</div>
+      <div class="dor">O lead chega e ninguem atende rapido. Ou pior: ninguem acompanha depois que ele some</div>
+      <div class="dor">Agencia te entrega relatorio com alcance, curtidas e impressoes — nada disso paga conta</div>
+      <div class="dor">Google, Meta, Instagram e site estao em sistemas separados, sem cruzamento</div>
+      <div class="dor">Conteudo terceirizado que nao conhece seu negocio, seu publico, sua voz</div>
+      <div class="dor">Voce paga mensalidade mas nao sabe o ROI real do investimento</div>
+      <div class="dor">Ja trocou de agencia 2, 3, 4 vezes e o resultado e sempre o mesmo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP (Solucao) -->
+<section class="roadmap" id="roadmap">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag green">O que voce vai receber</span>
+      <h2>O que a Sheraos <span class="gr">entrega de verdade.</span></h2>
+      <p class="sec-desc">Nao somos agencia de relatorio. Somos assessoria de crescimento com tecnologia propria.</p>
+    </div>
+    <div class="map-grid fi">
+      <div class="map-item"><strong>Estrategia completa</strong> de trafego organico + pago, pra sua empresa, nao modelo pronto</div>
+      <div class="map-item"><strong>CRM proprio integrado ao WhatsApp</strong> com disparos ja inclusos — nada de ferramenta a parte</div>
+      <div class="map-item"><strong>Cruzamento de vendas</strong> do clique ate o caixa — voce enxerga o ROI real</div>
+      <div class="map-item"><strong>Coleta de dados + analise + melhoria continua</strong> — o que nao funciona, a gente corta rapido</div>
+      <div class="map-item"><strong>Acompanhamento comercial</strong> com script de vendas — o lead nao cai no vazio</div>
+      <div class="map-item"><strong>Todos os canais de trafego</strong> (Google, Meta, TikTok, LinkedIn) num lugar so</div>
+      <div class="map-item"><strong>Paginas de vendas/captura</strong> otimizadas pra conversao (nao so bonitinhas)</div>
+      <div class="map-item"><strong>Reunioes periodicas</strong> pra decidir proximos passos juntos — voce nao fica no escuro</div>
+      <div class="map-item"><strong>Integracao com seus sistemas</strong> (ERP, checkout, loja) — tudo conversa</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL / NUMEROS -->
+<section class="autoridade">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">Quem somos</span>
+      <h2>Nao falamos de <span class="gr">achismo.</span><br>Falamos com numero.</h2>
+      <p class="sec-desc">8 anos de mercado, 300+ empresas atendidas no Brasil e no mundo.</p>
+    </div>
+    <div class="numbers fi">
+      <div class="num"><div class="n">+R$34M</div><div class="l">Gerado em vendas</div></div>
+      <div class="num"><div class="n">+R$20M</div><div class="l">Em ads gerenciados</div></div>
+      <div class="num"><div class="n">+300</div><div class="l">Empresas atendidas</div></div>
+      <div class="num"><div class="n">+8 anos</div><div class="l">De mercado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases-sec" id="cases">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag green">Resultados reais</span>
+      <h2>Ja <span class="gr">aceleramos</span> esses clientes.</h2>
+      <p class="sec-desc">Cliente real, numero real, periodo de 12 meses.</p>
+    </div>
+    <div class="cases fi">
+      <div class="case"><div class="case-head"><div class="case-logo dark"><img src="logo-divenezia.png" alt="Pousada Di Venezia"></div><h3>Pousada Di Venezia</h3><div class="case-niche">Pousada &bull; Hotel Fazenda</div></div><div class="case-body"><div class="case-result">+72%</div><div class="case-result-lbl">Aumento em faturamento</div><div class="case-metrics"><div class="case-metric"><div class="v">6.1x</div><div class="l">ROAS</div></div><div class="case-metric"><div class="v">R$ 1.2M</div><div class="l">Receita</div></div><div class="case-metric"><div class="v">12m</div><div class="l">Periodo</div></div></div></div></div>
+      <div class="case"><div class="case-head"><div class="case-logo"><img src="logo-sportset.png" alt="Sportset"></div><h3>Sportset</h3><div class="case-niche">E-commerce &bull; Esportes</div></div><div class="case-body"><div class="case-result">+110%</div><div class="case-result-lbl">Aumento em faturamento</div><div class="case-metrics"><div class="case-metric"><div class="v">5.8x</div><div class="l">ROAS</div></div><div class="case-metric"><div class="v">R$ 780k</div><div class="l">Receita</div></div><div class="case-metric"><div class="v">12m</div><div class="l">Periodo</div></div></div></div></div>
+      <div class="case"><div class="case-head"><div class="case-logo nopad"><img src="logo-r9.jpg" alt="R9 Veiculos"></div><h3>R9 Veiculos</h3><div class="case-niche">Automotivo &bull; Revenda</div></div><div class="case-body"><div class="case-result">+200%</div><div class="case-result-lbl">Aumento em faturamento</div><div class="case-metrics"><div class="case-metric"><div class="v">7.2x</div><div class="l">ROAS</div></div><div class="case-metric"><div class="v">R$ 2.7M</div><div class="l">Receita</div></div><div class="case-metric"><div class="v">12m</div><div class="l">Periodo</div></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRA QUEM E / NAO E -->
+<section class="publico-sec">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">Filtro</span>
+      <h2>A Sheraos e <span class="gr">pra voce</span> se...</h2>
+      <p class="sec-desc">A gente trabalha com quem quer crescer de verdade. Se nao for seu caso, nao perca seu tempo.</p>
+    </div>
+    <div class="pub-grid fi">
+      <div class="pub yes">
+        <h3><span class="pub-ic">✓</span>E pra voce se:</h3>
+        <ul>
+          <li>Voce ja tem um negocio rodando e quer escalar</li>
+          <li>Investe (ou pode investir) pelo menos R$ 2k/mes em ads</li>
+          <li>Quer medir resultado de verdade, nao so vaidade</li>
+          <li>Esta cansado de agencia que so entrega relatorio bonito</li>
+          <li>Quer parceria pra crescer, nao so fornecedor</li>
+          <li>Busca acompanhamento proximo e honestidade</li>
+          <li>Aceita feedback e quer melhorar processos internos</li>
+        </ul>
+      </div>
+      <div class="pub no">
+        <h3><span class="pub-ic">✕</span>Nao e pra voce se:</h3>
+        <ul>
+          <li>Acabou de abrir o negocio e ainda nao validou produto</li>
+          <li>Nao tem orcamento minimo de R$ 2k/mes pra ads</li>
+          <li>Quer resultado milagroso em 15 dias</li>
+          <li>Nao quer acompanhar o processo nem dar feedback</li>
+          <li>Procura agencia barata pra gestao com piloto automatico</li>
+          <li>Nao esta aberto a mudar o que nao funciona</li>
+          <li>Ja desistiu de marketing digital 3 vezes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODO -->
+<section class="metodo-sec">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">Metodologia</span>
+      <h2>Como a gente <span class="gr">trabalha com voce.</span></h2>
+      <p class="sec-desc">Processo claro em 4 etapas. Sem surpresa, sem enrolacao.</p>
+    </div>
+    <div class="metodo fi">
+      <div class="met">
+        <div class="met-n">01</div>
+        <div class="met-c">
+          <h3>Diagnostico gratuito</h3>
+          <p>A gente analisa seu marketing atual, concorrentes, canais e onde esta perdendo venda. 30 min de call, sem compromisso. Voce sai com um plano de acao.</p>
+        </div>
+      </div>
+      <div class="met">
+        <div class="met-n">02</div>
+        <div class="met-c">
+          <h3>Estrategia personalizada</h3>
+          <p>Plano completo com canais certos, orcamento realista, metas mensais e cronograma. Tudo documentado e alinhado com voce.</p>
+        </div>
+      </div>
+      <div class="met">
+        <div class="met-n">03</div>
+        <div class="met-c">
+          <h3>Execucao de verdade</h3>
+          <p>Nosso time executa: ads, conteudo, CRM, landing pages, paginas de venda. Voce nao precisa ficar cobrando — a gente entrega.</p>
+        </div>
+      </div>
+      <div class="met">
+        <div class="met-n">04</div>
+        <div class="met-c">
+          <h3>Acompanhamento constante</h3>
+          <p>Reunioes periodicas com dados reais. O que funciona, escala. O que nao funciona, corta. Voce sempre sabe o ROI do investimento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDADOR -->
+<section class="fundador-sec">
+  <div class="fund-grid fi">
+    <div class="fund-img">
+      <div class="placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+        <div>Foto do fundador aqui</div>
+      </div>
+    </div>
+    <div class="fund-text">
+      <span class="sec-tag">Por tras da Sheraos</span>
+      <div class="quote">A gente nao vende marketing. A gente vende crescimento — medido em real no caixa do cliente.</div>
+      <p>Sheraos foi criada em 2016 com uma pergunta incomoda: por que agencia entrega relatorio bonito e cliente continua sem saber se investimento virou venda?</p>
+      <p>Em 8 anos, construimos tecnologia propria (CRM + dashboard + WhatsApp), um time de especialistas em Google, Meta, TikTok e conteudo, e um metodo que ja gerou mais de R$ 34 milhoes pros nossos clientes.</p>
+      <p>A gente e certificado pelas maiores plataformas do mundo: Meta Partner, Google Partner, Shopify Partner, TikTok Partner. Mas o mais importante: a gente da resultado.</p>
+      <div class="sig">
+        <strong>Equipe Sheraos</strong>
+        <span>Assessoria de crescimento desde 2016</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATENCAO -->
+<section class="atencao">
+  <div class="atencao-box fi">
+    <div class="atencao-ic">!</div>
+    <div class="atencao-c">
+      <h4>Importante: a Sheraos nao e pra todo mundo</h4>
+      <p>Se voce procura agencia barata, resultado magico em 15 dias, ou ainda nao validou seu produto — a gente NAO e a opcao certa. Trabalhamos com quem quer escalar de verdade, com orcamento minimo de R$ 2k/mes em ads. Seja honesto com voce mesmo antes de agendar o diagnostico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="oferta-sec" id="oferta">
+  <div class="c-narrow fi">
+    <div class="sec-head">
+      <span class="sec-tag green">Investimento</span>
+      <h2>Pronto pra <span class="gr">comecar?</span></h2>
+      <p class="sec-desc">Escolha o plano que cabe no seu momento. Todos incluem CRM + WhatsApp com disparos ja incluso.</p>
+    </div>
+    <div class="oferta-card">
+      <h2>Plano Start</h2>
+      <p class="oferta-desc">Performance + Presenca digital completa. Pra quem esta comecando.</p>
+      <div class="oferta-price">
+        <div class="big">R$ 1.500<span class="per">/mes</span></div>
+        <div class="total">Ou 12x de <strong>R$ 149,90</strong> no cartao</div>
+      </div>
+      <ul class="oferta-features">
+        <li>Estrategia completa Organico + Pago</li>
+        <li>2 canais de trafego pago</li>
+        <li>CRM + WhatsApp com disparos</li>
+        <li>Cruzamento de vendas + melhoria</li>
+        <li>Ate 2 paginas de vendas</li>
+        <li>Relatorios mensais</li>
+        <li>Reuniao mensal</li>
+        <li>Acompanhamento dedicado</li>
+      </ul>
+      <a href="https://wa.me/5548999999999?text=Quero+saber+mais+sobre+o+plano+Start" class="btn btn-cta">
+        Quero entrar agora →
+      </a>
+      <div class="garantia">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2.3 0 4.4.8 6 2.3"/></svg>
+        30 dias de garantia. Nao gostou? Cancele sem perguntas.
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem">
+      <p style="font-size:.88rem;color:var(--gray-500)">Tambem temos planos Scale (R$ 2.500/mes) e Growth (R$ 3.500/mes). <a href="https://wa.me/5548999999999" style="color:var(--blue);text-decoration:underline;font-weight:600">Veja todos no WhatsApp</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="partners-title">Parceiros oficiais certificados</div>
+  <div class="partners-logos">
+    <span class="partner"><span class="partner-dot"></span>META Partner</span>
+    <span class="partner"><span class="partner-dot"></span>GOOGLE Partner</span>
+    <span class="partner"><span class="partner-dot"></span>SHOPIFY Partner</span>
+    <span class="partner"><span class="partner-dot"></span>TIKTOK Partner</span>
+    <span class="partner"><span class="partner-dot"></span>CLUTCH 4.9★</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="foot-text">Assessoria de crescimento desde 2016. <a href="mailto:contato@sheraos.com.br">contato@sheraos.com.br</a></div>
+  <div class="foot-copy">© 2026 Sheraos Marketing. Todos os direitos reservados.</div>
+</footer>
+
+<a href="https://wa.me/5548999999999" class="wa" aria-label="Fale no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
