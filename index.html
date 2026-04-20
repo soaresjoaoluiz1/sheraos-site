@@ -290,6 +290,36 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:4.5rem 1.5rem 2
 
 .fi{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .fi.v{opacity:1;transform:translateY(0)}
+
+/* LEAD MODAL */
+.lead-overlay{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(6px);z-index:300;display:none;align-items:center;justify-content:center;padding:1rem}
+.lead-overlay.open{display:flex}
+.lead-modal{background:var(--white);border-radius:16px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 60px rgba(15,23,42,.25);position:relative;animation:modalIn .35s cubic-bezier(.22,1,.36,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.lead-modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:10px;border:1px solid var(--gray-200);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.25rem;color:var(--gray-500);transition:all .2s;z-index:1}
+.lead-modal-close:hover{background:var(--gray-50);color:var(--navy)}
+.lead-modal-header{padding:2rem 2rem 0;text-align:center}
+.lead-modal-header h3{font-size:1.35rem;font-weight:800;color:var(--navy);margin-bottom:.35rem}
+.lead-modal-header p{font-size:.88rem;color:var(--gray-500);line-height:1.5}
+.lead-form{padding:1.5rem 2rem 2rem;display:flex;flex-direction:column;gap:1rem}
+.lead-field label{display:block;font-size:.75rem;font-weight:600;color:var(--gray-600);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+.lead-field input,.lead-field select{width:100%;padding:.75rem 1rem;border:1px solid var(--gray-200);border-radius:10px;font-size:.93rem;font-family:inherit;color:var(--navy);background:var(--gray-50);transition:all .2s;outline:none}
+.lead-field input:focus,.lead-field select:focus{border-color:var(--blue);background:var(--white);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.lead-field input::placeholder{color:var(--gray-400)}
+.lead-field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.lead-radio-group{display:flex;gap:.75rem}
+.lead-radio{flex:1}
+.lead-radio input{display:none}
+.lead-radio label{display:flex;align-items:center;justify-content:center;padding:.7rem 1rem;border:1px solid var(--gray-200);border-radius:10px;font-size:.88rem;font-weight:600;color:var(--gray-600);background:var(--gray-50);cursor:pointer;transition:all .2s;text-align:center}
+.lead-radio input:checked+label{border-color:var(--blue);background:var(--blue-soft);color:var(--blue)}
+.lead-submit{width:100%;padding:.95rem;border:none;border-radius:10px;background:var(--blue);color:var(--white);font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;transition:all .25s;box-shadow:var(--shadow-blue);margin-top:.25rem}
+.lead-submit:hover{background:var(--blue-2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,99,235,.45)}
+.lead-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.lead-success{text-align:center;padding:3rem 2rem}
+.lead-success svg{margin-bottom:1rem}
+.lead-success h3{font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:.5rem}
+.lead-success p{font-size:.9rem;color:var(--gray-500);line-height:1.6}
+@media(max-width:500px){.lead-modal-header{padding:1.5rem 1.5rem 0}.lead-form{padding:1.25rem 1.5rem 1.5rem}.lead-radio-group{flex-direction:column;gap:.5rem}}
 </style>
 </head>
 <body>
@@ -713,10 +743,146 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:4.5rem 1.5rem 2
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- LEAD MODAL -->
+<div class="lead-overlay" id="leadModal">
+  <div class="lead-modal">
+    <button class="lead-modal-close" onclick="closeLead()" aria-label="Fechar">&times;</button>
+    <div id="leadForm">
+      <div class="lead-modal-header">
+        <h3>Diagnóstico gratuito</h3>
+        <p>Preencha abaixo e nosso time entra em contato em até 24h com uma análise personalizada.</p>
+      </div>
+      <form class="lead-form" onsubmit="submitLead(event)">
+        <div class="lead-field">
+          <label for="lead-nome">Seu nome</label>
+          <input type="text" id="lead-nome" name="nome" placeholder="Ex: João Silva" required>
+        </div>
+        <div class="lead-field">
+          <label for="lead-empresa">Nome da empresa</label>
+          <input type="text" id="lead-empresa" name="empresa" placeholder="Ex: Loja Moda Feminina" required>
+        </div>
+        <div class="lead-field">
+          <label for="lead-faturamento">Faturamento mensal</label>
+          <select id="lead-faturamento" name="faturamento" required>
+            <option value="" disabled selected>Selecione uma faixa</option>
+            <option value="ate-20k">Até R$ 20 mil</option>
+            <option value="20k-50k">R$ 20 mil — R$ 50 mil</option>
+            <option value="50k-100k">R$ 50 mil — R$ 100 mil</option>
+            <option value="100k-500k">R$ 100 mil — R$ 500 mil</option>
+            <option value="500k+">Acima de R$ 500 mil</option>
+          </select>
+        </div>
+        <div class="lead-field">
+          <label for="lead-ads">Quanto investe em ads por mês</label>
+          <select id="lead-ads" name="investimento_ads" required>
+            <option value="" disabled selected>Selecione uma faixa</option>
+            <option value="nao-investe">Ainda não invisto</option>
+            <option value="ate-2k">Até R$ 2 mil</option>
+            <option value="2k-5k">R$ 2 mil — R$ 5 mil</option>
+            <option value="5k-15k">R$ 5 mil — R$ 15 mil</option>
+            <option value="15k-50k">R$ 15 mil — R$ 50 mil</option>
+            <option value="50k+">Acima de R$ 50 mil</option>
+          </select>
+        </div>
+        <div class="lead-field">
+          <label>Já trabalhou com agência de marketing?</label>
+          <div class="lead-radio-group">
+            <div class="lead-radio">
+              <input type="radio" id="ag-sim" name="agencia" value="sim" required>
+              <label for="ag-sim">Sim, já tive</label>
+            </div>
+            <div class="lead-radio">
+              <input type="radio" id="ag-nao" name="agencia" value="nao">
+              <label for="ag-nao">Nunca tive</label>
+            </div>
+            <div class="lead-radio">
+              <input type="radio" id="ag-atual" name="agencia" value="tenho">
+              <label for="ag-atual">Tenho hoje</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="lead-submit">Quero meu diagnóstico gratuito →</button>
+      </form>
+    </div>
+    <div id="leadSuccess" class="lead-success" style="display:none">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#EFF6FF"/><circle cx="28" cy="28" r="20" fill="#2563EB"/><path d="M22 28.5L26 32.5L34 24.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Recebemos seus dados!</h3>
+      <p>Nosso time vai analisar seu cenário e entrar em contato em até 24 horas com seu diagnóstico personalizado.</p>
+    </div>
+  </div>
+</div>
+
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.12});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+
+// Lead modal
+function openLead(e){
+  if(e){e.preventDefault();}
+  document.getElementById('leadModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLead(){
+  document.getElementById('leadModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('leadModal').addEventListener('click',function(e){
+  if(e.target===this)closeLead();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeLead();
+});
+
+// Intercept CTA buttons (except WhatsApp)
+document.querySelectorAll('a[href="#contato"]').forEach(function(a){
+  a.addEventListener('click',function(e){openLead(e);});
+});
+document.querySelectorAll('a[href="diagnóstico.html"]').forEach(function(a){
+  a.addEventListener('click',function(e){openLead(e);});
+});
+
+function submitLead(e){
+  e.preventDefault();
+  var form=e.target;
+  var btn=form.querySelector('.lead-submit');
+  btn.disabled=true;
+  btn.textContent='Enviando...';
+  var data={
+    nome:form.nome.value,
+    empresa:form.empresa.value,
+    faturamento:form.faturamento.value,
+    investimento_ads:form.investimento_ads.value,
+    agencia:form.agencia.value,
+    origem:window.location.href,
+    data:new Date().toISOString()
+  };
+  // Send to WhatsApp as fallback (works without backend)
+  var msg='*Novo lead — Sheraos*%0A'
+    +'Nome: '+encodeURIComponent(data.nome)+'%0A'
+    +'Empresa: '+encodeURIComponent(data.empresa)+'%0A'
+    +'Faturamento: '+encodeURIComponent(data.faturamento)+'%0A'
+    +'Investimento ads: '+encodeURIComponent(data.investimento_ads)+'%0A'
+    +'Já teve agência: '+encodeURIComponent(data.agencia);
+  // Try sending via fetch to a webhook (if configured later)
+  // For now, store in localStorage and show success
+  var leads=JSON.parse(localStorage.getItem('sheraos_leads')||'[]');
+  leads.push(data);
+  localStorage.setItem('sheraos_leads',JSON.stringify(leads));
+  // Show success
+  document.getElementById('leadForm').style.display='none';
+  document.getElementById('leadSuccess').style.display='block';
+  // Open WhatsApp with lead data in background
+  window.open('https://wa.me/5548999999999?text='+msg,'_blank');
+  setTimeout(function(){
+    closeLead();
+    document.getElementById('leadForm').style.display='block';
+    document.getElementById('leadSuccess').style.display='none';
+    form.reset();
+    btn.disabled=false;
+    btn.textContent='Quero meu diagnóstico gratuito →';
+  },4000);
+}
 </script>
 
 </body>
