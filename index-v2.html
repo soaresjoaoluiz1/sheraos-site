@@ -56,8 +56,8 @@ svg{display:block}
 .nav-links{display:flex;gap:2.25rem;align-items:center;flex:1;justify-content:center}
 .nav-links a{color:var(--gray-600);font-size:.9rem;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--navy)}
-.nav-cta{padding:.65rem 1.25rem;background:var(--navy);color:var(--white);border-radius:10px;font-weight:600;font-size:.85rem;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem}
-.nav-cta:hover{background:var(--blue);transform:translateY(-1px);box-shadow:var(--shadow-blue)}
+.nav-cta{padding:.65rem 1.25rem;background:var(--blue);color:var(--white);border-radius:10px;font-weight:600;font-size:.85rem;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;box-shadow:0 2px 10px rgba(37,99,235,.2)}
+.nav-cta:hover{background:var(--blue-2);transform:translateY(-1px);box-shadow:0 10px 24px rgba(37,99,235,.4)}
 .menu-btn{display:none;width:40px;height:40px;align-items:center;justify-content:center;color:var(--navy);background:none;border:none}
 @media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}.nav-in{gap:1rem}.nav>.nav-in>.nav-cta{display:none}}
 
@@ -74,8 +74,8 @@ svg{display:block}
 .hero-sub{font-size:clamp(1.05rem,2.2vw,1.2rem);color:var(--gray-600);max-width:640px;margin:0 auto 2.5rem;font-weight:400;line-height:1.6}
 .hero-ctas{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:4rem}
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.75rem;border-radius:10px;font-weight:600;font-size:.93rem;transition:all .25s;cursor:pointer;border:1px solid transparent}
-.btn-primary{background:var(--navy);color:var(--white);box-shadow:var(--shadow)}
-.btn-primary:hover{background:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow-blue)}
+.btn-primary{background:var(--blue);color:var(--white);box-shadow:var(--shadow-blue)}
+.btn-primary:hover{background:var(--blue-2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,99,235,.45)}
 .btn-secondary{background:var(--white);color:var(--navy);border-color:var(--gray-200);box-shadow:var(--shadow-sm)}
 .btn-secondary:hover{border-color:var(--gray-300);transform:translateY(-2px);box-shadow:var(--shadow)}
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:800px;margin:0 auto;padding-top:3rem;border-top:1px solid var(--gray-200)}
@@ -257,8 +257,8 @@ h2 .gr{background:linear-gradient(135deg,var(--blue),var(--navy));background-cli
 .price li::before{content:'✓';position:absolute;left:0;top:.65rem;color:var(--blue);font-weight:900;font-size:.85rem}
 .price.featured li::before{color:#93C5FD}
 .price .btn{width:100%;justify-content:center;font-size:.9rem;padding:.85rem}
-.price.featured .btn-primary{background:var(--white);color:var(--navy)}
-.price.featured .btn-primary:hover{background:var(--blue);color:var(--white)}
+.price.featured .btn-primary{background:var(--white);color:var(--blue);font-weight:700}
+.price.featured .btn-primary:hover{background:var(--blue);color:var(--white);box-shadow:0 10px 30px rgba(37,99,235,.5)}
 @media(max-width:900px){.prices{grid-template-columns:1fr;max-width:440px}}
 
 /* FAQ */
@@ -286,8 +286,8 @@ h2 .gr{background:linear-gradient(135deg,var(--blue),var(--navy));background-cli
 .cta-box h2{color:var(--white);margin-bottom:1rem}
 .cta-box h2 .gr{background:linear-gradient(135deg,#93C5FD,#06B6D4);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .cta-box p{font-size:1.05rem;color:rgba(255,255,255,.8);margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto}
-.cta-box .btn-primary{background:var(--white);color:var(--navy)}
-.cta-box .btn-primary:hover{background:var(--blue);color:var(--white)}
+.cta-box .btn-primary{background:var(--white);color:var(--blue);font-weight:700}
+.cta-box .btn-primary:hover{background:var(--blue);color:var(--white);box-shadow:0 10px 30px rgba(37,99,235,.5)}
 .cta-box .btn-secondary{background:transparent;color:var(--white);border-color:rgba(255,255,255,.25)}
 .cta-box .btn-secondary:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
 
@@ -369,7 +369,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:4.5rem 1.5rem 2
     <div class="fi">
       <span class="hero-pill"><span class="dot"></span> Plataforma + Gestao + Estrategia</span>
       <h1>Tudo pra sua empresa<br><span class="gr">vender mais.</span><br>Num sistema so.</h1>
-      <p class="hero-sub">Pare de pagar 10 ferramentas caras e dificeis. Na gestao da Sheraos voce recebe <strong style="color:#fff">toda a plataforma inclusa</strong>: CRM + WhatsApp multi-atendentes + dashboard unificado + disparos + automacoes. Junto com a estrategia que faz seu investimento virar venda.</p>
+      <p class="hero-sub">Pare de pagar 10 ferramentas caras e dificeis. Na gestao da Sheraos voce recebe <strong style="color:var(--blue)">toda a plataforma inclusa</strong>: CRM + WhatsApp multi-atendentes + dashboard unificado + disparos + automacoes. Junto com a estrategia que faz seu investimento virar venda.</p>
       <div class="hero-ctas">
         <a href="#contato" class="btn btn-primary">Comecar em 48h
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
