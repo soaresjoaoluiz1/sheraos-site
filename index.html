@@ -85,13 +85,23 @@ svg{display:block}
 @media(max-width:640px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
 
 /* PARTNERS */
-.partners{padding:3rem 1.5rem;background:var(--off-white);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
-.partners-title{text-align:center;font-size:.72rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.14em;margin-bottom:2rem}
-.partners-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3rem}
-.partner{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.8rem;color:var(--navy);letter-spacing:.02em;opacity:.85}
-.partner svg{height:24px;width:auto;flex-shrink:0}
-.partner-label{display:flex;flex-direction:column;line-height:1.15}.partner-label small{font-size:.6rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.08em}
-@media(max-width:640px){.partners-logos{gap:1.25rem 2rem}.partner{font-size:.7rem}.partner svg{height:20px}}
+.partners{padding:4rem 1.5rem;background:var(--off-white);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.partners-title{text-align:center;font-size:.8rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.18em;margin-bottom:2.5rem}
+.partners-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3.5rem 4rem;max-width:1100px;margin:0 auto}
+.partner{display:flex;align-items:center;gap:.8rem;font-weight:700;color:var(--navy);letter-spacing:.01em;opacity:.9;transition:opacity .2s}
+.partner:hover{opacity:1}
+.partner-ic{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:900;color:#fff;font-size:1.3rem;line-height:1}
+.partner-ic.meta{background:#0866FF}
+.partner-ic.google{background:#fff;border:1px solid var(--gray-200);color:var(--navy)}
+.partner-ic.google svg{width:28px;height:28px}
+.partner-ic.shopify{background:#95BF47}
+.partner-ic.tiktok{background:#000}
+.partner-ic.clutch{background:#E44F25}
+.partner-label{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.partner-label .name{font-size:1rem;font-weight:800;color:var(--navy)}
+.partner-label .tag{font-size:.68rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.12em;margin-top:.1rem}
+.partner-label .stars{font-size:.75rem;color:var(--amber);margin-top:.15rem;letter-spacing:.05em}
+@media(max-width:640px){.partners-logos{gap:2rem 2.5rem}.partner-ic{width:38px;height:38px;font-size:1.1rem}.partner-ic.google svg{width:24px;height:24px}.partner-label .name{font-size:.88rem}.partner-label .tag{font-size:.6rem}}
 
 /* SECTIONS */
 section{padding:7rem 1.5rem;position:relative}
@@ -382,24 +392,26 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:4.5rem 1.5rem 2
   <div class="partners-title">Parceiros oficiais certificados</div>
   <div class="partners-logos">
     <span class="partner">
-      <svg viewBox="0 0 36 36" height="28" fill="none"><circle cx="18" cy="18" r="18" fill="#0081FB"/><path d="M18 10.5c-4.14 0-7.5 3.36-7.5 7.5 0 2.36 1.1 4.47 2.8 5.84.16.13.4.07.46-.12l.6-1.92c.04-.14 0-.3-.1-.4A4.48 4.48 0 0112 18c0-3.31 2.69-6 6-6s6 2.69 6 6a4.48 4.48 0 01-2.26 3.4c-.1.1-.14.26-.1.4l.6 1.92c.06.19.3.25.46.12A7.48 7.48 0 0025.5 18c0-4.14-3.36-7.5-7.5-7.5z" fill="#fff"/><path d="M18 14.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#fff"/></svg>
-      <span class="partner-label">Meta<small>Partner</small></span>
+      <span class="partner-ic meta">M</span>
+      <span class="partner-label"><span class="name">Meta</span><span class="tag">Partner</span></span>
     </span>
     <span class="partner">
-      <svg viewBox="0 0 36 36" height="28" fill="none"><path d="M30.6 18.3c0-.9-.07-1.57-.23-2.26H18.15v4.1h7.17a6.3 6.3 0 01-2.64 4.1l4.05 3.14c2.43-2.24 3.87-5.54 3.87-9.08z" fill="#4285F4"/><path d="M18.15 30.5c3.55 0 6.53-1.17 8.7-3.18l-4.05-3.14c-1.15.8-2.67 1.32-4.65 1.32-3.56 0-6.58-2.4-7.66-5.63l-4.17 3.23A12.5 12.5 0 0018.15 30.5z" fill="#34A853"/><path d="M10.5 19.87a7.6 7.6 0 010-4.74L6.32 11.9A12.5 12.5 0 005.5 18c0 2.18.53 4.24 1.45 6.1l4.55-4.23z" fill="#FBBC05"/><path d="M18.15 10.5c2.02 0 3.83.7 5.26 2.05l3.9-3.9C25.1 6.64 21.98 5.5 18.15 5.5A12.5 12.5 0 006.32 11.9l4.17 3.23c1.08-3.23 4.1-4.63 7.66-4.63z" fill="#EA4335"/></svg>
-      <span class="partner-label">Google<small>Partner</small></span>
+      <span class="partner-ic google">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.75h3.56c2.08-1.92 3.28-4.74 3.28-8.08z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.56-2.75c-.98.66-2.23 1.06-3.72 1.06-2.87 0-5.3-1.94-6.16-4.55H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.07H2.18a11 11 0 0 0 0 9.86l3.66-2.83z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.07.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.18 7.07l3.66 2.83C6.7 7.32 9.13 5.38 12 5.38z"/></svg>
+      </span>
+      <span class="partner-label"><span class="name">Google</span><span class="tag">Partner</span></span>
     </span>
     <span class="partner">
-      <svg viewBox="0 0 36 36" height="28" fill="none"><path d="M25.13 7H10.87a1.5 1.5 0 00-1.44 1.1L6.5 20.27v.23a2.5 2.5 0 002.5 2.5h4.5l-1 6.5a.5.5 0 00.84.42L19 24h6.5a2.5 2.5 0 002.5-2.5v-.23L25.13 7z" fill="#95BF47"/><path d="M25.13 7l2.87 13.27v.23a2.5 2.5 0 01-2.5 2.5H19l-5.66 5.42a.5.5 0 01-.84-.42l1-6.5H9a2.5 2.5 0 01-2.5-2.5" fill="#5E8E3E"/></svg>
-      <span class="partner-label">Shopify<small>Partner</small></span>
+      <span class="partner-ic shopify">S</span>
+      <span class="partner-label"><span class="name">Shopify</span><span class="tag">Partner</span></span>
     </span>
     <span class="partner">
-      <svg viewBox="0 0 36 36" height="28" fill="none"><rect width="36" height="36" rx="8" fill="#010101"/><path d="M24.5 14.2c-.1-.8-.6-1.2-1.2-1.2s-1.4.3-2.1.7c-.5-1-1.3-1.6-2.4-1.6-2.7 0-5.4 3.3-6.1 6.3-.5 2-.1 3.4 1.3 3.4 1.2 0 2.5-1 3.4-2.3-.2.9-.1 1.5.4 2 .4.4 1 .5 1.6.3 1.4-.4 2.7-2 3.3-3.5.2-.4 0-.5-.3-.3-.6.5-1.2.8-1.6.8-.5 0-.5-.5-.3-1.2l1.6-4.9c.2-.5.4-.8.6-1 .1-.1.2-.2.2-.4" fill="#25F4EE"/><path d="M23.5 13.7c-.1-.8-.6-1.2-1.2-1.2s-1.4.3-2.1.7c-.5-1-1.3-1.6-2.4-1.6-2.7 0-5.4 3.3-6.1 6.3-.5 2-.1 3.4 1.3 3.4 1.2 0 2.5-1 3.4-2.3-.2.9-.1 1.5.4 2 .4.4 1 .5 1.6.3 1.4-.4 2.7-2 3.3-3.5.2-.4 0-.5-.3-.3-.6.5-1.2.8-1.6.8-.5 0-.5-.5-.3-1.2l1.6-4.9c.2-.5.4-.8.6-1 .1-.1.2-.2.2-.4" fill="#FE2C55"/><path d="M23 14c-.1-.8-.6-1.2-1.2-1.2s-1.4.3-2.1.7c-.5-1-1.3-1.6-2.4-1.6-2.7 0-5.4 3.3-6.1 6.3-.5 2-.1 3.4 1.3 3.4 1.2 0 2.5-1 3.4-2.3-.2.9-.1 1.5.4 2 .4.4 1 .5 1.6.3 1.4-.4 2.7-2 3.3-3.5.2-.4 0-.5-.3-.3-.6.5-1.2.8-1.6.8-.5 0-.5-.5-.3-1.2l1.6-4.9c.2-.5.4-.8.6-1 .1-.1.2-.2.2-.4" fill="#fff"/></svg>
-      <span class="partner-label">TikTok<small>Partner</small></span>
+      <span class="partner-ic tiktok">T</span>
+      <span class="partner-label"><span class="name">TikTok</span><span class="tag">Partner</span></span>
     </span>
     <span class="partner">
-      <svg viewBox="0 0 36 36" height="28" fill="none"><rect width="36" height="36" rx="8" fill="#17313B"/><path d="M18 9l2.35 4.76 5.26.77-3.8 3.7.9 5.24L18 20.97l-4.71 2.5.9-5.24-3.8-3.7 5.26-.77L18 9z" fill="#EF4335"/></svg>
-      <span class="partner-label">Clutch<small>4.9 ★</small></span>
+      <span class="partner-ic clutch">★</span>
+      <span class="partner-label"><span class="name">Clutch</span><span class="stars">4.9 ★★★★★</span></span>
     </span>
   </div>
 </div>
