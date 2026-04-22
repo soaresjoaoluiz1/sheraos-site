@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Diagnóstico Gratuito de Marketing — Sheraos</title>
-<meta name="description" content="Descubra em 30 minutos onde sua empresa esta perdendo vendas. Auditoria completa gratuita feita por especialistas Sheraos.">
+<title>Diagnóstico Gratuito — Sheraos</title>
+<meta name="description" content="Descubra quanto sua empresa pode faturar a mais nos próximos 6 meses. Análise gratuita em 30 minutos feita por especialistas Sheraos.">
 <link rel="icon" href="logo-sheraos.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,6 +29,8 @@
   --green:#10B981;
   --amber:#F59E0B;
   --red:#EF4444;
+  --amber-soft:#FEF3C7;
+  --amber-border:#FCD34D;
   --shadow-sm:0 1px 2px rgba(15,23,41,.05);
   --shadow:0 4px 12px rgba(15,23,41,.08);
   --shadow-md:0 10px 30px rgba(15,23,41,.08);
@@ -42,7 +44,7 @@ a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;padding:.25rem 1.5rem;max-width:1200px;margin:0 auto;gap:2rem}
 .logo-img{height:128px;width:auto;display:block}
 @media(max-width:900px){.logo-img{height:108px}}
@@ -67,11 +69,11 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
 .hdr h1 .gr{background:linear-gradient(135deg,var(--blue),var(--navy));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .hdr p{font-size:1.05rem;color:var(--gray-600);max-width:640px;margin:0 auto;line-height:1.65}
 
-/* LAYOUT 2 COL */
+/* GRID 2 COL */
 .grid2{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start}
 @media(max-width:900px){.grid2{grid-template-columns:1fr;gap:2rem}}
 
-/* VALUE LEFT */
+/* LEFT: VALOR */
 .value h2{font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;color:var(--navy);letter-spacing:-.02em}
 .value-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
 .value-ic{width:44px;height:44px;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0}
@@ -79,38 +81,50 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
 .value-item h4{font-size:.95rem;font-weight:700;margin-bottom:.3rem;color:var(--navy)}
 .value-item p{font-size:.88rem;color:var(--gray-600);line-height:1.55}
 
+/* ALERTA MIN R$ 1000 */
+.alert{background:var(--amber-soft);border:1px solid var(--amber-border);border-radius:12px;padding:1rem 1.25rem;margin-top:2rem;display:flex;gap:.85rem;align-items:flex-start}
+.alert-ic{width:28px;height:28px;background:var(--amber);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;font-size:.95rem}
+.alert-c h4{font-size:.88rem;font-weight:800;color:#92400E;margin-bottom:.25rem}
+.alert-c p{font-size:.82rem;color:#78350F;line-height:1.55;margin:0}
+
 .testimonial-mini{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow-sm)}
 .testimonial-mini .stars{color:var(--amber);margin-bottom:.6rem}
 .testimonial-mini p{font-size:.88rem;color:var(--gray-700);font-style:italic;margin-bottom:.85rem;line-height:1.6}
 .testimonial-mini .author{font-size:.8rem;font-weight:700;color:var(--navy)}
 .testimonial-mini .role{font-size:.72rem;color:var(--gray-500);margin-top:.1rem}
 
-/* FORM RIGHT */
+/* RIGHT: FORM */
 .form-wrap{background:var(--white);border:1px solid var(--gray-200);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;box-shadow:var(--shadow)}
 .form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--navy))}
 
 .form-head{margin-bottom:1.75rem}
 .form-head h3{font-size:1.35rem;font-weight:800;margin-bottom:.35rem;color:var(--navy);letter-spacing:-.02em}
 .form-head p{font-size:.85rem;color:var(--gray-500)}
+.form-progress{display:flex;gap:.35rem;margin-top:1rem}
+.form-progress span{flex:1;height:4px;background:var(--gray-200);border-radius:4px}
+.form-progress span.on{background:var(--blue)}
 
-.field{margin-bottom:1rem}
+.field{margin-bottom:1.1rem}
 .field label{display:block;font-size:.75rem;font-weight:600;margin-bottom:.45rem;color:var(--gray-700);text-transform:uppercase;letter-spacing:.05em}
 .field label span{color:var(--red)}
-.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;background:var(--off-white);border:1px solid var(--gray-200);border-radius:10px;color:var(--navy);font-size:.9rem;font-family:inherit;transition:all .2s}
+.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;background:var(--off-white);border:1px solid var(--gray-200);border-radius:10px;color:var(--navy);font-size:.95rem;font-family:inherit;transition:all .2s}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:var(--white);box-shadow:0 0 0 3px var(--blue-soft)}
 .field input::placeholder,.field textarea::placeholder{color:var(--gray-400)}
-.field textarea{min-height:90px;resize:vertical}
+.field textarea{min-height:80px;resize:vertical}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
 @media(max-width:480px){.field-row{grid-template-columns:1fr}}
 
 .radio-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
-.radio-card{cursor:pointer;padding:.75rem .85rem;background:var(--off-white);border:1px solid var(--gray-200);border-radius:10px;text-align:center;font-size:.82rem;font-weight:500;transition:all .2s;color:var(--gray-700)}
+.radio-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+@media(max-width:480px){.radio-grid-3{grid-template-columns:1fr 1fr}}
+.radio-card{cursor:pointer;padding:.75rem .85rem;background:var(--off-white);border:1px solid var(--gray-200);border-radius:10px;text-align:center;font-size:.82rem;font-weight:500;transition:all .2s;color:var(--gray-700);position:relative}
 .radio-card input{display:none}
 .radio-card:hover{border-color:var(--blue);background:var(--white)}
 .radio-card.selected{background:var(--blue);border-color:var(--blue);color:var(--white);font-weight:700;box-shadow:var(--shadow-blue)}
 
-.submit-btn{width:100%;padding:1.05rem;background:var(--navy);color:var(--white);border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .2s;font-family:inherit;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
-.submit-btn:hover{background:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow-blue)}
+.submit-btn{width:100%;padding:1.1rem;background:var(--blue);color:var(--white);border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .2s;font-family:inherit;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem;box-shadow:var(--shadow-blue)}
+.submit-btn:hover:not(:disabled){background:var(--blue-2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,99,235,.4)}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
 
 .form-foot{font-size:.72rem;color:var(--gray-500);text-align:center;margin-top:1rem;line-height:1.5}
 .form-foot a{color:var(--blue)}
@@ -119,15 +133,15 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
 .trust-item{font-size:.7rem;color:var(--gray-500);display:flex;align-items:center;gap:.35rem;font-weight:500}
 .trust-item::before{content:'✓';color:var(--green);font-weight:900}
 
-/* SUCCESS STATE */
-.success{display:none;text-align:center;padding:2rem}
+/* SUCCESS */
+.success{display:none;text-align:center;padding:2rem 1rem}
 .success.show{display:block}
 .success-ic{width:80px;height:80px;margin:0 auto 1.5rem;background:rgba(16,185,129,.12);border:2px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--green)}
 .success-ic svg{width:40px;height:40px}
 .success h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--navy);letter-spacing:-.02em}
 .success p{color:var(--gray-600);font-size:.95rem;line-height:1.6;margin-bottom:1.5rem}
-.success .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.85rem;background:#25D366;color:var(--white);border-radius:10px;font-weight:700;text-decoration:none;font-size:.9rem;transition:transform .2s,box-shadow .2s}
-.success .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.35)}
+.success .btn-wa{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.85rem;background:#25D366;color:var(--white);border-radius:10px;font-weight:700;text-decoration:none;font-size:.9rem;transition:all .2s}
+.success .btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.35)}
 
 /* BELOW */
 .below{margin-top:5rem;text-align:center;position:relative;z-index:1}
@@ -143,7 +157,6 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
 .partners-line-logos .item{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.88rem;color:var(--navy);opacity:.75}
 .partners-line-logos .dot{width:7px;height:7px;background:var(--blue);border-radius:50%}
 
-/* FOOT */
 .foot{text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--gray-200);font-size:.78rem;color:var(--gray-500);background:var(--off-white)}
 </style>
 </head>
@@ -168,55 +181,58 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
   <div class="bg-orb2"></div>
 
   <div class="wrap">
+
     <!-- HEADER -->
     <div class="hdr">
-      <span class="hdr-tag"><span class="d"></span> 100% Gratuito &bull; Sem compromisso</span>
-      <h1>Descubra em 30 min<br>onde sua empresa esta <span class="gr">perdendo vendas.</span></h1>
-      <p>Auditoria completa feita por um especialista Sheraos: analisamos seus ads, site, CRM e funil de vendas. Entregamos um plano claro de como escalar.</p>
+      <span class="hdr-tag"><span class="d"></span> Gratuito &bull; Sem compromisso &bull; 30 minutos</span>
+      <h1>Descubra quanto sua empresa<br>pode <span class="gr">faturar a mais.</span></h1>
+      <p>Análise gratuita feita por um especialista Sheraos. Mostramos onde você está perdendo venda hoje e apresentamos um plano claro pra virar o jogo nos próximos 6 meses.</p>
     </div>
 
     <!-- GRID 2 COL -->
     <div class="grid2">
 
-      <!-- LEFT: VALUE -->
+      <!-- LEFT: VALOR -->
       <div class="value">
         <h2>O que você recebe:</h2>
 
         <div class="value-item">
           <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
           <div>
-            <h4>Auditoria completa do marketing</h4>
-            <p>Analisamos suas campanhas de Google, Meta, TikTok, seu site, funil e CRM atual.</p>
+            <h4>Auditoria do seu marketing</h4>
+            <p>Analisamos seus anúncios, site, conteúdo e funil. Mostramos o que funciona e o que está queimando dinheiro.</p>
           </div>
         </div>
 
         <div class="value-item">
           <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
           <div>
-            <h4>Relatório com dados reais</h4>
-            <p>Mostramos métricas, pontos de perda e comparamos com concorrentes do seu mercado.</p>
+            <h4>Projeção de faturamento</h4>
+            <p>Estimamos quanto sua empresa pode faturar a mais com a estratégia certa, baseado em dados do seu segmento.</p>
           </div>
         </div>
 
         <div class="value-item">
           <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
           <div>
-            <h4>Plano estratégico personalizado</h4>
-            <p>Saia da call com um mapa claro: o que mudar, onde investir e como medir resultado.</p>
+            <h4>Plano de ação personalizado</h4>
+            <p>Saia da call com um mapa claro: canais, investimento ideal, metas mensais e o roadmap de crescimento.</p>
           </div>
         </div>
 
-        <div class="value-item">
-          <div class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <div>
-            <h4>3 ações imediatas pra aplicar</h4>
-            <p>Mesmo que você não feche com a gente, sai com 3 mudancas de alto impacto pra aplicar na semana.</p>
+        <!-- ALERTA MIN R$ 1000 -->
+        <div class="alert">
+          <div class="alert-ic">!</div>
+          <div class="alert-c">
+            <h4>Importante: investimento mínimo</h4>
+            <p>Nossa metodologia exige que sua empresa tenha (ou esteja disposta a investir) <strong>no mínimo R$ 1.000/mês em anúncios</strong> além da mensalidade do plano. Sem esse volume, os dados não são suficientes pra otimização real.</p>
           </div>
         </div>
 
+        <!-- TESTIMONIAL -->
         <div class="testimonial-mini">
           <div class="stars">★★★★★</div>
-          <p>"Em 30 minutos identificaram 4 pontos que estavam me custando R$ 40k por mês. So com as ações sugeridas já recuperei o investimento. Depois contratei a agência."</p>
+          <p>"Em 30 minutos identificaram pontos que estavam me custando R$ 40k por mês. Só com as ações sugeridas já recuperei o investimento."</p>
           <div class="author">Carlos Mendes</div>
           <div class="role">CEO, E-commerce de moda</div>
         </div>
@@ -227,18 +243,14 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
         <form id="diag-form" onsubmit="submitForm(event)">
           <div class="form-head">
             <h3>Agende seu diagnóstico</h3>
-            <p>Respondemos em menos de 1h em dia util.</p>
+            <p>Leva menos de 1 minuto pra preencher.</p>
           </div>
 
-          <div class="field">
-            <label>Seu nome <span>*</span></label>
-            <input type="text" name="nome" required placeholder="Como você se chama?">
-          </div>
-
+          <!-- 1. NOME + WHATSAPP -->
           <div class="field-row">
             <div class="field">
-              <label>Email <span>*</span></label>
-              <input type="email" name="email" required placeholder="voce@empresa.com">
+              <label>Seu nome <span>*</span></label>
+              <input type="text" name="nome" required placeholder="Como te chamamos?">
             </div>
             <div class="field">
               <label>WhatsApp <span>*</span></label>
@@ -246,68 +258,73 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
             </div>
           </div>
 
+          <!-- 2. EMPRESA -->
           <div class="field">
             <label>Nome da empresa <span>*</span></label>
-            <input type="text" name="empresa" required placeholder="Empresa/Marca">
+            <input type="text" name="empresa" required placeholder="Nome da sua marca/empresa">
           </div>
 
+          <!-- 3. FATURAMENTO -->
           <div class="field">
-            <label>Site (se tiver)</label>
-            <input type="url" name="site" placeholder="https://suaempresa.com.br">
-          </div>
-
-          <div class="field">
-            <label>Qual seu faturamento mensal atual? <span>*</span></label>
+            <label>Faturamento mensal da empresa <span>*</span></label>
             <div class="radio-grid">
-              <label class="radio-card"><input type="radio" name="faturamento" value="ate-10k" required>Até R$ 10k</label>
-              <label class="radio-card"><input type="radio" name="faturamento" value="10-50k">R$ 10k a R$ 50k</label>
-              <label class="radio-card"><input type="radio" name="faturamento" value="50-200k">R$ 50k a R$ 200k</label>
-              <label class="radio-card"><input type="radio" name="faturamento" value="200k+">R$ 200k+</label>
+              <label class="radio-card"><input type="radio" name="faturamento" value="ate-20k" required>Até R$ 20k</label>
+              <label class="radio-card"><input type="radio" name="faturamento" value="20-100k">R$ 20k a R$ 100k</label>
+              <label class="radio-card"><input type="radio" name="faturamento" value="100-500k">R$ 100k a R$ 500k</label>
+              <label class="radio-card"><input type="radio" name="faturamento" value="500k+">R$ 500k+</label>
             </div>
           </div>
 
+          <!-- 4. ADS -->
           <div class="field">
-            <label>Quanto investe em ads por mes?</label>
+            <label>Quanto você investe (ou pretende investir) em ads por mês? <span>*</span></label>
             <div class="radio-grid">
-              <label class="radio-card"><input type="radio" name="ads" value="nada">Nada ainda</label>
-              <label class="radio-card"><input type="radio" name="ads" value="ate-2k">Até R$ 2k</label>
-              <label class="radio-card"><input type="radio" name="ads" value="2-10k">R$ 2k a R$ 10k</label>
+              <label class="radio-card"><input type="radio" name="ads" value="menos-1k" required>Menos de R$ 1k</label>
+              <label class="radio-card"><input type="radio" name="ads" value="1-3k">R$ 1k a R$ 3k</label>
+              <label class="radio-card"><input type="radio" name="ads" value="3-10k">R$ 3k a R$ 10k</label>
               <label class="radio-card"><input type="radio" name="ads" value="10k+">R$ 10k+</label>
             </div>
+            <p id="ads-warn" style="display:none;font-size:.78rem;color:#92400E;background:var(--amber-soft);border:1px solid var(--amber-border);border-radius:8px;padding:.65rem .85rem;margin-top:.5rem;line-height:1.5"><strong>Atenção:</strong> nossa metodologia exige mínimo de R$ 1.000/mês em ads. Se ainda não investe, certifique-se que pode fazer esse aporte antes de agendar.</p>
           </div>
 
+          <!-- 5. AGENCIA -->
           <div class="field">
-            <label>Qual seu maior desafio hoje?</label>
-            <textarea name="desafio" placeholder="Ex: investe em ads mas não sabe o que vira venda, não tem presença digital, quer escalar..."></textarea>
+            <label>Já tem ou teve agência de marketing? <span>*</span></label>
+            <div class="radio-grid-3">
+              <label class="radio-card"><input type="radio" name="agencia" value="tenho" required>Tenho agora</label>
+              <label class="radio-card"><input type="radio" name="agencia" value="tive">Já tive</label>
+              <label class="radio-card"><input type="radio" name="agencia" value="nunca">Nunca tive</label>
+            </div>
           </div>
 
-          <button type="submit" class="submit-btn">Quero meu diagnóstico gratuito
+          <button type="submit" class="submit-btn">
+            Agendar diagnóstico gratuito
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </button>
 
           <div class="form-foot">
-            Ao enviar, você concorda com nossa <a href="#">politica de privacidade</a>.<br>
-            Seus dados são seguros e não são compartilhados.
+            Ao enviar, você concorda com nossa <a href="#">política de privacidade</a>.<br>
+            Resposta em menos de 1 hora em dia útil.
           </div>
         </form>
 
+        <!-- SUCCESS -->
         <div class="success" id="success">
           <div class="success-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Recebido!</h3>
-          <p>Em menos de 1 hora (dia util) um especialista da Sheraos vai entrar em contato no seu WhatsApp pra agendar o diagnóstico.</p>
-          <a href="https://wa.me/5548999999999?text=Acabei+de+preencher+o+diagnóstico+da+Sheraos" class="btn">
+          <p>Em menos de 1 hora (dia útil) um especialista da Sheraos vai entrar em contato no seu WhatsApp pra agendar o diagnóstico.</p>
+          <a href="https://wa.me/5548999999999?text=Acabei+de+preencher+o+formulario+da+Sheraos" class="btn-wa">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-            Falar agora no WhatsApp
+            Adiantar pelo WhatsApp
           </a>
         </div>
 
         <div class="trust">
           <span class="trust-item">Resposta em 1h</span>
-          <span class="trust-item">100% gratis</span>
+          <span class="trust-item">100% gratuito</span>
           <span class="trust-item">Sem compromisso</span>
         </div>
       </div>
-
     </div>
 
     <!-- BELOW -->
@@ -336,23 +353,61 @@ main{padding:9rem 1.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
 <div class="foot">© 2026 Sheraos Marketing. Todos os direitos reservados.</div>
 
 <script>
-document.querySelectorAll('.radio-card').forEach(c=>{
-  c.addEventListener('click',()=>{
-    const name=c.querySelector('input').name;
-    document.querySelectorAll(`.radio-card input[name="${name}"]`).forEach(i=>i.parentElement.classList.remove('selected'));
+// Radio cards interativos
+document.querySelectorAll('.radio-card').forEach(c => {
+  c.addEventListener('click', () => {
+    const input = c.querySelector('input');
+    const name = input.name;
+    document.querySelectorAll(`.radio-card input[name="${name}"]`).forEach(i => {
+      i.parentElement.classList.remove('selected');
+    });
     c.classList.add('selected');
-    c.querySelector('input').checked=true;
+    input.checked = true;
+
+    // Aviso quando ads < R$ 1k
+    if (name === 'ads') {
+      const warn = document.getElementById('ads-warn');
+      warn.style.display = input.value === 'menos-1k' ? 'block' : 'none';
+    }
   });
 });
 
-function submitForm(e){
+// Máscara simples de telefone
+document.querySelector('input[name="telefone"]').addEventListener('input', (e) => {
+  let v = e.target.value.replace(/\D/g, '');
+  if (v.length > 11) v = v.slice(0, 11);
+  if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+  else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4,5})(\d{0,4})/, '($1) $2-$3');
+  else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+  else if (v.length > 0) v = v.replace(/^(\d{0,2})/, '($1');
+  e.target.value = v;
+});
+
+function submitForm(e) {
   e.preventDefault();
-  const form=e.target;
-  const data=new FormData(form);
-  console.log('Dados do diagnóstico:',Object.fromEntries(data));
-  form.style.display='none';
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+
+  // TODO: integrar com backend/CRM/Email
+  console.log('Lead Sheraos:', data);
+
+  // Montar mensagem WhatsApp
+  const msg = `Olá Sheraos! Acabei de preencher o diagnóstico:\n\n` +
+    `*Nome:* ${data.nome}\n` +
+    `*Empresa:* ${data.empresa}\n` +
+    `*WhatsApp:* ${data.telefone}\n` +
+    `*Faturamento:* ${data.faturamento}\n` +
+    `*Investimento em ads:* ${data.ads}\n` +
+    `*Agência:* ${data.agencia}`;
+
+  // Atualiza link WhatsApp do sucesso com a mensagem
+  document.querySelector('.btn-wa').href =
+    'https://wa.me/5548999999999?text=' + encodeURIComponent(msg);
+
+  // Mostra sucesso
+  form.style.display = 'none';
   document.getElementById('success').classList.add('show');
-  document.querySelector('.form-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelector('.form-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 </script>
 
