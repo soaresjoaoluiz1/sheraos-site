@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Proposta Comercial — Andreia | Consultoria TikTok Affiliate</title>
+<link rel="icon" href="logo-sheraos.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F172A;
+  --navy-2:#1A2340;
+  --blue:#2563EB;
+  --blue-2:#3B82F6;
+  --blue-soft:#EFF6FF;
+  --blue-border:#DBEAFE;
+  --tiktok-pink:#FE2C55;
+  --tiktok-cyan:#25F4EE;
+  --white:#FFFFFF;
+  --off-white:#FAFBFC;
+  --gray-100:#F1F5F9;
+  --gray-200:#E2E8F0;
+  --gray-400:#94A3B8;
+  --gray-500:#64748B;
+  --gray-600:#475569;
+  --gray-700:#334155;
+  --green:#10B981;
+  --amber:#F59E0B;
+  --red:#EF4444;
+  --shadow-sm:0 1px 2px rgba(15,23,41,.05);
+  --shadow:0 4px 12px rgba(15,23,41,.08);
+  --shadow-md:0 10px 30px rgba(15,23,41,.08);
+  --shadow-lg:0 20px 50px rgba(15,23,41,.12);
+  --shadow-blue:0 10px 30px rgba(37,99,235,.25);
+  --shadow-pink:0 10px 30px rgba(254,44,85,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+.slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+.slide.dark{background:var(--navy);color:var(--white)}
+.slide-num{position:absolute;top:1.5rem;right:2rem;font-size:.7rem;color:var(--gray-400);font-weight:600;letter-spacing:.1em}
+.slide.dark .slide-num{color:rgba(255,255,255,.4)}
+.slide-logo{position:absolute;top:1.25rem;left:2rem}
+.slide-logo img{height:40px;width:auto}
+.slide.dark .slide-logo img{filter:brightness(0) invert(1)}
+
+.c{max-width:1100px;margin:0 auto;width:100%}
+.c-narrow{max-width:900px;margin:0 auto;width:100%}
+
+.sec-tag{display:inline-block;padding:.35rem .85rem;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:100px;font-size:.68rem;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+.slide.dark .sec-tag{background:rgba(37,99,235,.15);border-color:rgba(37,99,235,.3);color:#93C5FD}
+.sec-tag.tiktok{background:linear-gradient(90deg,rgba(254,44,85,.12),rgba(37,244,238,.12));border-color:rgba(254,44,85,.3);color:var(--tiktok-pink)}
+.sec-tag.green{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.3);color:var(--green)}
+
+h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem;color:var(--navy)}
+.slide.dark h1{color:var(--white)}
+h1 .gr{background:linear-gradient(135deg,var(--blue),var(--navy));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.slide.dark h1 .gr{background:linear-gradient(135deg,var(--tiktok-cyan),var(--tiktok-pink));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;line-height:1.15;margin-bottom:.85rem;letter-spacing:-.02em;color:var(--navy)}
+.slide.dark h2{color:var(--white)}
+
+.sub{font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--gray-600);max-width:720px;margin-bottom:2rem;line-height:1.6}
+.slide.dark .sub{color:rgba(255,255,255,.7)}
+
+/* Grid pattern */
+.slide.dark::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black,transparent);-webkit-mask-image:radial-gradient(ellipse at center,black,transparent);opacity:.5;pointer-events:none}
+.slide.dark::after{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(254,44,85,.18),transparent 60%);filter:blur(60px);pointer-events:none}
+.slide.dark>*{position:relative;z-index:1}
+.slide:not(.dark)::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--gray-100) 1px,transparent 1px),linear-gradient(90deg,var(--gray-100) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);opacity:.4;pointer-events:none}
+.slide:not(.dark)>*{position:relative;z-index:1}
+
+/* COVER */
+.cover{text-align:center}
+.cover::after{content:'';position:absolute;bottom:-300px;left:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,244,238,.15),transparent 60%);filter:blur(60px);pointer-events:none}
+.cover .badge{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1.1rem;background:linear-gradient(90deg,rgba(254,44,85,.18),rgba(37,244,238,.18));border:1px solid rgba(255,255,255,.15);border-radius:100px;font-size:.7rem;font-weight:700;color:#fff;margin-bottom:2rem;letter-spacing:.1em;text-transform:uppercase}
+.cover h1{font-size:clamp(2.5rem,7vw,4.5rem);margin-bottom:1.25rem}
+.cover .for{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);max-width:520px;margin-left:auto;margin-right:auto}
+.cover .for .lbl{font-size:.7rem;color:rgba(255,255,255,.5);letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-bottom:.4rem}
+.cover .for .name{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.cover .for .info{font-size:.85rem;color:rgba(255,255,255,.6)}
+.cover-bottom{position:absolute;bottom:1.5rem;left:0;right:0;text-align:center;font-size:.75rem;color:rgba(255,255,255,.5);font-weight:500;z-index:2}
+
+/* STATS */
+.stats-big{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin:2rem 0}
+.stat-big{background:var(--white);border:1px solid var(--gray-200);border-radius:16px;padding:1.5rem 1rem;text-align:center;box-shadow:var(--shadow-sm)}
+.slide.dark .stat-big{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+.stat-big .n{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:var(--navy);line-height:1;margin-bottom:.35rem;letter-spacing:-.02em}
+.slide.dark .stat-big .n{background:linear-gradient(135deg,#fff,#93C5FD);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.stat-big .l{font-size:.72rem;color:var(--gray-500);font-weight:500}
+.slide.dark .stat-big .l{color:rgba(255,255,255,.6)}
+@media(max-width:700px){.stats-big{grid-template-columns:repeat(2,1fr);gap:.75rem}}
+
+/* CALLOUT */
+.callout{padding:1rem 1.25rem;border-radius:10px;margin:1rem 0;font-size:.92rem;line-height:1.6}
+.callout.tiktok{background:linear-gradient(135deg,rgba(254,44,85,.06),rgba(37,244,238,.06));border:1px solid rgba(254,44,85,.25);border-left:3px solid var(--tiktok-pink);color:var(--gray-700)}
+.callout.tiktok strong{color:var(--tiktok-pink)}
+.callout.blue{background:var(--blue-soft);border:1px solid var(--blue-border);border-left:3px solid var(--blue);color:var(--gray-700)}
+.callout.blue strong{color:var(--blue)}
+.callout.amber{background:#fef9e7;border:1px solid #fde68a;border-left:3px solid var(--amber);color:var(--gray-700)}
+.callout.amber strong{color:#92400e}
+
+/* PROBLEM/SOLUTION GRID */
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.ps-card{padding:1.5rem;border-radius:14px;border:1px solid var(--gray-200)}
+.ps-card.problem{background:#fef2f2;border-color:#fecaca}
+.ps-card.problem h3{color:#dc2626;font-size:1rem;margin-bottom:.85rem;font-weight:700}
+.ps-card.solution{background:#f0fdf4;border-color:#bbf7d0}
+.ps-card.solution h3{color:var(--green);font-size:1rem;margin-bottom:.85rem;font-weight:700}
+.ps-card ul{list-style:none}
+.ps-card li{padding:.4rem 0 .4rem 1.5rem;position:relative;font-size:.88rem;color:var(--gray-700);line-height:1.5}
+.ps-card.problem li::before{content:'✕';position:absolute;left:0;color:#dc2626;font-weight:900;font-size:.9rem;top:.35rem}
+.ps-card.solution li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:900;font-size:.9rem;top:.35rem}
+@media(max-width:700px){.ps-grid{grid-template-columns:1fr}}
+
+/* SERVICES GRID (6 cards) */
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.serv{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1.5rem;transition:all .25s;box-shadow:var(--shadow-sm)}
+.serv:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.serv-num{font-size:.65rem;font-weight:800;color:var(--blue);letter-spacing:.15em;margin-bottom:.4rem}
+.serv h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:var(--navy)}
+.serv p{font-size:.83rem;color:var(--gray-600);line-height:1.55;margin:0}
+@media(max-width:900px){.serv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.serv-grid{grid-template-columns:1fr}}
+
+/* TIMELINE (Metodologia) */
+.timeline{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.tl-item{display:flex;gap:1.25rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--tiktok-pink);border-radius:0 12px 12px 0}
+.tl-num{font-size:1.6rem;font-weight:900;color:var(--tiktok-cyan);line-height:1;flex-shrink:0;min-width:50px}
+.tl-content{flex:1}
+.tl-content h3{font-size:1rem;margin-bottom:.3rem;color:#fff;font-weight:700}
+.tl-content p{font-size:.85rem;margin-bottom:.5rem;line-height:1.5;color:rgba(255,255,255,.7)}
+.tl-content .duration{display:inline-block;font-size:.65rem;font-weight:700;color:var(--tiktok-cyan);background:rgba(37,244,238,.1);border:1px solid rgba(37,244,238,.3);padding:.2rem .65rem;border-radius:100px;letter-spacing:.05em;text-transform:uppercase}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;align-items:stretch}
+.price-card{background:var(--white);border:1px solid var(--gray-200);border-radius:16px;padding:1.75rem 1.5rem;position:relative;display:flex;flex-direction:column;transition:all .25s;box-shadow:var(--shadow-sm)}
+.price-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.price-card.featured{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:var(--shadow-lg);transform:scale(1.02)}
+.price-card.featured:hover{transform:scale(1.02) translateY(-3px)}
+.price-card.featured::before{content:'MAIS RECOMENDADO';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:.3rem 1rem;background:linear-gradient(90deg,var(--tiktok-pink),var(--tiktok-cyan));color:#fff;border-radius:100px;font-size:.6rem;font-weight:800;letter-spacing:.1em;white-space:nowrap;box-shadow:var(--shadow-pink)}
+.price-card .tier{font-size:.65rem;font-weight:800;color:var(--blue);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem}
+.price-card.featured .tier{color:var(--tiktok-cyan)}
+.price-card h3{font-size:1.15rem;margin-bottom:.3rem;font-weight:800;color:var(--navy)}
+.price-card.featured h3{color:#fff}
+.price-card .desc{font-size:.78rem;color:var(--gray-500);margin-bottom:1.1rem;min-height:2.4em;line-height:1.5}
+.price-card.featured .desc{color:rgba(255,255,255,.6)}
+.price-card .value{font-size:1.7rem;font-weight:900;color:var(--navy);letter-spacing:-.03em;line-height:1;margin-bottom:.25rem}
+.price-card.featured .value{color:#fff}
+.price-card .value small{font-size:.72rem;color:var(--gray-500);font-weight:500}
+.price-card.featured .value small{color:rgba(255,255,255,.6)}
+.price-card .freq{font-size:.7rem;color:var(--gray-500);margin-bottom:1.1rem;font-weight:500}
+.price-card.featured .freq{color:rgba(255,255,255,.55)}
+.price-card ul{list-style:none;flex:1}
+.price-card li{font-size:.8rem;padding:.4rem 0 .4rem 1.25rem;position:relative;color:var(--gray-700);border-bottom:1px solid var(--gray-100);line-height:1.45}
+.price-card li:last-child{border-bottom:none}
+.price-card li::before{content:'✓';position:absolute;left:0;top:.45rem;color:var(--blue);font-weight:900;font-size:.78rem}
+.price-card.featured li{color:rgba(255,255,255,.85);border-bottom-color:rgba(255,255,255,.08)}
+.price-card.featured li::before{color:var(--tiktok-cyan)}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}.price-card.featured{transform:none}.price-card.featured:hover{transform:translateY(-3px)}}
+
+/* CHRONOGRAM TABLE */
+.chrono-wrap{margin-top:1.25rem;overflow-x:auto}
+table.chrono{width:100%;border-collapse:collapse;font-size:.85rem;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
+table.chrono th{text-align:left;padding:.85rem 1rem;background:var(--navy);color:#fff;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+table.chrono td{padding:.85rem 1rem;border-bottom:1px solid var(--gray-200);color:var(--gray-700)}
+table.chrono tr:nth-child(even) td{background:var(--off-white)}
+table.chrono tr:last-child td{border-bottom:none}
+table.chrono td:first-child{font-weight:700;color:var(--navy)}
+
+/* GUARANTEE */
+.guarantee{background:linear-gradient(135deg,#f0fdf4,#fff);border:1px solid #86efac;border-radius:14px;padding:1.5rem;margin-top:1.25rem;display:flex;gap:1.25rem;align-items:flex-start}
+.guarantee-ic{flex-shrink:0;width:54px;height:54px;background:var(--green);color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900}
+.guarantee-content h3{color:var(--green);margin-bottom:.35rem;font-size:1.05rem}
+.guarantee-content p{font-size:.88rem;margin:0;line-height:1.55;color:var(--gray-700)}
+
+/* NEXT STEPS / CTA */
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-top:1.5rem}
+.next-step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.25rem;transition:all .25s}
+.next-step:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+.next-step .num{display:inline-block;width:28px;height:28px;background:var(--tiktok-pink);color:#fff;border-radius:50%;text-align:center;font-weight:800;font-size:.82rem;line-height:28px;margin-bottom:.6rem}
+.next-step h4{font-size:.95rem;color:#fff;margin-bottom:.3rem;font-weight:700}
+.next-step p{font-size:.82rem;color:rgba(255,255,255,.7);margin:0;line-height:1.5}
+@media(max-width:700px){.next-grid{grid-template-columns:1fr}}
+
+.cta-buttons{margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 1.85rem;border-radius:10px;font-weight:700;font-size:.92rem;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:linear-gradient(90deg,var(--tiktok-pink),#ff5b7a);color:#fff;box-shadow:var(--shadow-pink)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(254,44,85,.4)}
+.btn-secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.btn-secondary:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4)}
+
+.validity{margin-top:2rem;text-align:center;font-size:.78rem;color:rgba(255,255,255,.5);font-style:italic}
+
+/* DECK NAV (lateral dots) */
+.deck-nav{position:fixed;right:1rem;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:.5rem}
+.deck-nav a{width:8px;height:8px;background:rgba(15,23,41,.25);border-radius:50%;transition:all .2s;cursor:pointer}
+.deck-nav a:hover,.deck-nav a.active{background:var(--tiktok-pink);transform:scale(1.5)}
+@media(max-width:700px){.deck-nav{display:none}}
+
+/* PRINT */
+@media print{
+  body{background:#fff;color:#000}
+  .slide{min-height:auto;page-break-after:always;padding:2rem}
+  .slide.dark{background:#fff!important;color:#000!important}
+  .slide.dark h1,.slide.dark h2{color:#000!important}
+  .slide.dark .sub{color:#555!important}
+  .slide.dark::before,.slide.dark::after{display:none}
+  .slide.dark .slide-logo img{filter:none}
+  .deck-nav{display:none}
+  html,body{scroll-snap-type:none}
+}
+</style>
+</head>
+<body>
+
+<!-- DECK NAV -->
+<div class="deck-nav">
+  <a href="#s1" title="Capa"></a>
+  <a href="#s2" title="Quem somos"></a>
+  <a href="#s3" title="Cenário"></a>
+  <a href="#s4" title="O que entregamos"></a>
+  <a href="#s5" title="Metodologia"></a>
+  <a href="#s6" title="Pacotes"></a>
+  <a href="#s7" title="Cronograma"></a>
+  <a href="#s8" title="Próximos passos"></a>
+</div>
+
+<!-- S1 — CAPA -->
+<section class="slide dark cover" id="s1">
+  <div class="slide-num">01 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <div class="badge">Proposta Comercial · Maio 2026</div>
+    <h1>Consultoria<br><span class="gr">TikTok Affiliate</span></h1>
+    <p class="sub" style="margin:1rem auto 0;text-align:center;color:rgba(255,255,255,.75)">Transforme sua conta em uma máquina de vendas. A gente te guia do primeiro vídeo até as primeiras comissões consistentes.</p>
+    <div class="for">
+      <div class="lbl">Apresentado para</div>
+      <div class="name">Andreia</div>
+      <div class="info">Afiliada TikTok Shop · Conta ativa, pronta pra revender</div>
+    </div>
+  </div>
+  <div class="cover-bottom"><strong style="color:#fff">Sheraos Marketing</strong> · Assessoria de Crescimento · sheraos.com.br</div>
+</section>
+
+<!-- S2 — QUEM SOMOS -->
+<section class="slide" id="s2">
+  <div class="slide-num">02 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Sobre a Sheraos</span>
+    <h1>A gente é uma assessoria de <span class="gr">crescimento</span>,<br>não só agência.</h1>
+    <p class="sub">Desde 2016, a gente trabalha com performance digital, conteúdo e estratégia de vendas. Atendemos mais de 300 empresas no Brasil, gerando mais de R$ 34 milhões em vendas para nossos clientes.</p>
+    <p class="sub" style="margin-top:0">Esse projeto com você, Andreia, é diferente do que fazemos pra grandes contas. Aqui o foco é <strong>te dar a estratégia certa pro TikTok Shop, formato Affiliate</strong>, com mentoria próxima e personalizada pro seu nicho.</p>
+    <div class="stats-big">
+      <div class="stat-big"><div class="n">+R$34M</div><div class="l">Em vendas geradas</div></div>
+      <div class="stat-big"><div class="n">+300</div><div class="l">Empresas atendidas</div></div>
+      <div class="stat-big"><div class="n">+8 anos</div><div class="l">De mercado</div></div>
+      <div class="stat-big"><div class="n">4.9★</div><div class="l">Avaliação Clutch</div></div>
+    </div>
+    <div class="callout tiktok">
+      <strong>Por que TikTok Shop agora?</strong> O programa de afiliados do TikTok Shop é uma das janelas de oportunidade mais quentes do momento no Brasil. Comissões boas, audiência massiva, e ainda dá pra crescer rápido com conteúdo orgânico, sem precisar pagar muito em ads no começo.
+    </div>
+  </div>
+</section>
+
+<!-- S3 — CENÁRIO -->
+<section class="slide" id="s3">
+  <div class="slide-num">03 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag tiktok">Cenário</span>
+    <h1>O TikTok Shop premia quem entende a <span class="gr">mecânica certa</span>.</h1>
+    <p class="sub">Você já tem o essencial: <strong>conta ativa e autorização para revender produtos como afiliada</strong>. Esse é o ponto de partida. Mas a maioria das afiliadas que começa sozinha trava em 3 pontos comuns:</p>
+
+    <div class="ps-grid">
+      <div class="ps-card problem">
+        <h3>Erros que travam quem começa</h3>
+        <ul>
+          <li>Escolher produtos pelo preço da comissão, não pelo potencial de venda</li>
+          <li>Vídeo bonito mas sem gancho que prende nos 3 primeiros segundos</li>
+          <li>Postar sem entender as métricas que o algoritmo valoriza</li>
+          <li>Falar do produto, não do problema que ele resolve</li>
+          <li>Tentar fazer perfeito e postar pouco (algoritmo penaliza)</li>
+        </ul>
+      </div>
+      <div class="ps-card solution">
+        <h3>O que muda com a consultoria</h3>
+        <ul>
+          <li>Curadoria de produtos por margem, demanda e potencial viral</li>
+          <li>Templates de roteiro com hook que retém audiência</li>
+          <li>Métricas que importam: retenção, watch time, conversão</li>
+          <li>Conteúdo que vende sem parecer venda</li>
+          <li>Volume com qualidade, no ritmo certo do algoritmo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout blue" style="margin-top:1.5rem">
+      <strong>O potencial real:</strong> afiliadas dedicadas no TikTok Shop fazem entre R$ 2.000 e R$ 30.000 por mês de comissão, dependendo do nicho, consistência e qualidade do conteúdo. A diferença entre o piso e o teto está quase sempre em <strong>estratégia + constância</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- S4 — O QUE ENTREGAMOS -->
+<section class="slide" id="s4">
+  <div class="slide-num">04 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Escopo</span>
+    <h1>Tudo que você precisa pra <span class="gr">vender de verdade</span> no TikTok Shop.</h1>
+    <p class="sub">Seis frentes de trabalho que cobrem desde a curadoria de produtos até a análise contínua de métricas.</p>
+    <div class="serv-grid">
+      <div class="serv">
+        <div class="serv-num">01</div>
+        <h3>Curadoria de produtos</h3>
+        <p>Lista mensal com produtos do TikTok Shop que estão vendendo e tem boa margem de comissão pro seu nicho.</p>
+      </div>
+      <div class="serv">
+        <div class="serv-num">02</div>
+        <h3>Otimização do perfil</h3>
+        <p>Bio, foto, link, destaques e nome estratégicos pro algoritmo entender seu posicionamento.</p>
+      </div>
+      <div class="serv">
+        <div class="serv-num">03</div>
+        <h3>Roteiros e ganchos</h3>
+        <p>Estrutura testada pros 3 primeiros segundos, formatos que funcionam e ideias prontas pra gravar.</p>
+      </div>
+      <div class="serv">
+        <div class="serv-num">04</div>
+        <h3>Análise de métricas</h3>
+        <p>Acompanhamento de retenção, watch time, CTR e conversão. A gente lê os dados pra você.</p>
+      </div>
+      <div class="serv">
+        <div class="serv-num">05</div>
+        <h3>Calendário editorial</h3>
+        <p>Plano de postagem com frequência ideal, horários e mix de formatos por semana.</p>
+      </div>
+      <div class="serv">
+        <div class="serv-num">06</div>
+        <h3>Mentoria contínua</h3>
+        <p>Calls de acompanhamento e suporte direto no WhatsApp. A gente caminha junto.</p>
+      </div>
+    </div>
+    <div class="callout amber" style="margin-top:1.5rem">
+      <strong>Diferencial Sheraos:</strong> a gente não vende curso pronto. Cada plano é personalizado pro seu nicho, perfil e momento. O que funciona pra moda não funciona pra beleza, e o que funciona pra beleza não funciona pra casa e decoração. A gente adapta.
+    </div>
+  </div>
+</section>
+
+<!-- S5 — METODOLOGIA (DARK) -->
+<section class="slide dark" id="s5">
+  <div class="slide-num">05 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Metodologia em 4 fases</span>
+    <h1>Do diagnóstico ao primeiro<br><span class="gr">R$ 5k de comissão</span>.</h1>
+    <p class="sub">Como a gente conduz o trabalho durante os primeiros 90 dias.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-num">01</div>
+        <div class="tl-content">
+          <h3>Diagnóstico e definição de nicho</h3>
+          <p>Análise da sua conta atual, do seu interesse pessoal e do mercado. Definimos um nicho principal e uma lista de 20 produtos pra começar.</p>
+          <span class="duration">Semana 1</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">02</div>
+        <div class="tl-content">
+          <h3>Setup completo do perfil + roteiros iniciais</h3>
+          <p>Otimização do perfil, definição da identidade visual, calendário do primeiro mês e 30 roteiros prontos pra gravar.</p>
+          <span class="duration">Semana 2</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">03</div>
+        <div class="tl-content">
+          <h3>Postagem ativa + ajustes em tempo real</h3>
+          <p>Você começa a postar com volume. A gente acompanha cada vídeo, lê as métricas, sugere correções e refina o que está funcionando.</p>
+          <span class="duration">Semana 3 a 8</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">04</div>
+        <div class="tl-content">
+          <h3>Escala e otimização</h3>
+          <p>Com base nos vídeos que mais converteram, multiplicamos o que deu certo. Lives de venda, conteúdos longos, parcerias.</p>
+          <span class="duration">A partir do mês 3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6 — PACOTES -->
+<section class="slide" id="s6">
+  <div class="slide-num">06 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Investimento</span>
+    <h1>Escolha o plano que <span class="gr">combina com seu momento</span>.</h1>
+    <p class="sub">Três níveis. O Crescimento é o que mais recomendamos pra quem quer resultado consistente nos primeiros 90 dias.</p>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="tier">START</div>
+        <h3>Pontapé Inicial</h3>
+        <div class="desc">Pra quem quer um plano de ação claro e sair postando com direção.</div>
+        <div class="value">R$ 497<small> · único</small></div>
+        <div class="freq">Entrega em até 7 dias</div>
+        <ul>
+          <li>1 call de diagnóstico (90 min)</li>
+          <li>Análise do seu perfil atual</li>
+          <li>Definição de nicho e produtos</li>
+          <li>Plano de ação 30 dias</li>
+          <li>30 ideias de roteiro</li>
+          <li>Suporte WhatsApp por 7 dias</li>
+        </ul>
+      </div>
+
+      <div class="price-card featured">
+        <div class="tier">CRESCIMENTO</div>
+        <h3>Mentoria Mensal</h3>
+        <div class="desc">Acompanhamento contínuo pra crescer com consistência nos primeiros 90 dias.</div>
+        <div class="value">R$ 1.200<small> /mês</small></div>
+        <div class="freq">Sugerido 3 meses · cancela quando quiser</div>
+        <ul>
+          <li>Tudo do plano Start, mais:</li>
+          <li>2 calls de mentoria por mês (60 min cada)</li>
+          <li>Análise mensal das métricas</li>
+          <li>Curadoria mensal de produtos</li>
+          <li>60 ideias de roteiro por mês</li>
+          <li>Otimização contínua de perfil</li>
+          <li>Suporte WhatsApp ilimitado</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <div class="tier">PREMIUM</div>
+        <h3>Mentoria + Produção</h3>
+        <div class="desc">Quando você quer escalar e prefere terceirizar parte da produção dos vídeos.</div>
+        <div class="value">R$ 2.500<small> /mês</small></div>
+        <div class="freq">Edição inclusa · sugerido 3 meses</div>
+        <ul>
+          <li>Tudo do plano Crescimento, mais:</li>
+          <li>Edição de até 8 vídeos por mês</li>
+          <li>Roteiros prontos pra gravar</li>
+          <li>Templates de capa em Canva</li>
+          <li>Estratégia de Lives no TikTok Shop</li>
+          <li>Reunião semanal (4 por mês)</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="callout tiktok" style="margin-top:1.5rem">
+      <strong>Bônus se fechar até 14/05:</strong> 1 sessão extra de gravação guiada (50 min) onde a gente grava juntas pelo WhatsApp ou Meet, ajustando hook, expressão e ritmo na hora.
+    </div>
+  </div>
+</section>
+
+<!-- S7 — CRONOGRAMA + GARANTIA -->
+<section class="slide" id="s7">
+  <div class="slide-num">07 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag green">Cronograma e garantia</span>
+    <h1>O que esperar nos <span class="gr">primeiros 90 dias</span>.</h1>
+    <p class="sub">Expectativa real, sem promessa de "ficar rica em 30 dias". Aqui é trabalho consistente.</p>
+
+    <div class="chrono-wrap">
+      <table class="chrono">
+        <thead>
+          <tr>
+            <th>Período</th>
+            <th>Foco</th>
+            <th>Entregas e marcos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Mês 1</td><td>Setup e primeiros vídeos</td><td>Perfil otimizado, nicho definido, 12 a 20 vídeos postados, primeiras métricas</td></tr>
+          <tr><td>Mês 2</td><td>Ajuste fino e primeiras vendas</td><td>Identificar formato que mais retém, 20 a 40 vídeos, primeiras comissões aparecem</td></tr>
+          <tr><td>Mês 3</td><td>Escala</td><td>Volume de venda mensal entre R$ 1k e R$ 5k de comissão (varia por nicho)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout amber">
+      <strong>Importante e honesto:</strong> resultado em afiliação depende de constância sua + estratégia nossa. A gente entrega a estratégia e o caminho. A gravação e o ritmo de postagem dependem do seu envolvimento.
+    </div>
+
+    <div class="guarantee">
+      <div class="guarantee-ic">✓</div>
+      <div class="guarantee-content">
+        <h3>Garantia de 7 dias</h3>
+        <p>Se nas duas primeiras semanas você sentir que a consultoria não é pra você, devolvemos 100% do valor pago, sem perguntas. A gente confia no método e quer cliente satisfeito, não preso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S8 — PRÓXIMOS PASSOS (DARK CTA) -->
+<section class="slide dark" id="s8">
+  <div class="slide-num">08 / 08</div>
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c" style="text-align:center">
+    <span class="sec-tag">Vamos começar</span>
+    <h1>Como <span class="gr">fechar e começar</span><br>em até 5 dias.</h1>
+    <p class="sub" style="margin:0 auto 1rem">Três passos simples. Você decide o plano, a gente faz a parte burocrática e em poucos dias está com tudo pronto.</p>
+
+    <div class="next-grid">
+      <div class="next-step">
+        <span class="num">1</span>
+        <h4>Você escolhe o plano</h4>
+        <p>Responde nossa mensagem dizendo qual plano (Start, Crescimento ou Premium) faz sentido pro seu momento.</p>
+      </div>
+      <div class="next-step">
+        <span class="num">2</span>
+        <h4>Contrato e pagamento</h4>
+        <p>Mandamos contrato simples e link de pagamento. Pix à vista (5% off) ou cartão em até 6x.</p>
+      </div>
+      <div class="next-step">
+        <span class="num">3</span>
+        <h4>Call de diagnóstico</h4>
+        <p>Em até 48h após o pagamento, agendamos a primeira call e a gente já começa a estruturar seu nicho.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="https://wa.me/5548999999999?text=Andreia%20aqui!%20Recebi%20a%20proposta%20de%20TikTok%20Affiliate%20e%20quero%20fechar." class="btn btn-primary">
+        Fechar pelo WhatsApp
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="mailto:contato@sheraos.com.br?subject=Proposta%20TikTok%20Affiliate%20-%20Andreia" class="btn btn-secondary">Tirar dúvida por email</a>
+    </div>
+
+    <div class="validity">Esta proposta é válida por 14 dias a partir da data de envio.</div>
+
+    <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;color:rgba(255,255,255,.5)">
+      <strong style="color:#fff">Sheraos Marketing</strong> · Araranguá, SC · contato@sheraos.com.br · sheraos.com.br
+    </div>
+  </div>
+</section>
+
+<script>
+const links=document.querySelectorAll('.deck-nav a');
+const sections=document.querySelectorAll('.slide');
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const id=x.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+id))}})},{threshold:.5});
+sections.forEach(s=>obs.observe(s));
+</script>
+
+</body>
+</html>
