@@ -42,10 +42,12 @@ body{font-family:'Inter',sans-serif;background:var(--white);color:var(--navy);li
 .slide.dark{background:var(--navy);color:var(--white)}
 .slide-num{position:absolute;top:1.5rem;right:1.5rem;font-size:.7rem;color:var(--gray-400);font-weight:600;letter-spacing:.1em;z-index:5}
 .slide.dark .slide-num{color:rgba(255,255,255,.4)}
-.slide-logo{position:absolute;top:1.25rem;left:1.5rem;z-index:5}
-.slide-logo img{height:42px;width:auto}
+.slide-logo{position:absolute;top:1.5rem;left:2rem;z-index:5}
+.slide-logo img{height:72px;width:auto}
 .slide.dark .slide-logo img{filter:brightness(0) invert(1)}
-@media(max-width:640px){.slide{padding:5rem 1.25rem 4rem}.slide-num{top:1rem;right:1rem;font-size:.6rem}.slide-logo{top:.85rem;left:1rem}.slide-logo img{height:34px}}
+.cover-logo{display:flex;justify-content:center;margin:0 auto 2rem}
+.cover-logo img{height:140px;width:auto;filter:brightness(0) invert(1)}
+@media(max-width:640px){.slide{padding:5.5rem 1.25rem 4rem}.slide-num{top:1rem;right:1rem;font-size:.6rem}.slide-logo{top:1rem;left:1.25rem}.slide-logo img{height:54px}.cover-logo img{height:96px}.cover-logo{margin:0 auto 1.25rem}}
 
 .c{max-width:1100px;margin:0 auto;width:100%}
 .c-narrow{max-width:900px;margin:0 auto;width:100%}
@@ -335,6 +337,7 @@ table.chrono td:first-child{font-weight:700;color:var(--navy)}
 <!-- S1 — CAPA -->
 <section class="slide dark cover" id="s1">
   <div class="c">
+    <div class="cover-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
     <div class="badge">Proposta Comercial · Maio 2026</div>
     <h1>Consultoria<br><span class="gr">TikTok Affiliate</span></h1>
     <p class="sub" style="margin:1rem auto 0;text-align:center;color:rgba(255,255,255,.75)">Estratégia, IA, edição premium e network direto com as top vendedoras do Brasil. Tudo pra você sair de perfil ativo e virar uma das que mais vendem no seu nicho.</p>
