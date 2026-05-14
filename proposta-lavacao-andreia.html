@@ -152,7 +152,18 @@ h1 .di{background:linear-gradient(135deg,var(--diesel),#FCD34D);background-clip:
 .comp-table tbody td.cell-yes{background:#F0FDF4;color:#14532D;text-align:center;font-weight:600}
 .comp-table tbody td.cell-no::before{content:'✕ ';color:var(--red);font-weight:900}
 .comp-table tbody td.cell-yes::before{content:'✓ ';color:var(--green);font-weight:900}
-@media(max-width:640px){.comp-table{font-size:.78rem}.comp-table thead th,.comp-table tbody td{padding:.75rem .55rem}}
+/* Mobile: tabela vira cards empilhados */
+@media(max-width:720px){
+  .comp-table{display:block;background:none;border:none;box-shadow:none;border-radius:0}
+  .comp-table thead{display:none}
+  .comp-table tbody{display:block}
+  .comp-table tbody tr{display:block;background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:1rem;margin-bottom:.85rem;box-shadow:var(--shadow-sm)}
+  .comp-table tbody td{display:block;padding:0;border:none;font-size:.88rem;white-space:normal;word-break:break-word}
+  .comp-table tbody td:first-child{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:.85rem;padding-bottom:.65rem;border-bottom:1px solid var(--gray-100)}
+  .comp-table tbody td.cell-no,.comp-table tbody td.cell-yes{margin-top:.55rem;padding:.65rem .85rem;border-radius:10px;text-align:left;line-height:1.4;font-size:.85rem}
+  .comp-table tbody td.cell-no::before{content:'✕ Sozinha: ';color:var(--red);font-weight:800}
+  .comp-table tbody td.cell-yes::before{content:'✓ Sheraos: ';color:var(--green);font-weight:800}
+}
 
 /* PACOTES */
 .pkg-sec{background:var(--off-white)}
@@ -242,20 +253,71 @@ h1 .di{background:linear-gradient(135deg,var(--diesel),#FCD34D);background-clip:
 
 /* MOBILE FINE-TUNE */
 @media(max-width:640px){
-  .slide h1{font-size:1.65rem;line-height:1.1}
-  .cover h1{font-size:2.1rem}
-  .sub{font-size:.95rem}
+  .slide h1{font-size:1.6rem;line-height:1.15;letter-spacing:-.015em}
+  .cover h1{font-size:1.95rem;line-height:1.1}
+  .sub{font-size:.95rem;line-height:1.55}
+  .sec-tag{font-size:.62rem;padding:.3rem .7rem}
   .stat{padding:1.1rem}
+  .stat .n{font-size:1.5rem}
+  .stat .l{font-size:.65rem}
   .cen-card{padding:1.4rem}
+  .cen-card .big{font-size:1.7rem}
+  .callout{font-size:.88rem;padding:1rem 1.15rem;line-height:1.55}
   .serv{padding:1.25rem}
-  .tech-card{padding:1.5rem}
+  .serv-num{font-size:.55rem;letter-spacing:.14em;margin-bottom:.6rem}
+  .serv h3{font-size:.95rem}
+  .serv p{font-size:.8rem}
+  .tech-card{padding:1.4rem}
+  .tech-card .ic{width:42px;height:42px;font-size:1.15rem;margin-bottom:.85rem}
+  .tech-card h4{font-size:1rem}
   .price-card{padding:1.65rem 1.4rem}
   .price-card h3{font-size:1.35rem}
   .price-card .value{font-size:1.75rem}
-  .meth-num{width:46px;height:46px;font-size:1rem}
-  .impact-q{font-size:1.6rem}
-  .btn-impact{padding:1rem 1.6rem;font-size:.95rem;width:100%;justify-content:center}
-  .comp-table{display:block;overflow-x:auto;white-space:nowrap}
+  .single-pkg{padding:1.5rem 1.25rem;margin-top:1.5rem}
+  .single-pkg-name{font-size:1.4rem;min-width:auto}
+  .single-pkg-value{font-size:2.2rem}
+  .single-pkg-badge{font-size:.62rem;padding:.4rem .9rem}
+  .single-pkg-head{padding-bottom:1.5rem;margin-bottom:1.5rem}
+  .single-pkg-foot{padding:1rem 1.15rem;font-size:.85rem}
+  .single-list li{font-size:.9rem;padding:.55rem 0}
+  .urgency{font-size:.82rem;padding:.85rem 1rem;align-items:flex-start}
+  .meth-num{width:42px;height:42px;font-size:.95rem;border-radius:11px}
+  .meth-row{gap:1rem;padding:1rem 0}
+  .meth-row h4{font-size:.98rem}
+  .meth-row p{font-size:.85rem;line-height:1.55}
+  .meth-row .when{font-size:.6rem}
+  .reg-list li{padding:.7rem 0;font-size:.88rem;gap:.6rem}
+  .reg-list li svg{width:18px;height:18px}
+  .reg-mock{padding:1.5rem}
+  .reg-mock-q{font-size:.95rem;margin-bottom:1.15rem}
+  .reg-mock-list li{font-size:.78rem;padding:.55rem 0}
+  .chrono-wrap{margin-top:1.5rem;border-radius:12px}
+  .chrono thead th,.chrono tbody td{padding:.6rem .55rem;font-size:.78rem}
+  .chrono tbody td:first-child{font-size:.72rem;width:auto;min-width:70px}
+  .callout-amber,.callout-tiktok,.callout-green{padding:1rem 1.15rem;font-size:.85rem;line-height:1.55;margin-top:.85rem;border-radius:11px}
+  .impact-q{font-size:1.55rem;line-height:1.2;margin-bottom:1.5rem}
+  .impact-line{font-size:.95rem;margin-bottom:.45rem}
+  .impact-cta{font-size:.9rem;margin-bottom:1.75rem;line-height:1.55}
+  .impact-foot{font-size:.75rem;margin-top:1.5rem;padding-top:1.25rem;line-height:1.55}
+  .btn-impact{padding:1rem 1.4rem;font-size:.92rem;width:100%;justify-content:center;border-radius:12px;gap:.55rem}
+  .btn-impact svg{width:20px;height:20px}
+  .cover-foot{font-size:.7rem;letter-spacing:.06em;margin-top:2rem;padding-top:1.25rem;line-height:1.55}
+  .cover .for{margin-top:2rem;padding-top:1.75rem}
+  .cover .for .name{font-size:1.35rem}
+  .cover .for .info{font-size:.82rem}
+  .badge{font-size:.6rem;padding:.38rem .9rem;letter-spacing:.12em;margin-bottom:1.5rem}
+}
+
+/* iOS scroll-snap fix + smooth touch */
+@supports (-webkit-touch-callout:none){
+  html,body{scroll-snap-type:y proximity}
+  body{-webkit-overflow-scrolling:touch}
+}
+
+/* Touch targets mínimos no mobile */
+@media(hover:none) and (pointer:coarse){
+  .dots a{width:14px;height:14px}
+  .btn-impact{min-height:54px}
 }
 </style>
 </head>
