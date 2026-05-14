@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Proposta Comercial · Andréia · Lavação de Caminhões e Carretas · São João do Sul</title>
+<link rel="icon" href="logo-sheraos.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F172A;
+  --navy-2:#1A2340;
+  --blue:#2563EB;
+  --blue-2:#3B82F6;
+  --blue-soft:#EFF6FF;
+  --blue-border:#DBEAFE;
+  --diesel:#F59E0B;
+  --diesel-soft:#FEF3C7;
+  --truck:#0EA5E9;
+  --white:#FFFFFF;
+  --off-white:#FAFBFC;
+  --gray-100:#F1F5F9;
+  --gray-200:#E2E8F0;
+  --gray-400:#94A3B8;
+  --gray-500:#64748B;
+  --gray-600:#475569;
+  --gray-700:#334155;
+  --green:#10B981;
+  --amber:#F59E0B;
+  --red:#EF4444;
+  --shadow-sm:0 1px 2px rgba(15,23,41,.05);
+  --shadow:0 4px 12px rgba(15,23,41,.08);
+  --shadow-md:0 10px 30px rgba(15,23,41,.08);
+  --shadow-lg:0 20px 50px rgba(15,23,41,.12);
+  --shadow-blue:0 10px 30px rgba(37,99,235,.25);
+  --shadow-diesel:0 10px 30px rgba(245,158,11,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+.slide{min-height:100vh;min-height:100dvh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:6rem 2rem 5rem;position:relative;overflow:hidden}
+.slide.dark{background:var(--navy);color:var(--white)}
+.slide-logo{position:absolute;top:1.5rem;left:2rem;z-index:5}
+.slide-logo img{height:72px;width:auto}
+.slide.dark .slide-logo img{filter:brightness(0) invert(1)}
+.cover-logo{display:flex;justify-content:center;margin:0 auto 2rem}
+.cover-logo img{height:140px;width:auto;filter:brightness(0) invert(1)}
+@media(max-width:640px){.slide{padding:5.5rem 1.25rem 4rem}.slide-logo{top:1rem;left:1.25rem}.slide-logo img{height:54px}.cover-logo img{height:96px}.cover-logo{margin:0 auto 1.25rem}}
+
+.c{max-width:1100px;margin:0 auto;width:100%}
+.c-narrow{max-width:900px;margin:0 auto;width:100%}
+
+.sec-tag{display:inline-block;padding:.35rem .85rem;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:100px;font-size:.68rem;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+.slide.dark .sec-tag{background:rgba(37,99,235,.15);border-color:rgba(37,99,235,.3);color:#93C5FD}
+.sec-tag.amber{background:var(--diesel-soft);border-color:#FCD34D;color:#92400E}
+.sec-tag.green{background:#ECFDF5;border-color:#A7F3D0;color:#047857}
+
+h1{font-size:clamp(1.9rem,4.5vw,3.1rem);font-weight:900;line-height:1.05;letter-spacing:-.025em;margin-bottom:1rem;color:var(--navy)}
+.slide.dark h1{color:var(--white)}
+h1 .gr{background:linear-gradient(135deg,var(--blue),var(--truck));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.slide.dark h1 .gr{background:linear-gradient(135deg,#60A5FA,#7DD3FC);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+h1 .di{background:linear-gradient(135deg,var(--diesel),#FCD34D);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.sub{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--gray-600);max-width:720px;margin-bottom:2rem}
+.slide.dark .sub{color:rgba(255,255,255,.78)}
+
+/* CAPA */
+.cover .c{text-align:center}
+.cover h1{font-size:clamp(2.5rem,6vw,4.5rem);margin-bottom:1.25rem;line-height:1}
+.badge{display:inline-block;padding:.45rem 1.1rem;background:linear-gradient(135deg,var(--diesel),#FBBF24);color:var(--navy);border-radius:100px;font-size:.72rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem;box-shadow:var(--shadow-diesel)}
+.cover .for{margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.12)}
+.cover .for .lbl{font-size:.7rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.18em;margin-bottom:.6rem;font-weight:600}
+.cover .for .name{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:var(--white);letter-spacing:-.01em}
+.cover .for .info{font-size:.92rem;color:rgba(255,255,255,.7);margin-top:.4rem}
+.cover-foot{margin-top:2.75rem;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:rgba(255,255,255,.55);letter-spacing:.1em}
+
+/* QUEM SOMOS - STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem}
+.stat{padding:1.5rem;background:var(--off-white);border-radius:14px;border:1px solid var(--gray-200)}
+.stat .n{font-size:clamp(1.6rem,3.5vw,2.25rem);font-weight:900;color:var(--blue);letter-spacing:-.02em;line-height:1}
+.stat .l{font-size:.78rem;color:var(--gray-500);margin-top:.4rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* CENARIO - 3 BIG */
+.cen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.cen-card{padding:1.75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;backdrop-filter:blur(10px)}
+.cen-card .big{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--diesel);line-height:1.05;margin-bottom:.5rem;letter-spacing:-.02em}
+.cen-card h4{font-size:1.02rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.cen-card p{font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.6}
+@media(max-width:900px){.cen-grid{grid-template-columns:1fr}}
+.callout{padding:1.25rem 1.5rem;background:rgba(245,158,11,.1);border-left:3px solid var(--diesel);border-radius:10px;margin-top:2rem;font-size:.95rem;color:rgba(255,255,255,.92)}
+.callout strong{color:#FCD34D}
+
+/* ESTRATEGIA - 8 CARDS */
+.serv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.25rem}
+.serv{padding:1.5rem;background:var(--white);border:1px solid var(--gray-200);border-radius:16px;position:relative;transition:all .3s}
+.serv:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--blue-border)}
+.serv-num{font-size:.62rem;color:var(--blue);font-weight:800;letter-spacing:.18em;margin-bottom:.85rem;text-transform:uppercase;display:block}
+.serv h3{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:.55rem;line-height:1.2;letter-spacing:-.01em}
+.serv p{font-size:.82rem;color:var(--gray-600);line-height:1.55}
+@media(max-width:900px){.serv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.serv-grid{grid-template-columns:1fr}}
+
+/* STACK TECH */
+.tech-sec{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--white)}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.tech-card{padding:1.85rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;position:relative;transition:all .3s}
+.tech-card:hover{background:rgba(255,255,255,.06);transform:translateY(-3px)}
+.tech-card .ic{width:48px;height:48px;background:linear-gradient(135deg,var(--blue),var(--truck));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:1rem;box-shadow:0 8px 22px rgba(14,165,233,.35)}
+.tech-card h4{font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:.55rem;letter-spacing:-.01em}
+.tech-card p{font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.6}
+.tech-card .tag-mini{display:inline-block;padding:.18rem .55rem;background:rgba(245,158,11,.18);color:#FCD34D;font-size:.62rem;font-weight:700;border-radius:6px;letter-spacing:.08em;margin-top:.8rem;text-transform:uppercase}
+@media(max-width:900px){.tech-grid{grid-template-columns:1fr}}
+
+/* DIFERENCIAIS REGIONAL */
+.reg-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;margin-top:2rem}
+.reg-list{list-style:none;padding:0;margin:1.5rem 0 0}
+.reg-list li{padding:.85rem 0;display:flex;gap:.85rem;align-items:flex-start;font-size:.95rem;color:var(--navy);border-bottom:1px solid var(--gray-100)}
+.reg-list li:last-child{border-bottom:none}
+.reg-list li svg{flex-shrink:0;margin-top:.18rem;color:var(--green)}
+.reg-list li strong{color:var(--navy);font-weight:700}
+.reg-mock{padding:2rem;background:linear-gradient(135deg,var(--blue) 0%,var(--truck) 100%);border-radius:20px;color:#fff;box-shadow:var(--shadow-blue);position:relative;overflow:hidden}
+.reg-mock::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08);filter:blur(20px)}
+.reg-mock-tag{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:.5rem;position:relative;z-index:2}
+.reg-mock-q{font-size:1.05rem;font-weight:700;margin-bottom:1.5rem;color:#fff;position:relative;z-index:2}
+.reg-mock-list{list-style:none;padding:0;position:relative;z-index:2}
+.reg-mock-list li{padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;align-items:center;font-size:.85rem}
+.reg-mock-list li:last-child{border-bottom:none}
+.reg-mock-list .pos{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(255,255,255,.2);border-radius:50%;font-weight:800;font-size:.72rem;margin-right:.55rem}
+.reg-mock-list .pos.gold{background:var(--diesel);color:var(--navy)}
+.reg-mock-list .name{font-weight:600}
+.reg-mock-list .stars{font-size:.72rem;color:#FCD34D;letter-spacing:.05em}
+@media(max-width:900px){.reg-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* METODOLOGIA - TIMELINE */
+.meth-wrap{margin-top:2.25rem}
+.meth-row{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:flex-start;padding:1.25rem 0;border-bottom:1px solid var(--gray-200)}
+.meth-row:last-child{border-bottom:none}
+.meth-num{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff;font-weight:900;font-size:1.15rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-blue)}
+.meth-row h4{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:.3rem;letter-spacing:-.01em}
+.meth-row p{font-size:.92rem;color:var(--gray-600);line-height:1.6}
+.meth-row .when{font-size:.7rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;display:block}
+
+/* COMPARACAO */
+.comp-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:2rem;background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow)}
+.comp-table thead th{padding:1.25rem 1rem;font-size:.78rem;text-align:left;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500)}
+.comp-table thead th.sheraos{background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff;text-align:center}
+.comp-table thead th.alone{background:var(--gray-100);color:var(--gray-600);text-align:center}
+.comp-table tbody td{padding:1rem;font-size:.9rem;border-top:1px solid var(--gray-100);color:var(--gray-700);vertical-align:top}
+.comp-table tbody td:first-child{font-weight:700;color:var(--navy)}
+.comp-table tbody td.cell-no{background:#FEF2F2;color:#7F1D1D;text-align:center;font-weight:500}
+.comp-table tbody td.cell-yes{background:#F0FDF4;color:#14532D;text-align:center;font-weight:600}
+.comp-table tbody td.cell-no::before{content:'✕ ';color:var(--red);font-weight:900}
+.comp-table tbody td.cell-yes::before{content:'✓ ';color:var(--green);font-weight:900}
+@media(max-width:640px){.comp-table{font-size:.78rem}.comp-table thead th,.comp-table tbody td{padding:.75rem .55rem}}
+
+/* PACOTES */
+.pkg-sec{background:var(--off-white)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.price-card{padding:2rem 1.75rem;background:var(--white);border:1px solid var(--gray-200);border-radius:20px;position:relative;transition:all .3s;display:flex;flex-direction:column}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.price-card.featured{border:2px solid var(--blue);box-shadow:var(--shadow-blue);transform:scale(1.02)}
+.price-card.featured::before{content:'MAIS ESCOLHIDO';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff;padding:.4rem 1.1rem;border-radius:100px;font-size:.65rem;font-weight:800;letter-spacing:.12em;box-shadow:var(--shadow-blue)}
+.price-card .tier{font-size:.68rem;color:var(--blue);font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.85rem;display:block}
+.price-card h3{font-size:1.55rem;font-weight:900;color:var(--navy);margin-bottom:.55rem;letter-spacing:-.015em}
+.price-card .desc{font-size:.85rem;color:var(--gray-600);min-height:46px;line-height:1.5;margin-bottom:1.25rem}
+.price-card .value{font-size:clamp(1.85rem,4vw,2.45rem);font-weight:900;color:var(--navy);letter-spacing:-.02em;margin-bottom:.2rem;line-height:1}
+.price-card .value small{font-size:.85rem;color:var(--gray-500);font-weight:600}
+.price-card .freq{font-size:.78rem;color:var(--gray-500);margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--gray-200)}
+.price-card ul{list-style:none;padding:0;margin:0;flex:1}
+.price-card li{font-size:.88rem;color:var(--gray-700);padding:.55rem 0;line-height:1.5;display:flex;gap:.6rem;align-items:flex-start;border-bottom:1px solid var(--gray-100)}
+.price-card li:last-child{border-bottom:none}
+.price-card li::before{content:'';flex-shrink:0;width:14px;height:14px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:contain;margin-top:.2rem}
+.price-card li.highlight{font-weight:700;color:var(--navy)}
+@media(max-width:900px){.price-grid{grid-template-columns:1fr;gap:1.5rem}.price-card.featured{transform:none}}
+
+/* PACOTE UNICO */
+.single-pkg{margin-top:2.5rem;background:var(--white);border:2px solid var(--blue);border-radius:24px;padding:2.5rem 2rem;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.single-pkg::before{content:'';position:absolute;top:-100px;right:-100px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.12),transparent 60%);filter:blur(20px);pointer-events:none}
+.single-pkg-badge{display:inline-block;padding:.45rem 1.1rem;background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff;border-radius:100px;font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.5rem;box-shadow:var(--shadow-blue);position:relative;z-index:2}
+.single-pkg-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;padding-bottom:2rem;margin-bottom:2rem;border-bottom:1px solid var(--gray-200);position:relative;z-index:2}
+.single-pkg-name{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1.1;flex:1;min-width:240px}
+.single-pkg-value{font-size:clamp(2.4rem,5vw,3.4rem);font-weight:900;color:var(--blue);letter-spacing:-.025em;line-height:1}
+.single-pkg-value small{font-size:1rem;color:var(--gray-500);font-weight:600}
+.single-pkg-freq{flex-basis:100%;font-size:.88rem;color:var(--gray-600);font-weight:600;margin-top:.3rem}
+.single-pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;position:relative;z-index:2}
+.single-col-h{font-size:.7rem;color:var(--blue);font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:2px solid var(--blue-border)}
+.single-list{list-style:none;padding:0;margin:0}
+.single-list li{font-size:.93rem;color:var(--gray-700);padding:.6rem 0;line-height:1.5;display:flex;gap:.7rem;align-items:flex-start}
+.single-list li::before{content:'';flex-shrink:0;width:18px;height:18px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:contain;margin-top:.15rem}
+.single-pkg-foot{margin-top:2rem;padding:1.25rem 1.5rem;background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #FCD34D;border-radius:12px;font-size:.92rem;color:#7C2D12;position:relative;z-index:2}
+.single-pkg-foot strong{color:#7C2D12;font-weight:800}
+@media(max-width:900px){.single-pkg{padding:1.75rem 1.4rem}.single-pkg-grid{grid-template-columns:1fr;gap:1.5rem}.single-pkg-head{flex-direction:column;align-items:flex-start;gap:.5rem}}
+
+.urgency{background:linear-gradient(135deg,#FEE2E2,#FECACA);border:1px solid #FCA5A5;border-radius:12px;padding:1rem 1.25rem;margin-top:2rem;font-size:.88rem;color:#7F1D1D;display:flex;align-items:center;gap:.65rem}
+.urgency-ic{font-size:1.2rem}
+.urgency strong{color:#991B1B;font-weight:800}
+
+/* CRONOGRAMA + GARANTIA + BONUS */
+.chrono-wrap{margin-top:2rem;background:var(--white);border:1px solid var(--gray-200);border-radius:16px;overflow:hidden}
+.chrono{width:100%;border-collapse:collapse}
+.chrono thead th{background:var(--gray-100);padding:.95rem 1rem;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--gray-500);text-align:left}
+.chrono tbody td{padding:.95rem 1rem;font-size:.92rem;border-top:1px solid var(--gray-100);color:var(--gray-700);vertical-align:top}
+.chrono tbody td:first-child{font-weight:800;color:var(--blue);width:18%}
+@media(max-width:640px){.chrono thead th,.chrono tbody td{padding:.6rem .55rem;font-size:.78rem}}
+
+.callout-amber,.callout-tiktok,.callout-green{margin-top:1.25rem;padding:1.25rem 1.5rem;border-radius:14px;font-size:.92rem;line-height:1.65}
+.callout-amber{background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #FCD34D;color:#7C2D12}
+.callout-amber strong{color:#7C2D12;font-weight:800}
+.callout-tiktok{background:linear-gradient(135deg,#DBEAFE,#BFDBFE);border:1px solid #93C5FD;color:#1E3A8A}
+.callout-tiktok strong{color:#1E3A8A;font-weight:800}
+.callout-green{background:linear-gradient(135deg,#D1FAE5,#A7F3D0);border:1px solid #6EE7B7;color:#065F46}
+.callout-green strong{color:#065F46;font-weight:800}
+
+/* IMPACT CTA */
+.impact-sec{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 50%,#0B1226 100%);color:var(--white);position:relative;overflow:hidden}
+.impact-sec::before{content:'';position:absolute;top:-200px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.25),transparent 60%);filter:blur(40px);pointer-events:none}
+.impact-sec::after{content:'';position:absolute;bottom:-200px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.18),transparent 60%);filter:blur(40px);pointer-events:none}
+.impact-box{position:relative;z-index:2;text-align:center;max-width:780px;margin:0 auto}
+.impact-line{font-size:1.1rem;color:rgba(255,255,255,.7);margin-bottom:.6rem;font-weight:600;letter-spacing:.05em}
+.impact-q{font-size:clamp(1.8rem,4.5vw,2.85rem);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.025em;margin-bottom:2rem}
+.impact-hl{background:linear-gradient(135deg,var(--diesel),#FCD34D);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.impact-cta{font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:2.25rem;line-height:1.65;max-width:580px;margin-left:auto;margin-right:auto}
+.impact-cta strong{color:#FCD34D;font-weight:800}
+.btn-impact{display:inline-flex;align-items:center;gap:.75rem;background:#25D366;color:#fff;padding:1.15rem 2.25rem;border-radius:14px;font-size:1.05rem;font-weight:800;text-decoration:none;box-shadow:0 14px 40px rgba(37,211,102,.45);transition:all .3s}
+.btn-impact:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(37,211,102,.55);background:#22C55E}
+.btn-impact svg{flex-shrink:0}
+.impact-foot{margin-top:2rem;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.1);font-size:.85rem;color:rgba(255,255,255,.55)}
+
+/* NAV DOTS (lateral) */
+.dots{position:fixed;right:1.25rem;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;gap:.6rem}
+.dots a{width:9px;height:9px;border-radius:50%;background:rgba(15,23,41,.18);display:block;transition:all .2s}
+.dots a:hover{background:var(--blue);transform:scale(1.4)}
+@media(max-width:640px){.dots{display:none}}
+
+/* PRINT */
+@media print{
+  html,body{scroll-snap-type:none}
+  .slide{min-height:auto;page-break-after:always;padding:2.5rem 2rem}
+  .dots{display:none}
+}
+
+/* MOBILE FINE-TUNE */
+@media(max-width:640px){
+  .slide h1{font-size:1.65rem;line-height:1.1}
+  .cover h1{font-size:2.1rem}
+  .sub{font-size:.95rem}
+  .stat{padding:1.1rem}
+  .cen-card{padding:1.4rem}
+  .serv{padding:1.25rem}
+  .tech-card{padding:1.5rem}
+  .price-card{padding:1.65rem 1.4rem}
+  .price-card h3{font-size:1.35rem}
+  .price-card .value{font-size:1.75rem}
+  .meth-num{width:46px;height:46px;font-size:1rem}
+  .impact-q{font-size:1.6rem}
+  .btn-impact{padding:1rem 1.6rem;font-size:.95rem;width:100%;justify-content:center}
+  .comp-table{display:block;overflow-x:auto;white-space:nowrap}
+}
+</style>
+</head>
+<body>
+
+<!-- DOTS NAV -->
+<div class="dots">
+  <a href="#s1" title="Capa"></a>
+  <a href="#s2" title="Sheraos"></a>
+  <a href="#s3" title="Cenário"></a>
+  <a href="#s4" title="Estratégia"></a>
+  <a href="#s5" title="Stack"></a>
+  <a href="#s6" title="Regional"></a>
+  <a href="#s7" title="Método"></a>
+  <a href="#s8" title="Comparação"></a>
+  <a href="#s9" title="Pacotes"></a>
+  <a href="#s10" title="Cronograma"></a>
+  <a href="#s11" title="Próximos passos"></a>
+</div>
+
+<!-- S1 — CAPA -->
+<section class="slide dark cover" id="s1">
+  <div class="c">
+    <div class="cover-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+    <div class="badge">Proposta Comercial · Maio 2026</div>
+    <h1>Posicionamento Digital<br><span class="gr">+ Vendas pra sua Lavação</span></h1>
+    <p class="sub" style="margin:1rem auto 0;text-align:center;color:rgba(255,255,255,.75)">Google Meu Negócio, site, tráfego pago e acompanhamento comercial. Pra quando o caminhoneiro pesquisar "lavação de caminhão" perto da BR-101, sua lavação aparecer em primeiro.</p>
+    <div class="for">
+      <div class="lbl">Apresentado para</div>
+      <div class="name">Andréia</div>
+      <div class="info">Lavação de Caminhões e Carretas · São João do Sul - SC</div>
+    </div>
+    <div class="cover-foot"><strong style="color:#fff;font-weight:600">Sheraos Marketing</strong> · Assessoria de Crescimento · sheraos.com.br</div>
+  </div>
+</section>
+
+<!-- S2 — QUEM SOMOS -->
+<section class="slide" id="s2">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Sobre a Sheraos</span>
+    <h1>A gente é uma assessoria de <span class="gr">crescimento</span>,<br>não só agência.</h1>
+    <p class="sub">Desde 2016 trabalhamos com performance digital, conteúdo e estratégia de vendas. Atendemos mais de 300 empresas no Brasil, gerando mais de R$ 34 milhões em vendas pros nossos clientes. Esse projeto com você é especial porque <strong>somos de Santa Catarina, conhecemos o sul, e sabemos como o caminhoneiro decide onde parar pra lavar</strong>.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">+R$34M</div><div class="l">Gerados em vendas</div></div>
+      <div class="stat"><div class="n">+300</div><div class="l">Empresas atendidas</div></div>
+      <div class="stat"><div class="n">+R$20M</div><div class="l">Em ads gerenciados</div></div>
+      <div class="stat"><div class="n">+8 anos</div><div class="l">Gerando resultado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- S3 — CENARIO -->
+<section class="slide dark" id="s3">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">O Cenário</span>
+    <h1>Sua lavação tá na <span class="gr">rota certa</span>.<br>Só falta o caminhoneiro <span class="di">te achar</span>.</h1>
+    <p class="sub">São João do Sul fica em cima da BR-101, principal corredor de caminhões entre RS e SC. Todo dia passam <strong>milhares de carretas</strong>. Quem aparece primeiro no Google quando o motorista pesquisa "lavação caminhão perto de mim", pega o cliente. Quem não aparece, perde.</p>
+    <div class="cen-grid">
+      <div class="cen-card">
+        <div class="big">+50 mil</div>
+        <h4>Caminhões/dia na BR-101</h4>
+        <p>Fluxo médio estimado de veículos pesados passando pela rota entre RS e SC, segundo a ANTT. Vários precisam parar pra lavar.</p>
+      </div>
+      <div class="cen-card">
+        <div class="big">87%</div>
+        <h4>Decidem no Google Maps</h4>
+        <p>Caminhoneiros e gestores de frota buscam serviço no celular antes de parar. Quem tem Google Meu Negócio bem feito vence.</p>
+      </div>
+      <div class="cen-card">
+        <div class="big">3x</div>
+        <h4>Mais cliques no top 3</h4>
+        <p>A diferença entre aparecer em 1º, 2º ou 3º no Maps é absurda. Quem chega no top fatura, o resto fica esperando.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>O potencial real:</strong> uma lavação bem posicionada na rota da BR-101 fecha entre 8 e 20 caminhões a mais por dia só com tráfego digital. Hoje você ta deixando esse cliente passar reto pra concorrência.
+    </div>
+  </div>
+</section>
+
+<!-- S4 — ESTRATEGIA -->
+<section class="slide" id="s4">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">A Estratégia Completa</span>
+    <h1>O que a gente vai fazer<br>pra sua <span class="gr">lavação bombar</span>.</h1>
+    <p class="sub">Não é só "criar Instagram bonito". É uma operação de aquisição de cliente, com 8 frentes trabalhando juntas pra cada caminhoneiro da BR-101 saber que sua lavação existe e é a melhor opção.</p>
+    <div class="serv-grid">
+      <div class="serv">
+        <span class="serv-num">01 · GOOGLE MEU NEGÓCIO</span>
+        <h3>Ficha 100% otimizada</h3>
+        <p>Criação ou reformulação do perfil no Google Maps com fotos profissionais, horário, descrição com palavras-chave, posts semanais e respostas de avaliação.</p>
+      </div>
+      <div class="serv">
+        <span class="serv-num">02 · SEO LOCAL</span>
+        <h3>Aparecer no top do Maps</h3>
+        <p>Estratégia pra subir nos termos "lavação caminhão SJ Sul", "lavação carreta BR-101", "lavação perto de mim" pra quem ta na estrada.</p>
+      </div>
+      <div class="serv">
+        <span class="serv-num">03 · SITE PRÓPRIO</span>
+        <h3>Site rápido + WhatsApp direto</h3>
+        <p>Site one-page profissional, mobile, com botão de WhatsApp gigante, mapa e serviços. Carrega em 2 segundos no celular do caminhoneiro na estrada.</p>
+      </div>
+      <div class="serv">
+        <span class="serv-num">04 · GOOGLE ADS BUSCA</span>
+        <h3>Captura intenção real</h3>
+        <p>Anúncio no topo da pesquisa de quem ta procurando lavação agora. Geo-segmentado num raio de 30km do seu posto. Pago por clique qualificado, não por curtida.</p>
+      </div>
+      <div class="serv">
+        <span class="serv-num">05 · META ADS</span>
+        <h3>Frotas e transportadoras</h3>
+        <p>Anúncio segmentado pra dono de transportadora, gerente de frota e caminhoneiro autônomo na região. Fechar contrato de lavação recorrente é onde o jogo vira.</p>
+      </div>
+      <div class="serv">
+        <span class="serv-num">06 · CRM SHERAOS</span>
+        <h3>Acompanha cada cliente</h3>
+        <p>Plataforma própria pra você ver quantos contatos vieram do Google, quantos viraram lavação, qual canal mais fatura e quem ficou sem resposta.</p>
+      </div>
+      <div class="serv">
+        <span class="serv-num">07 · TREINAMENTO</span>
+        <h3>Atendente vende mais</h3>
+        <p>Treinamento comercial pra quem responde o WhatsApp e atende no balcão. Roteiro de venda, upsell de serviço (cera, motor, polimento), follow-up.</p>
+      </div>
+      <div class="serv">
+        <span class="serv-num">08 · ANÁLISE</span>
+        <h3>O que ta barrando venda</h3>
+        <p>Toda semana a gente olha onde lead ta caindo: anúncio errado? Site lento? Atendente sumindo? Preço fora? E ajusta antes de virar problema.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 — STACK TECH -->
+<section class="slide tech-sec" id="s5">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Stack tecnológico</span>
+    <h1>Tecnologia de ponta<br><span class="gr">trabalhando pela sua lavação.</span></h1>
+    <p class="sub">A gente usa as melhores ferramentas do mercado, configuradas e gerenciadas pela equipe Sheraos. Você foca em lavar caminhão, a tecnologia trabalha por você.</p>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="ic">G</div>
+        <h4>Google Meu Negócio</h4>
+        <p>Sua vitrine no Maps. Posts semanais, gestão de avaliação, fotos profissionais, perguntas e respostas. Tudo otimizado pra ranquear em 1º.</p>
+        <span class="tag-mini">Setup + gestão mensal</span>
+      </div>
+      <div class="tech-card">
+        <div class="ic">A</div>
+        <h4>Google Ads</h4>
+        <p>Campanhas de busca segmentadas. Quem digitou "lavação" perto do seu posto vê seu anúncio no topo, com botão de ligar e mapa direto.</p>
+        <span class="tag-mini">Investimento separado</span>
+      </div>
+      <div class="tech-card">
+        <div class="ic">M</div>
+        <h4>Meta Ads</h4>
+        <p>Anúncio no Instagram e Facebook pra dono de transportadora e gerente de frota. Foco em fechar contrato recorrente, não só caminhão solto.</p>
+        <span class="tag-mini">Investimento separado</span>
+      </div>
+      <div class="tech-card">
+        <div class="ic">W</div>
+        <h4>WhatsApp Business</h4>
+        <p>Configuração com mensagens automáticas, catálogo de serviços, etiquetas e link rastreável. Tudo integrado com o CRM da Sheraos.</p>
+        <span class="tag-mini">Incluso no pacote</span>
+      </div>
+      <div class="tech-card">
+        <div class="ic">S</div>
+        <h4>CRM Sheraos</h4>
+        <p>Plataforma desenvolvida pela gente. Você vê cada lead do Google e do anúncio chegando, status do atendimento e quanto cada canal faturou.</p>
+        <span class="tag-mini">Diferencial Sheraos</span>
+      </div>
+      <div class="tech-card">
+        <div class="ic">I</div>
+        <h4>IA + Automação</h4>
+        <p>Resposta automática inicial no WhatsApp, follow-up pra quem não fechou, lembrete pra cliente recorrente. Ninguém esquecido.</p>
+        <span class="tag-mini">Pacote Domínio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6 — DIFERENCIAL REGIONAL -->
+<section class="slide" id="s6">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag green">Diferencial regional</span>
+    <h1>A Sheraos é de SC.<br><span class="gr">Conhece o sul que você atende.</span></h1>
+    <p class="sub">A gente não atende você de outro estado, sem entender o caminhoneiro daqui. A gente é da região, sabe como funciona o fluxo da 101, conhece transportadoras locais, e fala a língua do mercado.</p>
+    <div class="reg-grid">
+      <div>
+        <ul class="reg-list">
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Sediados em SC</strong>, atendimento prioritário pra cliente do Sul</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Conhecemos a BR-101</strong>: pontos de parada, postos, fluxo, sazonalidade</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Mais de 300 empresas catarinenses</strong> atendidas em diversos segmentos</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Reunião presencial</strong> quando precisar, sem cobrança extra</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Atendimento direto com o dono</strong>, sem passar por 5 funcionários</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Fotografia profissional inclusa</strong> nos pacotes maiores (sua estrutura, seus serviços)</span></li>
+        </ul>
+      </div>
+      <div class="reg-mock">
+        <div class="reg-mock-tag">Google · "lavação caminhão SJ Sul"</div>
+        <div class="reg-mock-q">O objetivo: você no topo do Maps.</div>
+        <ul class="reg-mock-list">
+          <li><span><span class="pos gold">1</span><span class="name">Sua Lavação</span></span><span class="stars">★★★★★ 4.9</span></li>
+          <li><span><span class="pos">2</span><span class="name">Concorrente B</span></span><span class="stars">★★★★ 4.2</span></li>
+          <li><span><span class="pos">3</span><span class="name">Concorrente C</span></span><span class="stars">★★★ 3.8</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S7 — METODOLOGIA -->
+<section class="slide" id="s7">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Metodologia</span>
+    <h1>Do diagnóstico até<br>o <span class="gr">caixa enchendo</span>, em 5 passos.</h1>
+    <p class="sub">Processo testado em mais de 300 empresas. Sem mistério, sem promessa de mágica. Cada etapa tem entregável claro e prazo definido.</p>
+    <div class="meth-wrap">
+      <div class="meth-row">
+        <div class="meth-num">1</div>
+        <div>
+          <span class="when">Semana 1</span>
+          <h4>Diagnóstico completo</h4>
+          <p>Visita virtual ou presencial. Análise da concorrência local, fluxo da BR-101, perfil do seu cliente atual, ticket médio e capacidade da estrutura. Você recebe o documento mesmo se não fechar.</p>
+        </div>
+      </div>
+      <div class="meth-row">
+        <div class="meth-num">2</div>
+        <div>
+          <span class="when">Semanas 1-2</span>
+          <h4>Setup técnico</h4>
+          <p>Criação/otimização do Google Meu Negócio, sessão de fotos profissionais, montagem do site one-page, configuração do WhatsApp Business e do CRM Sheraos com seu funil.</p>
+        </div>
+      </div>
+      <div class="meth-row">
+        <div class="meth-num">3</div>
+        <div>
+          <span class="when">Semanas 2-3</span>
+          <h4>Tráfego no ar</h4>
+          <p>Campanhas Google Ads e Meta Ads lançadas. Geo-segmentação na BR-101 e cidades vizinhas. Criativos prontos, palavras-chave validadas, segmentação testada.</p>
+        </div>
+      </div>
+      <div class="meth-row">
+        <div class="meth-num">4</div>
+        <div>
+          <span class="when">A partir do mês 1</span>
+          <h4>Otimização semanal</h4>
+          <p>Toda semana a gente revisa: que anúncio ta vendendo? Quem chegou e não fechou? Onde o lead ta caindo? Ajustes pra cortar desperdício e dobrar o que funciona.</p>
+        </div>
+      </div>
+      <div class="meth-row">
+        <div class="meth-num">5</div>
+        <div>
+          <span class="when">Mês 2 em diante</span>
+          <h4>Escala</h4>
+          <p>O que ta funcionando, dobra orçamento. Fecha contrato com transportadora. Aumenta ticket com serviços extras. Sua lavação vira referência regional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S8 — COMPARACAO -->
+<section class="slide" id="s8">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag amber">Comparação honesta</span>
+    <h1>Sozinha vs <span class="gr">com a Sheraos</span>.<br>A diferença é grande.</h1>
+    <p class="sub">Você pode tentar fazer tudo isso sozinha. Muita gente tenta. Mas o tempo que vai gastar aprendendo, errando e refazendo custa muito mais do que contratar quem já fez isso 300 vezes.</p>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th class="alone">Sozinha</th>
+          <th class="sheraos">Com Sheraos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Google Meu Negócio bem feito</td><td class="cell-no">Sem prática, fica genérico</td><td class="cell-yes">Top 3 do Maps em 60-90 dias</td></tr>
+        <tr><td>Site profissional</td><td class="cell-no">R$ 2-5k uma vez, sem ajuste</td><td class="cell-yes">Incluso, otimizado mês a mês</td></tr>
+        <tr><td>Google Ads + Meta Ads</td><td class="cell-no">Aprende meses queimando dinheiro</td><td class="cell-yes">No ar em 7-14 dias, otimizado</td></tr>
+        <tr><td>CRM e acompanhamento</td><td class="cell-no">Caderno e WhatsApp solto</td><td class="cell-yes">Plataforma própria com relatório</td></tr>
+        <tr><td>Treinamento comercial</td><td class="cell-no">Atendente improvisa</td><td class="cell-yes">Roteiro testado de venda</td></tr>
+        <tr><td>Análise de gargalo</td><td class="cell-no">Não enxerga onde perde venda</td><td class="cell-yes">Relatório semanal de funil</td></tr>
+        <tr><td>Custo total mensal estimado</td><td class="cell-no">R$ 3-5k em ferramentas + tempo</td><td class="cell-yes">R$ 1.000/mês com tudo incluso</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- S9 — PACOTE ÚNICO -->
+<section class="slide pkg-sec" id="s9">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag">Investimento</span>
+    <h1>Um pacote, <span class="gr">tudo incluso</span>.<br>Preço honesto, entrega completa.</h1>
+    <p class="sub">A gente não vende serviço solto nem te empurra upgrade. É um pacote único, com toda a operação rodando. Você paga uma mensalidade, a gente entrega tudo.</p>
+
+    <div class="single-pkg">
+      <div class="single-pkg-badge">PACOTE COMPLETO · LAVAÇÃO ANDRÉIA</div>
+      <div class="single-pkg-head">
+        <h3 class="single-pkg-name">Operação Sheraos Completa</h3>
+        <div class="single-pkg-value">R$ 1.000<small> /mês</small></div>
+        <div class="single-pkg-freq">Contrato mínimo 3 meses · R$ 3.000 total no período inicial</div>
+      </div>
+
+      <div class="single-pkg-grid">
+        <div class="single-col">
+          <div class="single-col-h">Posicionamento digital</div>
+          <ul class="single-list">
+            <li>Google Meu Negócio criado e otimizado</li>
+            <li>Gestão mensal do GMB (posts, fotos, avaliações)</li>
+            <li>SEO local pra ranquear no top do Maps</li>
+            <li>Site one-page profissional rápido e mobile</li>
+            <li>WhatsApp Business configurado e integrado</li>
+            <li>4 posts mensais no Instagram</li>
+          </ul>
+        </div>
+        <div class="single-col">
+          <div class="single-col-h">Tráfego e vendas</div>
+          <ul class="single-list">
+            <li>Gestão de Google Ads (verba de mídia à parte)</li>
+            <li>Gestão de Meta Ads (verba de mídia à parte)</li>
+            <li>CRM Sheraos com seu funil de vendas</li>
+            <li>Acompanhamento comercial: o que ta barrando venda</li>
+            <li>Roteiro de atendimento pro WhatsApp</li>
+            <li>2 calls de acompanhamento por mês</li>
+            <li>Relatório semanal de leads e mensal de resultado</li>
+            <li>Suporte WhatsApp comercial direto</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="single-pkg-foot">
+        <strong>Por que tão acessível?</strong> A gente ta abrindo agenda pra construir mais cases regionais em SC. Esse preço é uma janela de entrada, não vai durar.
+      </div>
+    </div>
+
+    <div class="urgency">
+      <span class="urgency-ic">⚡</span>
+      <span><strong>Atenção:</strong> a gente atende um número limitado de clientes por mês pra garantir qualidade no acompanhamento. Vagas pra maio: 3 abertas.</span>
+    </div>
+  </div>
+</section>
+
+<!-- S10 — CRONOGRAMA + GARANTIA + BÔNUS -->
+<section class="slide" id="s10">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="c">
+    <span class="sec-tag green">Cronograma e garantias</span>
+    <h1>O que esperar nos <span class="gr">primeiros 90 dias</span>.</h1>
+    <p class="sub">Expectativa realista, sem promessa de ficar milionária em 30 dias. Aqui é trabalho consistente, com método e ajuste em cima de dado real.</p>
+
+    <div class="chrono-wrap">
+      <table class="chrono">
+        <thead>
+          <tr><th>Período</th><th>Foco</th><th>Resultado esperado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Semanas 1-2</td><td>Diagnóstico + Setup</td><td>GMB no ar, site publicado, CRM configurado, tudo pronto pra rodar</td></tr>
+          <tr><td>Mês 1</td><td>Tráfego ligado</td><td>Primeiros leads do Google Ads e Maps chegando, validação de criativos</td></tr>
+          <tr><td>Mês 2</td><td>Otimização e escala</td><td>CPL caindo, conversão subindo, agenda de lavação começando a encher</td></tr>
+          <tr><td>Mês 3</td><td>Domínio regional</td><td>Top 3 no Maps, contatos B2B fechando, ticket médio crescendo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout-amber">
+      <strong>Importante e honesto:</strong> resultado em lavação depende de capacidade de atendimento + qualidade do serviço + ritmo do mercado. A gente entrega o lead qualificado, o método, a tecnologia e o acompanhamento. Você entrega o serviço bem feito que faz o caminhoneiro voltar e indicar.
+    </div>
+
+    <div class="callout-tiktok">
+      <strong>Bônus se fechar até 20/05:</strong>
+      <br>· Sessão de fotos profissional inclusa (sua estrutura, seus serviços, seus colaboradores).
+      <br>· Setup acelerado: GMB e site no ar em até 10 dias úteis.
+      <br>· 5% de desconto se pagar à vista os 3 primeiros meses (R$ 2.850 em vez de R$ 3.000).
+    </div>
+
+    <div class="callout-green">
+      <strong>Garantia de 7 dias:</strong> se nos primeiros 7 dias você sentir que não é pra você, devolvemos 100% do valor. Sem pergunta, sem letra miúda.
+    </div>
+  </div>
+</section>
+
+<!-- S11 — IMPACT CTA -->
+<section class="slide dark impact-sec" id="s11">
+  <div class="slide-logo"><img src="logo-sheraos.png" alt="Sheraos"></div>
+  <div class="impact-box">
+    <div class="impact-line">Andréia,</div>
+    <div class="impact-q">Vamos lotar a agenda da sua<br>lavação com <span class="impact-hl">caminhão todo dia</span>?</div>
+    <div class="impact-cta">Responde <strong>SIM</strong> aqui pro João, CEO da Sheraos, que te enviou essa proposta. A gente começa o diagnóstico essa semana e em 30 dias seu Google ta bombando.</div>
+    <a href="https://wa.me/5551981859180?text=Sim%20Jo%C3%A3o!%20Recebi%20a%20proposta%20da%20Sheraos%20pra%20Lava%C3%A7%C3%A3o%20de%20Caminh%C3%B5es%20e%20quero%20iniciar%20essa%20semana." class="btn-impact" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>Quero lotar a agenda, vamos!</span>
+    </a>
+    <div class="impact-foot">João Soares · CEO Sheraos · WhatsApp (51) 9 8185 9180<br>Sheraos Marketing · Assessoria de Crescimento · sheraos.com.br</div>
+  </div>
+</section>
+
+</body>
+</html>
