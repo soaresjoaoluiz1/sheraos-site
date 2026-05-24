@@ -201,3 +201,59 @@ h1 .strike{text-decoration:line-through;text-decoration-thickness:6px;color:rgba
   font-size:22px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:14px;list-style:none;
 }
 .cta-bullets li svg{width:22px;height:22px;color:var(--green);flex-shrink:0}
+
+/* Carrossel — swipe hint + contador */
+.swipe-hint{
+  position:absolute;bottom:38px;right:46px;z-index:3;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 20px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);border-radius:100px;
+  font-size:14px;font-weight:700;color:rgba(255,255,255,.9);
+  letter-spacing:.08em;text-transform:uppercase;
+  backdrop-filter:blur(8px);
+}
+.swipe-hint svg{width:18px;height:18px;animation:slideX 1.4s ease-in-out infinite}
+@keyframes slideX{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+.slide-counter{
+  position:absolute;top:38px;right:46px;z-index:3;
+  font-size:13px;font-weight:800;color:rgba(255,255,255,.55);
+  letter-spacing:.18em;text-transform:uppercase;
+  padding:7px 14px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);border-radius:100px;
+}
+
+/* CTA grande (último slide do carrossel) */
+.cta-big{display:flex;flex-direction:column;align-items:flex-start;gap:22px;margin-top:34px}
+.cta-big .lead{font-size:26px;font-weight:600;color:rgba(255,255,255,.92);line-height:1.45;max-width:840px}
+.cta-big .lead strong{color:#fff;font-weight:800}
+.cta-button.full{align-self:stretch;justify-content:space-between}
+.cta-button.green{background:linear-gradient(135deg,#10B981,#34D399);box-shadow:0 16px 50px rgba(16,185,129,.5)}
+
+/* Mini bullets dentro de slide (resultado/lista compacta) */
+.minibullets{display:flex;flex-direction:column;gap:14px;margin-top:24px;max-width:880px}
+.minibullets li{
+  list-style:none;font-size:21px;line-height:1.5;color:rgba(255,255,255,.88);
+  display:flex;gap:14px;align-items:flex-start;
+}
+.minibullets li::before{
+  content:'';width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:14px;
+  background:linear-gradient(135deg,var(--blue-3),var(--blue));
+  box-shadow:0 0 10px rgba(96,165,250,.5);
+}
+.minibullets.green li::before{background:linear-gradient(135deg,#6EE7B7,#10B981);box-shadow:0 0 10px rgba(16,185,129,.5)}
+.minibullets.red li::before{background:linear-gradient(135deg,#FCA5A5,#EF4444);box-shadow:0 0 10px rgba(239,68,68,.5)}
+
+/* Bloco-painel (mock de dashboard etc) */
+.mock-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:24px 28px;margin-top:24px;
+  font-family:'Inter',monospace;
+}
+.mock-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:18px}
+.mock-row:last-child{border-bottom:none}
+.mock-row .lbl{color:rgba(255,255,255,.65);font-weight:500}
+.mock-row .val{font-weight:800;color:#fff}
+.mock-row .val.blue{color:var(--blue-3)}
+.mock-row .val.green{color:#34D399}
+.mock-row .val.red{color:#FCA5A5}
