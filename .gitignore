@@ -1,19 +1,19 @@
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
 
 # Editor
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
 # Logs
-*.log
-npm-debug.log*
-
+# OS
 # Temp
+*.log
+*.swo
+*.swp
 *.tmp
+*~
+.DS_Store
 .cache/
+.idea/
+.vscode/
+Thumbs.db
+desktop.ini
+instagram-posts/node_modules/
+instagram-posts/package*.json
+npm-debug.log*
