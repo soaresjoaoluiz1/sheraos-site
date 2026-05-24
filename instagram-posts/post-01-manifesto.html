@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Sheraos · Post 01 · Manifesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F172A;
+  --navy-2:#1A2340;
+  --blue:#2563EB;
+  --blue-2:#3B82F6;
+  --blue-3:#60A5FA;
+  --green:#10B981;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#0a0f1e}
+body{font-family:'Inter',-apple-system,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:0}
+
+.post{
+  width:1080px;height:1350px;
+  background:linear-gradient(180deg,#0B1226 0%,var(--navy) 45%,var(--navy-2) 100%);
+  position:relative;overflow:hidden;color:#fff;
+  display:flex;flex-direction:column;
+  padding:90px 90px 90px;
+}
+
+/* Grid background */
+.post::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 70% 55% at 50% 50%,black 30%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 50%,black 30%,transparent 80%);
+  pointer-events:none;
+}
+.post::after{
+  content:'';position:absolute;
+  top:-220px;right:-180px;width:680px;height:680px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,.32),transparent 60%);
+  filter:blur(50px);pointer-events:none;
+}
+.glow-2{
+  position:absolute;bottom:-160px;left:-140px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(16,185,129,.18),transparent 60%);
+  filter:blur(60px);pointer-events:none;
+}
+
+/* Header */
+.header{
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;z-index:2;
+}
+.logo{display:flex;align-items:center;gap:14px}
+.logo img{height:64px;width:auto;filter:brightness(0) invert(1)}
+.logo .brand{font-size:22px;font-weight:900;letter-spacing:.04em;color:#fff}
+.pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 20px;background:rgba(37,99,235,.18);
+  border:1px solid rgba(37,99,235,.4);border-radius:100px;
+  font-size:15px;font-weight:700;color:#93C5FD;letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.pill .dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 12px rgba(16,185,129,.6)}
+
+/* Main */
+.main{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:2;margin:0 -10px;
+}
+.kicker{
+  font-size:18px;font-weight:700;color:#93C5FD;
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:36px;
+  display:flex;align-items:center;gap:18px;
+}
+.kicker::before{content:'';width:42px;height:2px;background:var(--blue-3);border-radius:2px}
+h1{
+  font-size:128px;font-weight:900;line-height:.97;
+  letter-spacing:-.045em;color:#fff;margin-bottom:42px;
+}
+h1 .br{display:block}
+h1 .gr{
+  background:linear-gradient(135deg,#60A5FA 0%,#3B82F6 60%,#2563EB 100%);
+  background-clip:text;-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  position:relative;
+}
+.sub{
+  font-size:32px;font-weight:500;line-height:1.45;
+  color:rgba(255,255,255,.82);max-width:870px;
+}
+.sub strong{color:#fff;font-weight:700}
+
+/* Footer */
+.footer{
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;z-index:2;padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.stat{display:flex;flex-direction:column;gap:4px}
+.stat .n{font-size:36px;font-weight:900;letter-spacing:-.02em;color:#fff;line-height:1}
+.stat .l{font-size:14px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.14em;text-transform:uppercase}
+.handle{
+  display:flex;flex-direction:column;align-items:flex-end;gap:4px;
+}
+.handle .h{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.handle .l{font-size:13px;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.12em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="glow-2"></div>
+
+  <div class="header">
+    <div class="logo">
+      <img src="logo-sheraos.png" alt="Sheraos">
+      <span class="brand">SHERAOS</span>
+    </div>
+    <div class="pill"><span class="dot"></span> Assessoria de Crescimento</div>
+  </div>
+
+  <div class="main">
+    <div class="kicker">Manifesto Sheraos</div>
+    <h1>
+      <span class="br">Crescimento</span>
+      <span class="br">com <span class="gr">estratégia.</span></span>
+      <span class="br">Não com <span class="gr">achismo.</span></span>
+    </h1>
+    <p class="sub">A gente entrega <strong>estratégia, performance, conteúdo e IA</strong> trabalhando juntos pra sua empresa <strong>faturar mais</strong>. Desde 2016.</p>
+  </div>
+
+  <div class="footer">
+    <div class="stat">
+      <span class="n">+R$ 34M</span>
+      <span class="l">Gerado em vendas pros nossos clientes</span>
+    </div>
+    <div class="handle">
+      <span class="h">sheraos.com.br</span>
+      <span class="l">@sheraosagencia</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
