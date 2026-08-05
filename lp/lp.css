@@ -32,18 +32,10 @@ svg{display:block}
 /* NAV minimal */
 .lp-nav{
   position:absolute;top:0;left:0;right:0;z-index:10;
-  padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 2rem;display:flex;align-items:center;justify-content:flex-start;
 }
-.lp-nav .logo img{height:60px;width:auto;filter:brightness(0) invert(1);opacity:.95}
-.lp-nav .wa{
-  display:inline-flex;align-items:center;gap:.5rem;
-  padding:.55rem 1rem;background:rgba(255,255,255,.1);
-  border:1px solid rgba(255,255,255,.2);border-radius:100px;
-  font-size:.82rem;font-weight:700;color:#fff;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-}
-.lp-nav .wa svg{width:16px;height:16px;color:#25D366}
-@media(max-width:640px){.lp-nav{padding:1rem 1.25rem}.lp-nav .logo img{height:48px}}
+.lp-nav .logo img{height:120px;width:auto;filter:brightness(0) invert(1);opacity:.98}
+@media(max-width:640px){.lp-nav{padding:1rem 1.25rem}.lp-nav .logo img{height:96px}}
 
 /* HERO */
 .lp-hero{

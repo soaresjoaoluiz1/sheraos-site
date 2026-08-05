@@ -39,9 +39,11 @@ const HEADERS = [
   'nome',
   'whatsapp',
   'empresa',
+  'cidade',
   'faturamento',
   'investimento_ads',
   'agencia_atual',
+  'veio_de_anuncio',
   'utm_source',
   'utm_medium',
   'utm_campaign',
@@ -81,6 +83,7 @@ function doPost(e) {
     }
 
     var status = qualificarLead(data);
+    var veioAnuncio = detectarAnuncio(data);
 
     var row = [
       new Date(),
@@ -88,9 +91,11 @@ function doPost(e) {
       data.nome || '',
       data.whatsapp || '',
       data.empresa || '',
+      data.cidade || '',
       data.faturamento || '',
       data.investimento_ads || '',
       data.agencia_atual || '',
+      veioAnuncio,
       data.utm_source || '',
       data.utm_medium || '',
       data.utm_campaign || '',
@@ -140,6 +145,19 @@ function qualificarLead(d) {
   return 'A qualificar';
 }
 
+/**
+ * Detecta se lead veio de anúncio pago (checa UTMs, gclid, fbclid).
+ * Retorna: "sim" ou "nao".
+ */
+function detectarAnuncio(d) {
+  if (d.gclid || d.fbclid) return 'sim';
+  var src = String(d.utm_source || '').toLowerCase();
+  var med = String(d.utm_medium || '').toLowerCase();
+  if (src === 'facebook' || src === 'instagram' || src === 'meta' || src === 'fb' || src === 'ig' || src === 'google' || src === 'tiktok' || src === 'linkedin') return 'sim';
+  if (med === 'cpc' || med === 'paid' || med === 'ppc' || med === 'ads') return 'sim';
+  return 'nao';
+}
+
 function jsonResponse(obj) {
   return ContentService
     .createTextOutput(JSON.stringify(obj))
@@ -158,6 +176,7 @@ function testarEscrita() {
         nome: 'Teste Sheraos',
         whatsapp: '5548999999999',
         empresa: 'Empresa Teste',
+        cidade: 'São Paulo / SP',
         faturamento: '100k-500k',
         investimento_ads: '2k-5k',
         agencia_atual: 'nao',
