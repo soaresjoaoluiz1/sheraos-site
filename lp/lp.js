@@ -2,7 +2,7 @@
 
 // ATUALIZE ESSA URL COM A URL DO SEU APPS SCRIPT WEB APP
 // (depois de fazer o Deploy > Nova implantacao no Apps Script)
-const WEBHOOK_URL = 'https://script.google.com/macros/s/COLE_AQUI_A_URL_DO_APPS_SCRIPT/exec';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyrBegEs1gM1iFs2xAK8q62kTK3vpnk8WxVejWO1p5bCutc6jOGWgI92YgGJUkxdn3Shw/exec';
 
 (function(){
   // Timer da pagina
