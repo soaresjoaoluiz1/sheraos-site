@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>O que descobrimos em 300 diagnósticos — Blog Sheraos</title>
+<meta name="description" content="8 padrões recorrentes em diagnósticos de empresas médias. Dados de 8 anos de operação Sheraos.">
+<meta property="og:title" content="O que descobrimos em 300 diagnósticos — Blog Sheraos">
+<meta property="og:description" content="8 padrões recorrentes em diagnósticos de empresas médias. Dados de 8 anos de operação Sheraos.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sheraos.com.br/blog/descobertas-300-diagnosticos">
+
+<link rel="canonical" href="https://sheraos.com.br/blog/descobertas-300-diagnosticos">
+<link rel="icon" href="/logo-sheraos.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/base.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHG815RJVG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CHG815RJVG');</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="/" aria-label="Sheraos"><img src="/logo-sheraos.png" alt="Sheraos" class="logo-img"></a>
+    <div class="nav-links">
+      <a href="/metodo.html">Método</a>
+      <a href="/servicos.html">Serviços</a>
+      <a href="/cases.html">Cases</a>
+      <a href="/garantia.html">Garantia</a>
+      <a href="/#planos">Planos</a>
+      <a href="/blog.html">Blog</a>
+    </div>
+    <a href="/diagnostico.html" class="nav-cta">Diagnóstico gratuito
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="menu-btn" onclick="document.getElementById('mm').classList.add('open')" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</nav>
+
+<div class="mm" id="mm">
+  <button class="close" onclick="document.getElementById('mm').classList.remove('open')" aria-label="Fechar">×</button>
+  <a href="/metodo.html">Método</a>
+  <a href="/servicos.html">Serviços</a>
+  <a href="/cases.html">Cases</a>
+  <a href="/garantia.html">Garantia</a>
+  <a href="/#planos">Planos</a>
+  <a href="/blog.html">Blog</a>
+  <a href="/diagnostico.html" class="nav-cta">Diagnóstico gratuito →</a>
+</div>
+
+<style>
+.blog-hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1150px;margin:0 auto}
+.blog-hub-card{background:var(--white);border:1px solid var(--gray-200);border-radius:18px;padding:2rem 1.75rem;transition:all .3s;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.blog-hub-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:var(--shadow-md)}
+.blog-hub-card .cat{display:inline-block;padding:.25rem .65rem;background:var(--blue-soft);color:var(--blue);border-radius:6px;font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.85rem}
+.blog-hub-card h3{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;line-height:1.3;letter-spacing:-.015em}
+.blog-hub-card p{font-size:.9rem;color:var(--gray-500);line-height:1.55;margin-bottom:1rem;flex:1}
+.blog-hub-card .meta{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--gray-100);font-size:.75rem;color:var(--gray-500);margin-top:auto}
+@media(max-width:900px){.blog-hub-grid{grid-template-columns:1fr;max-width:440px}}
+
+.cat-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:3rem}
+.cat-tab{padding:.5rem 1rem;background:var(--white);border:1px solid var(--gray-200);border-radius:100px;font-size:.85rem;font-weight:600;color:var(--gray-700);transition:all .2s}
+.cat-tab:hover,.cat-tab.active{background:var(--blue);color:var(--white);border-color:var(--blue)}
+
+/* ARTIGO */
+.article-header{background:var(--off-white);padding:5rem 1.5rem 4rem;border-bottom:1px solid var(--gray-200)}
+.article-header-in{max-width:760px;margin:0 auto}
+.article-cat{display:inline-block;padding:.35rem .85rem;background:var(--blue-soft);color:var(--blue);border-radius:100px;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+.article-header h1{font-size:clamp(1.75rem,4vw,2.75rem);color:var(--navy);margin-bottom:1rem;line-height:1.15;letter-spacing:-.025em}
+.article-header .lead{font-size:1.15rem;color:var(--gray-600);line-height:1.6;margin-bottom:1.5rem}
+.article-meta{display:flex;flex-wrap:wrap;gap:1.5rem;padding-top:1.5rem;border-top:1px solid var(--gray-200);font-size:.85rem;color:var(--gray-500);align-items:center}
+.article-meta .item{display:inline-flex;align-items:center;gap:.4rem}
+.article-meta strong{color:var(--navy);font-weight:600}
+
+.article-body{background:var(--white);padding:4rem 1.5rem 6rem}
+
+.article-related{background:var(--off-white);padding:5rem 1.5rem}
+.article-related h3{font-size:1.5rem;font-weight:800;color:var(--navy);text-align:center;margin-bottom:2rem}
+</style>
+
+<article>
+<header class="article-header">
+  <div class="article-header-in">
+    <nav class="breadcrumb"><a href="/">Início</a> <span>/</span> <a href="/blog.html">Blog</a> <span>/</span> 300 diagnósticos</nav>
+    <span class="article-cat">Marketing</span>
+    <h1>O que descobrimos em 300 diagnósticos de empresas médias</h1>
+    <p class="lead">Padrões e verdades sobre onde o dinheiro de marketing realmente se perde. Dados coletados em 8 anos de operação.</p>
+    <div class="article-meta">
+      <span class="item"><strong>Sheraos</strong> · Equipe editorial</span>
+      <span class="item">05 ago 2026</span>
+      <span class="item">12 min de leitura</span>
+    </div>
+  </div>
+</header>
+
+<div class="article-body">
+  <div class="c-article">
+    <div class="prose fi">
+      <p>Em 8 anos de Sheraos, fizemos <strong>300+ diagnósticos</strong> de empresas médias que estavam pensando em contratar a gente. Isso nos deu uma amostra grande e diversa: e-commerce, serviços B2B, gastronomia, saúde, imobiliário, moda, joalheria, educação, hotelaria, automotivo, SaaS.</p>
+      <p>Depois de analisar padrões, sistematizamos os aprendizados. Vou dividir os 8 mais recorrentes. Provavelmente 3-5 desses padrões estão presentes na sua empresa agora.</p>
+
+      <h2>Padrão 01 · 73% do problema não está no marketing</h2>
+      <p>Dos 300 diagnósticos, em <strong>219 casos (73%)</strong> o gargalo principal não era ads ou conteúdo. Era:</p>
+      <ul>
+        <li>Atendimento comercial lento (respondia lead depois de horas)</li>
+        <li>Oferta commodity sem posicionamento claro</li>
+        <li>Produto ou serviço com problema de percepção de valor</li>
+        <li>Preoço desalinhado com pra público ou concorrência</li>
+      </ul>
+      <p>Concluir: <strong>marketing multiplica o que existe</strong>. Se você multiplica operação quebrada, você multiplica desperdício.</p>
+
+      <h2>Padrão 02 · CPL barato quase sempre esconde CAC alto</h2>
+      <p>Empresas que se orgulhavam de CPL baixo (R$5-15) tinham, em média, <strong>CAC 3-8x maior que o esperado</strong>. Aprofundamos esse padrão em outro artigo: <a href="/blog/cpl-barato-pode-ser-caro.html">Por que CPL barato pode ser o pior investimento</a>.</p>
+
+      <h2>Padrão 03 · Agência trocada 2+ vezes em 3 anos</h2>
+      <p>66% dos diagnosticados tinham histórico de trocar de agência 2 ou mais vezes em 3 anos. As razões mais citadas:</p>
+      <ul>
+        <li>"Prometeram muito, entregaram pouco"</li>
+        <li>"Perdi contato com quem operava"</li>
+        <li>"Relatório bonito mas caixa não mudou"</li>
+        <li>"Descobri que colocaram estagiário na minha conta"</li>
+      </ul>
+      <p><strong>Consequência:</strong> cada troca custa 3-6 meses de setup + curva de aprendizado. Trocar 2 vezes em 3 anos significa 12+ meses perdidos.</p>
+
+      <h2>Padrão 04 · CRM inexistente ou subutilizado</h2>
+      <p>Apenas <strong>18% das empresas</strong> tinham CRM ativo com processos definidos. Das outras:</p>
+      <ul>
+        <li>Nenhum CRM (WhatsApp puro) - 34%</li>
+        <li>CRM comprado mas não usado - 28%</li>
+        <li>Planilha Excel improvisada - 20%</li>
+      </ul>
+      <p>Sem CRM organizado, <strong>você perde 30-50% dos leads</strong> antes mesmo de tentar vender.</p>
+
+      <h2>Padrão 05 · Dashboard? Que dashboard?</h2>
+      <p>84% das empresas não tinham dashboard unificado. Cada canal em silo: Meta Ads em uma tela, Google em outra, CRM em terceira, financeiro em quarta. Decisão vira suposição.</p>
+      <p>Empresas com dashboard unificado tomam decisão de investimento <strong>3-5x mais rápido</strong> e com muito menos erro.</p>
+
+      <h2>Padrão 06 · Retenção esquecida</h2>
+      <p>90% do foco vai pra aquisição. Apenas <strong>12% tinham estratégia estruturada de retenção</strong>. Isso significa:</p>
+      <ul>
+        <li>Sem automação de recompra</li>
+        <li>Sem programa de fidelidade</li>
+        <li>Sem base de clientes segmentada por comportamento</li>
+        <li>Sem cross-sell ativo</li>
+      </ul>
+      <p>Cliente que já comprou tem probabilidade <strong>7x maior</strong> de comprar de novo que lead frio. Ignorar retenção é deixar dinheiro na mesa.</p>
+
+      <h2>Padrão 07 · Dependência de UM canal só</h2>
+      <p>52% das empresas tinham 70%+ do faturamento vindo de UM único canal (Meta Ads na maioria). Isso significa risco alto:</p>
+      <ul>
+        <li>Se conta é bloqueada por 3 dias, faturamento cai 50%</li>
+        <li>Se plataforma encarece, margem some</li>
+        <li>Se algoritmo muda, operação inteira sofre</li>
+      </ul>
+      <p><strong>Diversificação inteligente</strong> é seçuro de negócio, não luxo.</p>
+
+      <h2>Padrão 08 · Falta de tempo pra estratégia</h2>
+      <p>92% dos empresários diagnosticados diziam a mesma coisa: <strong>"não tenho tempo pra pensar estratégia, só apago incêndio"</strong>. E realmente não tinham.</p>
+      <p>Sem tempo pra pensar, operação cresce sem plano. Cresce, mas cresce ineficiente. Cresce, mas cresce com margem cada vez menor.</p>
+
+      <blockquote>
+        <p>Se você reconheceu 4 ou mais desses 8 padrões na sua empresa, provavelmente tem 20-40% de faturamento adicional disponível sem investir mais em ads. Basta consertar o que já existe.</p>
+      </blockquote>
+
+      <h2>O que fazer com isso</h2>
+      <p>Esses padrões são a razão do Método Sheraos ter <strong>6 fases</strong> em vez de "vender tráfego pago". Cobre desde Diagnóstico (onde encontramos esses padrões) até Escala (onde eliminamos eles um a um).</p>
+      <p>Se você quer saber quais desses 8 padrões estão presentes na sua operação, <a href="/diagnostico.html">solicite diagnóstico gratuito</a>. Em 48h a gente entrega relatório identificando cada um + plano de correção priorizado.</p>
+
+      <div class="callout">
+        <p><strong>Fun fact:</strong> nossos clientes mais bem sucedidos são os que descobriram que 5+ desses padrões estavam presentes. Consertar todos eles em 12 meses é o que gera crescimento de 100%+ em faturamento.</p>
+      </div>
+
+      <hr>
+
+      <p><em>Escrito pela equipe editorial da Sheraos, com base em 300+ diagnósticos reais. <a href="/diagnostico.html">Solicite o seu</a>.</em></p>
+    </div>
+  </div>
+</div>
+</article>
+
+<section class="article-related">
+  <div class="c">
+    <h3>Continue lendo</h3>
+    <div class="blog-hub-grid fi">
+      <a href="/blog/como-escolher-agencia-marketing.html" class="blog-hub-card">
+        <span class="cat">Gestão</span>
+        <h3>Como escolher agência sem armadilha</h3>
+        <p>12 perguntas fundamentais.</p>
+        <div class="meta"><span>05 ago 2026</span><span>8 min</span></div>
+      </a>
+      <a href="/blog/7-erros-meta-ads-queimam-verba.html" class="blog-hub-card">
+        <span class="cat">Meta Ads</span>
+        <h3>7 erros no Meta Ads que queimam verba</h3>
+        <p>Padrões de auditorias reais.</p>
+        <div class="meta"><span>05 ago 2026</span><span>10 min</span></div>
+      </a>
+      <a href="/blog/cpl-barato-pode-ser-caro.html" class="blog-hub-card">
+        <span class="cat">Meta Ads</span>
+        <h3>CPL barato pode ser o pior investimento</h3>
+        <p>A conta que agência não te mostra.</p>
+        <div class="meta"><span>05 ago 2026</span><span>6 min</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="/logo-sheraos.png" alt="Sheraos">
+      <p>Operação de crescimento desde 2016. Método próprio de 6 fases que transforma investimento em marketing em faturamento previsível.</p>
+      <div class="foot-social">
+        <a href="https://instagram.com/sheraosmarketing" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://linkedin.com/company/sheraosmarketing" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.38-1.11 2.5-2.49 2.5S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM5 8H0v16h5V8zm7.98 0H8V24h4.98v-8.4c0-4.64 6.02-5 6.02 0V24h5V13.89c0-7.82-8.95-7.54-11.02-3.69V8z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col"><h4>Método Sheraos</h4><ul><li><a href="/metodo.html">Método completo</a></li><li><a href="/servicos.html">Ferramentas por fase</a></li><li><a href="/garantia.html">Garantia 90 dias</a></li><li><a href="/#planos">Planos e preços</a></li></ul></div>
+    <div class="foot-col"><h4>Empresa</h4><ul><li><a href="/cases.html">Cases</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/sobre.html">Sobre</a></li><li><a href="/diagnostico.html">Diagnóstico gratuito</a></li></ul></div>
+    <div class="foot-col"><h4>Contato</h4><ul><li><a href="/contato.html">Página de contato</a></li><li><a href="mailto:marketingsheraos@gmail.com">marketingsheraos@gmail.com</a></li><li><a href="https://wa.me/554896838666">WhatsApp (48) 9683-8666</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Sheraos Marketing. Todos os direitos reservados. · <a href="/politica-de-privacidade.html" style="color:rgba(255,255,255,.55)">Política de Privacidade</a></p>
+    <div class="foot-partners"><span>META PARTNER</span><span>GOOGLE PARTNER</span><span>SHOPIFY PARTNER</span><span>TIKTOK PARTNER</span><span>CLUTCH 4.9★</span></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/554896838666" class="wa" aria-label="Fale no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+
+</body>
+</html>
