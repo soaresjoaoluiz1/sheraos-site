@@ -34,8 +34,8 @@ svg{display:block}
   position:absolute;top:0;left:0;right:0;z-index:10;
   padding:1.25rem 2rem;display:flex;align-items:center;justify-content:center;
 }
-.lp-nav .logo img{height:110px;width:auto;filter:brightness(0) invert(1);opacity:.98}
-@media(max-width:640px){.lp-nav{padding:.85rem 1.25rem}.lp-nav .logo img{height:88px}}
+.lp-nav .logo img{height:160px;width:auto;filter:brightness(0) invert(1);opacity:.98}
+@media(max-width:640px){.lp-nav{padding:.5rem 1.25rem}.lp-nav .logo img{height:130px}}
 
 /* HERO */
 .lp-hero{
@@ -69,12 +69,13 @@ svg{display:block}
 }
 
 .lp-text .lp-badge{
-  display:inline-flex;align-items:center;gap:.55rem;
-  padding:.5rem 1rem;background:rgba(99,102,241,.15);
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.35rem .85rem;background:rgba(99,102,241,.15);
   border:1px solid rgba(139,92,246,.3);border-radius:100px;
-  font-size:.72rem;font-weight:800;color:var(--lp-accent-3);
-  letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.75rem;
+  font-size:.62rem;font-weight:800;color:var(--lp-accent-3);
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.75rem;
 }
+.lp-text .lp-badge .dt{width:6px;height:6px}
 .lp-text .lp-badge .dt{width:8px;height:8px;background:var(--lp-cta);border-radius:50%;box-shadow:0 0 10px rgba(16,185,129,.7)}
 
 .lp-text h1{
