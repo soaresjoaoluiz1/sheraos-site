@@ -70,9 +70,14 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyrBegEs1gM1iFs2xAK
         body: JSON.stringify(data)
       }).then(function(){
         showSuccess(form);
-        // Dispara evento de conversao pro GA + Meta Pixel se existirem
+        // GA4 event
         if (window.gtag) window.gtag('event', 'lead_submit', { lp: lpOrigem });
-        if (window.fbq) window.fbq('track', 'Lead', { lp: lpOrigem });
+        // Meta Pixel: Lead100k (qualificado) ou Lead padrao - logica no pixel-events.js
+        if (typeof window.sheraosTrackLead === 'function') {
+          window.sheraosTrackLead(data);
+        } else if (window.fbq) {
+          window.fbq('track', 'Lead', { lp: lpOrigem });
+        }
       }).catch(function(err){
         console.error(err);
         btn.disabled = false;
