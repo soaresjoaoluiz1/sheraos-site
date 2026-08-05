@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sheraos Crescimento — Faturamento previsível com Tráfego + CRM próprio + Conteúdo</title>
+<meta name="description" content="Pacote único de crescimento: tráfego pago, CRM proprietário e conteúdo que vende. +R$34M gerados em vendas, +300 empresas atendidas. Diagnóstico gratuito.">
+<meta property="og:title" content="Sheraos Crescimento — Faturamento previsível, sem achismo.">
+<meta property="og:description" content="Tráfego + CRM próprio + Conteúdo de venda. Um pacote, todo mês, com método e resultado.">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo-sheraos.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F172A;--navy-2:#1A2340;--blue:#2563EB;--blue-2:#3B82F6;
+  --blue-soft:#EFF6FF;--blue-border:#DBEAFE;--white:#FFFFFF;--off-white:#FAFBFC;
+  --gray-50:#F8FAFC;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-300:#CBD5E1;
+  --gray-400:#94A3B8;--gray-500:#64748B;--gray-600:#475569;--gray-700:#334155;--gray-800:#1E293B;
+  --green:#10B981;--amber:#F59E0B;--red:#EF4444;
+  --shadow-sm:0 1px 2px rgba(15,23,41,.05);
+  --shadow:0 4px 12px rgba(15,23,41,.08);
+  --shadow-md:0 10px 30px rgba(15,23,41,.08);
+  --shadow-lg:0 20px 50px rgba(15,23,41,.12);
+  --shadow-blue:0 10px 30px rgba(37,99,235,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--white);color:var(--navy);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+svg{display:block}
+.c{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.c-narrow{max-width:960px;margin:0 auto;padding:0 1.5rem}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gray-200);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:var(--shadow-sm)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:.25rem 1.5rem;max-width:1200px;margin:0 auto;gap:2rem}
+.logo-img{height:128px;width:auto;display:block}
+@media(max-width:900px){.logo-img{height:108px}}
+@media(max-width:640px){.logo-img{height:120px}}
+.nav-links{display:flex;gap:2.25rem;align-items:center;flex:1;justify-content:center}
+.nav-links a{color:var(--gray-600);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{padding:.7rem 1.3rem;background:var(--blue);color:var(--white);border-radius:10px;font-weight:600;font-size:.85rem;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;box-shadow:0 2px 10px rgba(37,99,235,.2)}
+.nav-cta:hover{background:var(--blue-2);transform:translateY(-1px);box-shadow:0 10px 24px rgba(37,99,235,.4)}
+.menu-btn{display:none;width:40px;height:40px;align-items:center;justify-content:center;color:var(--navy);background:none;border:none}
+@media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}.nav-in{gap:1rem}.nav>.nav-in>.nav-cta{display:none}}
+.mm{position:fixed;inset:0;background:var(--white);z-index:100;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding:2rem}
+.mm.open{display:flex}
+.mm a{font-size:1.4rem;font-weight:600;color:var(--navy)}
+.mm .close{position:absolute;top:1.5rem;right:1.5rem;font-size:2rem;color:var(--gray-600);background:none;border:none}
+
+/* HERO */
+.hero{position:relative;padding:5rem 1.5rem 4.5rem;overflow:hidden;background:var(--white)}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--gray-100) 1px,transparent 1px),linear-gradient(90deg,var(--gray-100) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 50% at 50% 40%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 40%,black,transparent);pointer-events:none;opacity:.5}
+.hero::after{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.1),transparent 60%);filter:blur(40px);pointer-events:none}
+.hero-in{position:relative;z-index:2;max-width:1000px;margin:0 auto;text-align:center}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1rem;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:100px;font-size:.75rem;font-weight:600;color:var(--blue);margin-bottom:2rem}
+.hero-pill .dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 10px rgba(16,185,129,.4);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+.hero h1{font-size:clamp(2.1rem,5.5vw,4.2rem);font-weight:900;line-height:1.04;letter-spacing:-.035em;margin-bottom:1.5rem;color:var(--navy)}
+.hero h1 .gr{background:linear-gradient(135deg,var(--blue),var(--navy));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero-sub{font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--gray-600);max-width:740px;margin:0 auto 2.5rem;font-weight:400;line-height:1.6}
+.hero-sub strong{color:var(--navy);font-weight:700}
+.hero-ctas{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.75rem;border-radius:10px;font-weight:600;font-size:.93rem;transition:all .25s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--blue);color:var(--white);box-shadow:var(--shadow-blue)}
+.btn-primary:hover{background:var(--blue-2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,99,235,.45)}
+.btn-secondary{background:var(--white);color:var(--navy);border-color:var(--gray-200);box-shadow:var(--shadow-sm)}
+.btn-secondary:hover{border-color:var(--gray-300);transform:translateY(-2px);box-shadow:var(--shadow)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:840px;margin:0 auto;padding-top:2.5rem;border-top:1px solid var(--gray-200)}
+.hstat .n{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.hstat .l{font-size:.72rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;font-weight:600}
+@media(max-width:640px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
+
+/* SECTIONS */
+section{padding:6rem 1.5rem;position:relative}
+.sec-tag{display:inline-block;padding:.35rem .85rem;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:100px;font-size:.7rem;font-weight:700;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin-bottom:1rem;color:var(--navy)}
+h2 .gr{background:linear-gradient(135deg,var(--blue),var(--navy));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.sec-desc{font-size:1.05rem;color:var(--gray-600);max-width:680px;margin:0 auto 3.5rem;line-height:1.65}
+.sec-head{text-align:center;margin-bottom:3.5rem}
+
+/* PROBLEM */
+.problem-sec{background:var(--off-white)}
+.problem-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1100px;margin:0 auto}
+.p-card{background:var(--white);border:1px solid var(--gray-200);border-radius:18px;padding:1.75rem;position:relative}
+.p-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);border-radius:18px 18px 0 0}
+.p-card-ic{width:44px;height:44px;background:#FEF2F2;border:1px solid #FECACA;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--red)}
+.p-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;color:var(--navy)}
+.p-card p{color:var(--gray-600);font-size:.93rem;line-height:1.6}
+@media(max-width:900px){.problem-cards{grid-template-columns:1fr}}
+
+/* PACOTE — 3 PILARES */
+.pkg-sec{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--white)}
+.pkg-sec h2,.pkg-sec h2 .gr{color:var(--white);-webkit-text-fill-color:initial;background:none}
+.pkg-sec h2 .hl{background:linear-gradient(135deg,#60A5FA,#93C5FD);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.pkg-sec .sec-desc{color:rgba(255,255,255,.75)}
+.pkg-sec .sec-tag{background:rgba(37,99,235,.18);border-color:rgba(37,99,235,.35);color:#93C5FD}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1100px;margin:0 auto 3rem}
+.pkg-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem;position:relative;transition:all .3s}
+.pkg-card:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);transform:translateY(-4px)}
+.pkg-num{position:absolute;top:1.5rem;right:1.75rem;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.15em}
+.pkg-ic{width:54px;height:54px;background:linear-gradient(135deg,var(--blue),var(--blue-2));border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:1.5rem;box-shadow:0 8px 24px rgba(37,99,235,.35)}
+.pkg-card h3{font-size:1.25rem;font-weight:800;color:var(--white);margin-bottom:.6rem;letter-spacing:-.01em}
+.pkg-card .pkg-cap{font-size:.7rem;font-weight:700;color:#93C5FD;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem;display:block}
+.pkg-card p{color:rgba(255,255,255,.72);font-size:.92rem;line-height:1.65;margin-bottom:1.25rem}
+.pkg-list{list-style:none;padding:0;margin:0}
+.pkg-list li{font-size:.88rem;color:rgba(255,255,255,.85);padding-left:1.4rem;position:relative;margin-bottom:.55rem;line-height:1.55}
+.pkg-list li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;background:#60A5FA;border-radius:50%;box-shadow:0 0 8px rgba(96,165,250,.5)}
+.pkg-foot{text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.25rem 1.75rem;max-width:760px;margin:0 auto;font-size:.95rem;color:rgba(255,255,255,.85)}
+.pkg-foot strong{color:#fff;font-weight:700}
+@media(max-width:900px){.pkg-grid{grid-template-columns:1fr}}
+
+/* CRM */
+.crm-sec{background:var(--white)}
+.crm-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:3.5rem;align-items:center;max-width:1180px;margin:0 auto}
+.crm-text .sec-tag{margin-bottom:1.25rem}
+.crm-text h2{text-align:left;margin-bottom:1.25rem}
+.crm-text p{color:var(--gray-600);font-size:1rem;line-height:1.7;margin-bottom:1rem}
+.crm-text p strong{color:var(--navy);font-weight:700}
+.crm-feats{list-style:none;padding:0;margin:1.5rem 0 0}
+.crm-feats li{padding:.6rem 0;display:flex;gap:.75rem;align-items:flex-start;font-size:.95rem;color:var(--navy);border-bottom:1px solid var(--gray-100)}
+.crm-feats li:last-child{border-bottom:none}
+.crm-feats li svg{flex-shrink:0;margin-top:.2rem;color:var(--green)}
+.crm-mock{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);border-radius:20px;padding:1.25rem;box-shadow:0 30px 80px rgba(15,23,41,.3);position:relative;overflow:hidden}
+.crm-mock::before{content:'';position:absolute;top:0;left:0;right:0;height:32px;background:rgba(0,0,0,.3)}
+.crm-mock::after{content:'';position:absolute;top:11px;left:14px;width:30px;height:10px;background:radial-gradient(circle 4px at 5px 5px,#FF5F57 99%,transparent),radial-gradient(circle 4px at 15px 5px,#FEBC2E 99%,transparent),radial-gradient(circle 4px at 25px 5px,#28C840 99%,transparent)}
+.crm-mock-body{margin-top:32px;background:var(--white);border-radius:10px;padding:1.25rem;color:var(--navy)}
+.crm-mock-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--gray-100);font-size:.78rem}
+.crm-mock-row:last-child{border-bottom:none}
+.crm-mock-row .lbl{color:var(--gray-500);font-weight:500}
+.crm-mock-row .val{font-weight:700;color:var(--navy)}
+.crm-mock-row .val.green{color:var(--green)}
+.crm-mock-row .val.blue{color:var(--blue)}
+.crm-mock-bar{display:flex;gap:4px;margin:1rem 0 0;align-items:flex-end;height:60px}
+.crm-mock-bar .b{flex:1;background:linear-gradient(180deg,var(--blue),var(--blue-2));border-radius:3px 3px 0 0;opacity:.8}
+.crm-mock-bar .b:nth-child(1){height:30%}
+.crm-mock-bar .b:nth-child(2){height:45%}
+.crm-mock-bar .b:nth-child(3){height:38%}
+.crm-mock-bar .b:nth-child(4){height:60%}
+.crm-mock-bar .b:nth-child(5){height:70%}
+.crm-mock-bar .b:nth-child(6){height:85%}
+.crm-mock-bar .b:nth-child(7){height:100%;background:linear-gradient(180deg,var(--green),#34D399)}
+.crm-mock-tag{display:inline-block;padding:.2rem .6rem;background:var(--blue-soft);color:var(--blue);font-size:.65rem;font-weight:700;border-radius:6px;letter-spacing:.05em;margin-bottom:.85rem}
+@media(max-width:900px){.crm-grid{grid-template-columns:1fr;gap:2.5rem}.crm-text h2{text-align:center}}
+
+/* CASES */
+.cases-sec{background:var(--off-white)}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1180px;margin:0 auto}
+.case-card{background:var(--white);border:1px solid var(--gray-200);border-radius:18px;padding:1.85rem;position:relative;transition:all .3s}
+.case-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--blue-border)}
+.case-tag{display:inline-block;padding:.25rem .7rem;background:var(--gray-100);color:var(--gray-600);font-size:.65rem;font-weight:700;border-radius:6px;letter-spacing:.08em;margin-bottom:1rem;text-transform:uppercase}
+.case-num{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;letter-spacing:-.02em;background:linear-gradient(135deg,var(--blue),var(--navy));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.05;margin-bottom:.4rem}
+.case-card .case-period{font-size:.72rem;color:var(--gray-500);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+.case-card p{color:var(--gray-600);font-size:.92rem;line-height:1.65}
+.case-card p strong{color:var(--navy);font-weight:700}
+@media(max-width:900px){.cases-grid{grid-template-columns:1fr}}
+
+/* PROCESSO */
+.proc-sec{background:var(--white)}
+.proc-steps{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative}
+.proc-steps::before{content:'';position:absolute;top:24px;left:48px;right:48px;height:2px;background:linear-gradient(90deg,var(--blue-border),var(--blue),var(--blue-border));z-index:0}
+.proc-step{position:relative;z-index:1;text-align:center;padding:0 .25rem}
+.proc-num{width:48px;height:48px;background:var(--white);border:2px solid var(--blue);color:var(--blue);font-weight:800;font-size:1rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;box-shadow:0 4px 12px rgba(37,99,235,.18)}
+.proc-step h4{font-size:.95rem;font-weight:700;margin-bottom:.45rem;color:var(--navy)}
+.proc-step p{font-size:.82rem;color:var(--gray-600);line-height:1.55}
+@media(max-width:900px){.proc-steps{grid-template-columns:1fr;gap:1.25rem}.proc-steps::before{display:none}}
+
+/* HONESTIDADE */
+.honest-sec{background:linear-gradient(180deg,#FFFBEB 0%,#FEF3C7 100%);border-top:1px solid #FDE68A;border-bottom:1px solid #FDE68A}
+.honest-card{max-width:880px;margin:0 auto;background:var(--white);border:1px solid #FDE68A;border-radius:18px;padding:2.25rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:flex-start}
+.honest-ic{width:52px;height:52px;background:#FEF3C7;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#D97706;flex-shrink:0}
+.honest-card h3{font-size:1.25rem;font-weight:800;color:var(--navy);margin-bottom:.85rem;letter-spacing:-.01em}
+.honest-card p{color:var(--gray-700);font-size:.95rem;line-height:1.7;margin-bottom:.65rem}
+.honest-card p:last-child{margin-bottom:0}
+.honest-card strong{color:var(--navy);font-weight:700}
+@media(max-width:640px){.honest-card{grid-template-columns:1fr;padding:1.5rem;text-align:center}.honest-ic{margin:0 auto}}
+
+/* FOR/NOT FOR */
+.fit-sec{background:var(--white)}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;max-width:1100px;margin:0 auto}
+.fit-card{border-radius:18px;padding:2rem;border:1px solid var(--gray-200)}
+.fit-card.yes{background:linear-gradient(180deg,#F0FDF4 0%,#DCFCE7 100%);border-color:#BBF7D0}
+.fit-card.no{background:linear-gradient(180deg,#FEF2F2 0%,#FEE2E2 100%);border-color:#FECACA}
+.fit-card h3{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem}
+.fit-card.yes h3 .ic{color:var(--green)}
+.fit-card.no h3 .ic{color:var(--red)}
+.fit-card ul{list-style:none;padding:0;margin:0}
+.fit-card li{font-size:.93rem;color:var(--gray-700);padding:.55rem 0;line-height:1.55;display:flex;gap:.55rem;align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.05)}
+.fit-card li:last-child{border-bottom:none}
+.fit-card li svg{flex-shrink:0;margin-top:.18rem}
+.fit-card.yes li svg{color:var(--green)}
+.fit-card.no li svg{color:var(--red)}
+@media(max-width:900px){.fit-grid{grid-template-columns:1fr}}
+
+/* PARTNERS */
+.partners{padding:3.5rem 1.5rem;background:var(--off-white);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.partners-title{text-align:center;font-size:.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.18em;margin-bottom:2.25rem}
+.partners-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3rem 4rem;max-width:1100px;margin:0 auto}
+.partner{display:flex;align-items:center;gap:.8rem;font-weight:700;color:var(--navy);letter-spacing:.01em;opacity:.9}
+.partner-ic{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:900;color:#fff;font-size:1.3rem;line-height:1}
+.partner-ic.meta{background:#0866FF}
+.partner-ic.google{background:#fff;border:1px solid var(--gray-200)}
+.partner-ic.shopify{background:#95BF47}
+.partner-ic.tiktok{background:#000}
+.partner-ic.clutch{background:#E44F25}
+.partner-label{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.partner-label .name{font-size:1rem;font-weight:800;color:var(--navy)}
+.partner-label .tag{font-size:.68rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.12em;margin-top:.1rem}
+.partner-label .stars{font-size:.75rem;color:var(--amber);margin-top:.15rem;letter-spacing:.05em}
+@media(max-width:640px){.partners-logos{gap:2rem 2.5rem}.partner-ic{width:38px;height:38px;font-size:1.1rem}}
+
+/* CTA FINAL */
+.cta-sec{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 50%,#0B1226 100%);color:var(--white);padding:6rem 1.5rem;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;top:-200px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.25),transparent 60%);filter:blur(40px);pointer-events:none}
+.cta-sec::after{content:'';position:absolute;bottom:-200px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.15),transparent 60%);filter:blur(40px);pointer-events:none}
+.cta-in{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.cta-in .sec-tag{background:rgba(37,99,235,.18);border-color:rgba(37,99,235,.35);color:#93C5FD}
+.cta-in h2{color:#fff;font-size:clamp(2rem,4.5vw,3rem)}
+.cta-in h2 .gr{background:linear-gradient(135deg,#60A5FA,#93C5FD);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.cta-in p{color:rgba(255,255,255,.78);font-size:1.05rem;margin:1rem auto 2rem;max-width:580px}
+.cta-bullets{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.25rem;margin:0 auto 2.25rem;max-width:680px}
+.cta-bullets span{font-size:.82rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:.4rem}
+.cta-bullets span svg{color:var(--green);flex-shrink:0}
+.btn-cta{background:#fff;color:var(--navy);padding:1.05rem 2rem;border-radius:12px;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:.5rem;box-shadow:0 14px 40px rgba(0,0,0,.3)}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:3rem 1.5rem 2.25rem;text-align:center;font-size:.85rem;border-top:1px solid rgba(255,255,255,.08)}
+footer a{color:rgba(255,255,255,.78);text-decoration:none}
+footer a:hover{color:#fff}
+footer .foot-links{margin-bottom:1rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
+footer .foot-bot{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.5rem}
+
+/* FADE-IN */
+.fi{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.fi.v{opacity:1;transform:translateY(0)}
+
+/* MOBILE FINE-TUNE */
+@media(max-width:640px){
+  section{padding:4.25rem 1.25rem}
+  .hero{padding:3.5rem 1.25rem 3rem}
+  .sec-desc{margin-bottom:2.5rem}
+  .sec-head{margin-bottom:2.5rem}
+  .pkg-card{padding:1.5rem}
+  .crm-mock-body{padding:.85rem}
+  .case-card{padding:1.5rem}
+  .honest-card{padding:1.5rem}
+  .fit-card{padding:1.5rem}
+  .cta-sec{padding:4rem 1.25rem}
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHG815RJVG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CHG815RJVG');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="index.html" aria-label="Sheraos"><img src="logo-sheraos.png" alt="Sheraos" class="logo-img"></a>
+    <div class="nav-links">
+      <a href="#problema">Problema</a>
+      <a href="#pacote">Pacote</a>
+      <a href="#crm">Plataforma</a>
+      <a href="#cases">Cases</a>
+      <a href="#processo">Processo</a>
+    </div>
+    <a href="diagnostico.html" class="nav-cta">Diagnóstico gratuito
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="menu-btn" onclick="document.getElementById('mm').classList.add('open')" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mm" id="mm">
+  <button class="close" onclick="document.getElementById('mm').classList.remove('open')" aria-label="Fechar">×</button>
+  <a href="#problema" onclick="document.getElementById('mm').classList.remove('open')">Problema</a>
+  <a href="#pacote" onclick="document.getElementById('mm').classList.remove('open')">Pacote</a>
+  <a href="#crm" onclick="document.getElementById('mm').classList.remove('open')">Plataforma</a>
+  <a href="#cases" onclick="document.getElementById('mm').classList.remove('open')">Cases</a>
+  <a href="#processo" onclick="document.getElementById('mm').classList.remove('open')">Processo</a>
+  <a href="diagnostico.html" class="nav-cta" onclick="document.getElementById('mm').classList.remove('open')">Diagnóstico gratuito →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="fi">
+      <span class="hero-pill"><span class="dot"></span> Crescimento de Faturamento · Pacote único</span>
+      <h1>Sua empresa pode faturar<br><span class="gr">muito mais</span> com a estratégia certa.</h1>
+      <p class="hero-sub">Tráfego pago + <strong>CRM próprio da Sheraos</strong> + conteúdo que vende, num pacote só. A gente liga sua máquina de vendas e mantém ela rodando todo mês, com método e número na mesa.</p>
+      <div class="hero-ctas">
+        <a href="diagnostico.html" class="btn btn-primary">Quero meu diagnóstico gratuito
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#pacote" class="btn btn-secondary">Ver o que entra no pacote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="n">+R$34M</div><div class="l">Gerado em vendas</div></div>
+        <div class="hstat"><div class="n">+R$20M</div><div class="l">Em ads gerenciados</div></div>
+        <div class="hstat"><div class="n">+300</div><div class="l">Empresas atendidas</div></div>
+        <div class="hstat"><div class="n">+8 anos</div><div class="l">Gerando resultado</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="partners-title">Parceiros oficiais certificados</div>
+  <div class="partners-logos">
+    <span class="partner">
+      <span class="partner-ic meta">M</span>
+      <span class="partner-label"><span class="name">Meta</span><span class="tag">Partner</span></span>
+    </span>
+    <span class="partner">
+      <span class="partner-ic google">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.75h3.56c2.08-1.92 3.28-4.74 3.28-8.08z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.56-2.75c-.98.66-2.23 1.06-3.72 1.06-2.87 0-5.3-1.94-6.16-4.55H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.07H2.18a11 11 0 0 0 0 9.86l3.66-2.83z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.07.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.18 7.07l3.66 2.83C6.7 7.32 9.13 5.38 12 5.38z"/></svg>
+      </span>
+      <span class="partner-label"><span class="name">Google</span><span class="tag">Partner</span></span>
+    </span>
+    <span class="partner">
+      <span class="partner-ic shopify">S</span>
+      <span class="partner-label"><span class="name">Shopify</span><span class="tag">Partner</span></span>
+    </span>
+    <span class="partner">
+      <span class="partner-ic tiktok">T</span>
+      <span class="partner-label"><span class="name">TikTok</span><span class="tag">Partner</span></span>
+    </span>
+    <span class="partner">
+      <span class="partner-ic clutch">★</span>
+      <span class="partner-label"><span class="name">Clutch</span><span class="stars">4.9 ★★★★★</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problem-sec" id="problema">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">O Problema</span>
+      <h2>Você investe em marketing<br>mas o <span class="gr">faturamento não acompanha?</span></h2>
+      <p class="sec-desc">Se você sente que o dinheiro ta saindo e o resultado nao aparece, geralmente é uma dessas três armadilhas:</p>
+    </div>
+    <div class="problem-cards fi">
+      <div class="p-card">
+        <div class="p-card-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
+        <h3>Ads no escuro</h3>
+        <p>Anúncio rodando sem rastrear quem virou cliente. Você paga pra impressão, não pra venda. No fim do mês ninguém sabe o que funcionou.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-card-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Conteúdo que não vende</h3>
+        <p>Posts bonitos, alcance crescendo, e o caixa do mesmo jeito. Conteúdo de feed sem CTA, sem trilha de venda, sem ligação com o anúncio.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-card-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Sem CRM, sem dado</h3>
+        <p>Lead chega no WhatsApp, vira anotação no caderno e some. Sem controle de funil, sem follow-up automático, sem visão real de quanto cada canal gera.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTE — 3 PILARES -->
+<section class="pkg-sec" id="pacote">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">O Pacote Sheraos Crescimento</span>
+      <h2>Um pacote, três pilares,<br><span class="hl">resultado todo mês.</span></h2>
+      <p class="sec-desc">A gente não vende serviço solto. Vende uma operação inteira de crescimento, com tráfego, plataforma e conteúdo trabalhando juntos pra fazer sua empresa faturar mais.</p>
+    </div>
+    <div class="pkg-grid fi">
+      <div class="pkg-card">
+        <span class="pkg-num">01</span>
+        <div class="pkg-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <span class="pkg-cap">Pilar 01</span>
+        <h3>Tráfego que vende</h3>
+        <p>Meta Ads e Google Ads gerenciados todo dia, com criativos otimizados, segmentação testada e ajuste contínuo focado em CPL e ROAS.</p>
+        <ul class="pkg-list">
+          <li>Estratégia de campanha pro seu nicho</li>
+          <li>Criativos com IA + edição premium</li>
+          <li>Otimização semanal de bid e público</li>
+          <li>Pixel, GA4 e conversões configurados</li>
+          <li>Relatório real de venda, não de alcance</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <span class="pkg-num">02</span>
+        <div class="pkg-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M6 8l3 3 3-3"/><path d="M14 8l3 3 3-3"/></svg></div>
+        <span class="pkg-cap">Pilar 02 · Diferencial</span>
+        <h3>CRM próprio Sheraos</h3>
+        <p>Plataforma desenvolvida pela gente: funil de vendas, automação de follow-up no WhatsApp, dashboard de origem do lead e relatório que mostra quanto cada canal fatura.</p>
+        <ul class="pkg-list">
+          <li>Acesso pra você e pro seu time</li>
+          <li>Funil customizado pro seu negócio</li>
+          <li>Automação de mensagens e tarefas</li>
+          <li>Análise completa do site (heatmap, sessão)</li>
+          <li>Relatório mensal de ROI por canal</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <span class="pkg-num">03</span>
+        <div class="pkg-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <span class="pkg-cap">Pilar 03</span>
+        <h3>Conteúdo que converte</h3>
+        <p>Criação e edição de vídeo + imagem alinhada com a estratégia de tráfego. Reels, anúncios, posts de venda, estudo de hook. Tudo conectado, tudo testado.</p>
+        <ul class="pkg-list">
+          <li>Reels e shorts editados premium</li>
+          <li>Vídeos com IA (sem precisar gravar)</li>
+          <li>Carrosséis e posts de venda</li>
+          <li>Roteiros com hook e CTA testados</li>
+          <li>Calendário mensal de conteúdo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pkg-foot fi">
+      <strong>Por que pacote único?</strong> Tráfego sem CRM é dinheiro queimando. CRM sem conteúdo é funil seco. Conteúdo sem tráfego é alcance que não escala. Os três juntos viram máquina de venda.
+    </div>
+  </div>
+</section>
+
+<!-- CRM -->
+<section class="crm-sec" id="crm">
+  <div class="crm-grid">
+    <div class="crm-text fi">
+      <span class="sec-tag">Plataforma proprietária</span>
+      <h2>O CRM da Sheraos é seu <span class="gr">painel de controle de vendas.</span></h2>
+      <p>A maioria das agências liga seu anúncio e some. A gente entrega o anúncio <strong>e a plataforma pra você acompanhar lead por lead</strong>, do primeiro clique até o fechamento. Sem caderno, sem planilha solta, sem perder oportunidade.</p>
+      <p>Construído pela própria Sheraos pra resolver o que a gente via toda vez: cliente investindo bem em ads e mesmo assim sem visão real do ROI.</p>
+      <ul class="crm-feats">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Funil de vendas</strong> com etapas customizadas pro seu negócio</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Origem do lead</strong> rastreada (Meta, Google, orgânico, indicação)</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Automação de follow-up</strong> no WhatsApp e e-mail</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Análise de site completa</strong> com heatmap e gravação de sessão</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>ROI por canal</strong> mostrado no dashboard, em tempo real</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Treinamento comercial</strong> pra sua equipe usar a ferramenta</span></li>
+      </ul>
+    </div>
+    <div class="crm-mock fi">
+      <div class="crm-mock-body">
+        <span class="crm-mock-tag">Dashboard · Maio 2026</span>
+        <div class="crm-mock-row"><span class="lbl">Leads no mês</span><span class="val">312</span></div>
+        <div class="crm-mock-row"><span class="lbl">Origem · Meta Ads</span><span class="val blue">187 (60%)</span></div>
+        <div class="crm-mock-row"><span class="lbl">Origem · Google Ads</span><span class="val blue">94 (30%)</span></div>
+        <div class="crm-mock-row"><span class="lbl">Origem · Orgânico</span><span class="val">31 (10%)</span></div>
+        <div class="crm-mock-row"><span class="lbl">Conversão p/ cliente</span><span class="val green">14,2%</span></div>
+        <div class="crm-mock-row"><span class="lbl">Faturamento gerado</span><span class="val green">R$ 168.400</span></div>
+        <div class="crm-mock-row"><span class="lbl">ROAS</span><span class="val green">7.2x</span></div>
+        <div class="crm-mock-bar">
+          <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases-sec" id="cases">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">Cases Sheraos</span>
+      <h2>O resultado fala mais alto<br>do que <span class="gr">qualquer promessa.</span></h2>
+      <p class="sec-desc">Empresas reais, segmentos diferentes, mesmo método. Esses são alguns dos crescimentos que a gente entregou nos últimos meses.</p>
+    </div>
+    <div class="cases-grid fi">
+      <div class="case-card">
+        <span class="case-tag">E-commerce · Moda</span>
+        <div class="case-num">+R$ 1,2M</div>
+        <div class="case-period">Em 12 meses</div>
+        <p>Cliente entrou faturando R$ 40k/mês. Implementamos <strong>tráfego no Meta + CRM com automação de carrinho abandonado</strong>. Em 1 ano, faturamento mensal passou pra R$ 180k.</p>
+      </div>
+      <div class="case-card">
+        <span class="case-tag">Serviço · Estética</span>
+        <div class="case-num">312 leads/mês</div>
+        <div class="case-period">No 4º mês de operação</div>
+        <p>Clínica estava sem agenda nova. Rodamos <strong>Google Ads pra termos de intenção + Meta pra remarketing</strong> e conectamos no CRM com follow-up automático. Agenda lotada em 90 dias.</p>
+      </div>
+      <div class="case-card">
+        <span class="case-tag">Educação · Curso</span>
+        <div class="case-num">ROAS 11.4x</div>
+        <div class="case-period">Lançamento de 30 dias</div>
+        <p>Lançamento com <strong>tráfego segmentado + conteúdo de venda no Reels + automação de DM</strong>. R$ 18 mil em ads viraram R$ 205 mil em matrículas em 4 semanas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="proc-sec" id="processo">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">Como a gente trabalha</span>
+      <h2>Do diagnóstico ao crescimento,<br>em <span class="gr">passos claros.</span></h2>
+      <p class="sec-desc">Sem mistério, sem promessa de mágica. Um processo testado em 300 empresas atendidas.</p>
+    </div>
+    <div class="proc-steps fi">
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <h4>Diagnóstico</h4>
+        <p>Análise do seu site, ads atuais, funil e produto. Você recebe o documento mesmo se não fechar.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <h4>Setup</h4>
+        <p>Configuração do CRM, pixel, conversões, integração com WhatsApp e treinamento da equipe.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <h4>Tráfego ligado</h4>
+        <p>Campanhas no ar em até 7 dias, com criativos prontos e segmentação validada.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">4</div>
+        <h4>Otimização</h4>
+        <p>Ajuste semanal de criativo, público, lance e funil. Reunião mensal de revisão.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">5</div>
+        <h4>Crescimento</h4>
+        <p>Escalada do que funciona, corte do que não funciona. Faturamento crescendo mês a mês.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONESTIDADE -->
+<section class="honest-sec">
+  <div class="c">
+    <div class="honest-card fi">
+      <div class="honest-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <div>
+        <h3>O que a gente não promete (e por que isso é bom)</h3>
+        <p>A gente <strong>não promete R$ 1MI em 30 dias</strong>. Não promete viralizar. Não promete ROAS específico antes de olhar seu cenário. Quem promete isso ta vendendo sonho, não trabalho.</p>
+        <p>O que a gente entrega é <strong>método consistente, transparência total e crescimento de faturamento mês a mês</strong>. Os números dos cases acima são reais e levaram 4 a 12 meses pra acontecer. O seu vai depender do seu produto, mercado e nível de envolvimento. A gente dá o método, a tecnologia e o trabalho. Você decide o ritmo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="fit-sec">
+  <div class="c">
+    <div class="sec-head fi">
+      <span class="sec-tag">Pra quem é · Pra quem não é</span>
+      <h2>Honestidade antes da assinatura.</h2>
+      <p class="sec-desc">A Sheraos não é pra todo mundo. Confere se você se encaixa antes de marcar o diagnóstico.</p>
+    </div>
+    <div class="fit-grid fi">
+      <div class="fit-card yes">
+        <h3><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>É pra você se</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span>Tem produto/serviço com cliente pagante (não é zero ainda)</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span>Pode investir mínimo R$ 3k/mês em ads + fee da agência</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span>Quer dado, processo e crescimento sustentável</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span>Topa atender lead rápido e seguir o método</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span>Pensa em escalar nos próximos 6-12 meses</span></li>
+        </ul>
+      </div>
+      <div class="fit-card no">
+        <h3><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Não é pra você se</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Quer mágica em 30 dias sem investir nem trabalhar</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Procura "social media barata" pra postar bonitinho</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Não tem produto validado nem caixa pra investir</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Não responde lead, não confia em método, vai mudar tudo a cada semana</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Quer só "rodar ads" sem CRM e sem estratégia</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-sec">
+  <div class="cta-in fi">
+    <span class="sec-tag">Próximo passo</span>
+    <h2>Faz seu <span class="gr">diagnóstico gratuito</span><br>e descobre o potencial real do seu negócio.</h2>
+    <p>Em 30 minutos a gente analisa seu site, seus ads atuais e seu funil. Você sai com um documento por escrito, mesmo se não fechar nada com a gente.</p>
+    <div class="cta-bullets">
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> 100% gratuito</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Sem compromisso</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Documento por escrito</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Resposta em 24h</span>
+    </div>
+    <a href="diagnostico.html" class="btn btn-cta">Quero meu diagnóstico gratuito
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="diagnostico.html">Diagnóstico</a>
+    <a href="#pacote">Pacote</a>
+    <a href="#cases">Cases</a>
+  </div>
+  <div>Sheraos Marketing · Assessoria de Crescimento · sheraos.com.br</div>
+  <div class="foot-bot">+R$34M gerados em vendas · +300 empresas · 8 anos · Atendimento Brasil, com prioridade pra Sul/SC</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+
+</body>
+</html>
