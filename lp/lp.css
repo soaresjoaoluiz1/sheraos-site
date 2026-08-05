@@ -29,13 +29,13 @@ a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 svg{display:block}
 
-/* NAV minimal */
+/* NAV minimal - logo centralizada como Tasty */
 .lp-nav{
   position:absolute;top:0;left:0;right:0;z-index:10;
-  padding:1.25rem 2rem;display:flex;align-items:center;justify-content:flex-start;
+  padding:1.25rem 2rem;display:flex;align-items:center;justify-content:center;
 }
-.lp-nav .logo img{height:120px;width:auto;filter:brightness(0) invert(1);opacity:.98}
-@media(max-width:640px){.lp-nav{padding:1rem 1.25rem}.lp-nav .logo img{height:96px}}
+.lp-nav .logo img{height:110px;width:auto;filter:brightness(0) invert(1);opacity:.98}
+@media(max-width:640px){.lp-nav{padding:.85rem 1.25rem}.lp-nav .logo img{height:88px}}
 
 /* HERO */
 .lp-hero{
