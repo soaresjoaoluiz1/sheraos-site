@@ -40,7 +40,7 @@ svg{display:block}
 /* HERO */
 .lp-hero{
   position:relative;min-height:100vh;
-  padding:6rem 2rem 4rem;
+  padding:9rem 2rem 4rem;
   background:
     radial-gradient(ellipse 80% 60% at 20% 20%, rgba(99,102,241,.25), transparent 60%),
     radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,246,.2), transparent 60%),
@@ -64,9 +64,8 @@ svg{display:block}
   align-items:start;min-height:calc(100vh - 10rem);
 }
 @media(max-width:960px){
-  .lp-hero{padding:5rem 1.25rem 3rem;min-height:auto}
-  .lp-hero-in{grid-template-columns:1fr;gap:3.5rem;min-height:auto}
-  .lp-text{margin-bottom:.5rem}
+  .lp-hero{padding:8rem 1.25rem 3rem;min-height:auto}
+  .lp-hero-in{grid-template-columns:1fr;gap:2rem;min-height:auto}
 }
 
 .lp-text .lp-badge{
