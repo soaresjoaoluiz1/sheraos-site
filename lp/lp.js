@@ -48,10 +48,65 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyrBegEs1gM1iFs2xAK
     });
   }
 
+  // Validacao manual dos campos required (form tem novalidate)
+  function validarForm(form){
+    var camposObrigatorios = ['nome','whatsapp','empresa','cidade','faturamento','investimento_ads','agencia_atual'];
+    var faltando = [];
+    var primeiroInvalido = null;
+
+    camposObrigatorios.forEach(function(nome){
+      var el = form.querySelector('[name="'+nome+'"]');
+      if (!el) return;
+      var valor = String(el.value || '').trim();
+      // Selects com placeholder vazio contam como nao preenchido
+      if (!valor || valor === '') {
+        faltando.push(nome);
+        if (!primeiroInvalido) primeiroInvalido = el;
+        el.style.boxShadow = '0 0 0 3px rgba(239,68,68,.5)';
+      } else {
+        el.style.boxShadow = '';
+      }
+    });
+
+    // Validacao adicional: whatsapp precisa ter no minimo 10 digitos
+    var wpp = form.querySelector('[name="whatsapp"]');
+    if (wpp && String(wpp.value || '').replace(/\D/g,'').length < 10) {
+      if (faltando.indexOf('whatsapp') === -1) faltando.push('whatsapp');
+      wpp.style.boxShadow = '0 0 0 3px rgba(239,68,68,.5)';
+      if (!primeiroInvalido) primeiroInvalido = wpp;
+    }
+
+    // Validacao adicional: tempo minimo de 3 segundos (anti-bot basico)
+    if ((Date.now() - T0) < 3000) {
+      return { ok: false, motivo: 'tempo_curto' };
+    }
+
+    if (faltando.length > 0) {
+      if (primeiroInvalido) {
+        primeiroInvalido.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function(){ primeiroInvalido.focus(); }, 400);
+      }
+      return { ok: false, motivo: 'faltando', campos: faltando };
+    }
+    return { ok: true };
+  }
+
   // Envio do form
   function handleSubmit(form, lpOrigem) {
     form.addEventListener('submit', function(e){
       e.preventDefault();
+
+      // Valida antes de qualquer coisa
+      var v = validarForm(form);
+      if (!v.ok) {
+        if (v.motivo === 'tempo_curto') {
+          alert('Espera um instantinho antes de enviar.');
+        } else {
+          alert('Preenche todos os campos pra continuar.');
+        }
+        return;
+      }
+
       const btn = form.querySelector('.lp-submit');
       const btnOriginalHtml = btn.innerHTML;
       btn.disabled = true;

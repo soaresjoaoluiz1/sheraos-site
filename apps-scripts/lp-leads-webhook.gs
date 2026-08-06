@@ -82,6 +82,14 @@ function doPost(e) {
       sheet.setFrozenRows(1);
     }
 
+    // Safeguard: rejeita submissions sem os campos obrigatorios
+    // (caso alguem burlar o JS do frontend)
+    var nomeOk = String(data.nome || '').trim().length >= 2;
+    var wppOk  = String(data.whatsapp || '').replace(/\D/g,'').length >= 10;
+    if (!nomeOk || !wppOk) {
+      return jsonResponse({ ok: false, error: 'campos_obrigatorios_faltando' });
+    }
+
     var status = qualificarLead(data);
     var veioAnuncio = detectarAnuncio(data);
 
