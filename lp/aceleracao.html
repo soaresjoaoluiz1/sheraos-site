@@ -45,7 +45,12 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
   font-weight: 400;
 }
 .lp-text .lp-sub strong { color: #fff; font-weight: 700; }
-.lp-text .lp-sub strong { color: #fff; font-weight: 700; }
+
+/* Mobile: espaco menor entre sub e form */
+@media(max-width:960px){
+  .lp-hero-in { gap: .75rem !important; }
+  .lp-text .lp-sub { margin-top: 1.25rem; }
+}
 
 .lp-form-card {
   background: linear-gradient(180deg, #6366F1 0%, #4f46e5 100%);
