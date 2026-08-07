@@ -256,10 +256,8 @@ src="https://www.facebook.com/tr?id=2071518483727035&ev=PageView&noscript=1"
     <div class="lp-form-card">
       <form class="lp-form" novalidate>
         <input type="text" name="nome" placeholder="* Qual é seu nome?" required>
-        <input type="email" name="email" placeholder="* Qual seu melhor e-mail?" required>
         <input type="tel" name="whatsapp" placeholder="* Qual é seu WhatsApp?" required maxlength="16">
-        <input type="text" name="empresa" placeholder="* Qual o nome da sua empresa?" required>
-        <input type="text" name="instagram" placeholder="Qual o Instagram da sua empresa?">
+        <input type="text" name="instagram" placeholder="* Qual o Instagram da sua empresa?" required>
         <select name="faturamento" required>
           <option value="" disabled selected>* Faturamento mensal médio</option>
           <option value="ate-50k">Até R$ 50 mil</option>
@@ -268,22 +266,12 @@ src="https://www.facebook.com/tr?id=2071518483727035&ev=PageView&noscript=1"
           <option value="500k-1m">R$ 500 mil a R$ 1 milhão</option>
           <option value="1m+">Acima de R$ 1 milhão</option>
         </select>
-        <select name="investimento_ads" required>
-          <option value="" disabled selected>* Quanto investe hoje em ads/mês</option>
-          <option value="nao-invisto">Ainda não invisto</option>
-          <option value="ate-2k">Até R$ 2 mil</option>
-          <option value="2k-5k">R$ 2 mil a R$ 5 mil</option>
-          <option value="5k-15k">R$ 5 mil a R$ 15 mil</option>
-          <option value="15k+">Acima de R$ 15 mil</option>
-        </select>
-        <select name="agencia_atual" required>
-          <option value="" disabled selected>* Já trabalhou com agência?</option>
-          <option value="tenho-agora">Tenho agência hoje</option>
-          <option value="ja-tive">Já tive, saí</option>
-          <option value="nunca-tive">Nunca tive</option>
-        </select>
 
+        <input type="hidden" name="email" value="">
+        <input type="hidden" name="empresa" value="">
         <input type="hidden" name="cidade" value="">
+        <input type="hidden" name="investimento_ads" value="">
+        <input type="hidden" name="agencia_atual" value="">
         <input type="hidden" name="utm_source">
         <input type="hidden" name="utm_medium">
         <input type="hidden" name="utm_campaign">

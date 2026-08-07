@@ -49,18 +49,17 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyrBegEs1gM1iFs2xAK
   }
 
   // Validacao manual dos campos required (form tem novalidate)
+  // Valida SO os campos visiveis com atributo required (nao valida hidden inputs)
   function validarForm(form){
-    var camposObrigatorios = ['nome','whatsapp','empresa','cidade','faturamento','investimento_ads','agencia_atual'];
     var faltando = [];
     var primeiroInvalido = null;
 
-    camposObrigatorios.forEach(function(nome){
-      var el = form.querySelector('[name="'+nome+'"]');
-      if (!el) return;
+    // Pega todos os campos required visiveis (nao hidden)
+    var camposRequired = form.querySelectorAll('input[required]:not([type="hidden"]), select[required]:not([type="hidden"])');
+    camposRequired.forEach(function(el){
       var valor = String(el.value || '').trim();
-      // Selects com placeholder vazio contam como nao preenchido
       if (!valor || valor === '') {
-        faltando.push(nome);
+        faltando.push(el.name);
         if (!primeiroInvalido) primeiroInvalido = el;
         el.style.boxShadow = '0 0 0 3px rgba(239,68,68,.5)';
       } else {
