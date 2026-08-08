@@ -52,10 +52,12 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
 }
 .lp-text .lp-sub strong { color: #fff; font-weight: 700; }
 
-/* Mobile: espaco menor entre sub e form */
+/* Mobile: ajustes finos pra encaixar no fold do celular */
 @media(max-width:960px){
-  .lp-hero-in { gap: .75rem !important; }
-  .lp-text .lp-sub { margin-top: 1.25rem; }
+  .lp-nav { margin-top: -20px; }
+  .lp-hero-in { gap: .75rem !important; margin-top: -35px; }
+  .lp-text h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); }
+  .lp-text .lp-sub { font-size: clamp(0.9rem, 1.5vw, 1.2rem); margin-top: 0; }
 }
 
 .lp-form-card {
