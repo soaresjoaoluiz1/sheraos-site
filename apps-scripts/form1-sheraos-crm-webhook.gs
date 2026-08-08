@@ -243,7 +243,8 @@ function processarAbaLPs() {
       'crm-ia':         'LP CRM + IA',
       'posicionamento': 'LP Posicionamento Digital',
       'aceleracao':     'LP Método Aceleração (A)',
-      'aceleracao-b':   'LP Método Aceleração (B - Dobrar 90d)'
+      'aceleracao-b':   'LP Método Aceleração (B - Dobrar 90d)',
+      'metodo':         'LP /metodo (Aceleração Digital)'
     };
     const source = sourceMap[lpOrigem] || ('LP ' + lpOrigem);
 
