@@ -19,6 +19,12 @@
 /* Aceleracao - overrides estilo Tasty */
 body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
 
+/* Ajuste de posicionamento: encaixa logo e conteudo hero no fold */
+@media (min-width: 961px) {
+  .lp-nav { margin-top: -40px; }
+  .lp-hero-in { margin-top: -25px; }
+}
+
 .lp-hero {
   background:
     radial-gradient(ellipse 60% 50% at 15% 20%, rgba(99,102,241,.28), transparent 60%),
