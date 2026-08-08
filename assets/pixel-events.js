@@ -80,17 +80,18 @@
       faturamento: (data && data.faturamento) || '',
       ads_investido: (data && data.investimento_ads) || '',
       empresa: (data && data.empresa) || '',
-      cidade: (data && data.cidade) || ''
+      cidade: (data && data.cidade) || '',
+      currency: 'BRL'
     };
 
     try {
       if (faturaOk && adsOk) {
-        // Lead qualificado - evento customizado pra otimizacao Meta
-        window.fbq('trackCustom', 'Lead100k', payload);
-        // Tambem dispara Lead padrao pra consistencia de reporting
-        window.fbq('track', 'Lead', Object.assign({}, payload, { qualified: true }));
+        // Lead qualificado (empresa +100k + investe +2k/mes em ads) - evento customizado pra otimizacao Meta
+        window.fbq('trackCustom', 'Lead100k', Object.assign({}, payload, { value: 500 }));
+        // Tambem dispara Lead padrao pra consistencia de reporting (valor maior indica prioridade)
+        window.fbq('track', 'Lead', Object.assign({}, payload, { qualified: true, value: 300 }));
       } else {
-        window.fbq('track', 'Lead', Object.assign({}, payload, { qualified: false }));
+        window.fbq('track', 'Lead', Object.assign({}, payload, { qualified: false, value: 50 }));
       }
     } catch(e){}
   };

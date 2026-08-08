@@ -130,7 +130,7 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyrBegEs1gM1iFs2xAK
         if (typeof window.sheraosTrackLead === 'function') {
           window.sheraosTrackLead(data);
         } else if (window.fbq) {
-          window.fbq('track', 'Lead', { lp: lpOrigem });
+          window.fbq('track', 'Lead', { lp: lpOrigem, value: 50, currency: 'BRL' });
         }
       }).catch(function(err){
         console.error(err);
