@@ -331,8 +331,7 @@ src="https://www.facebook.com/tr?id=2071518483727035&ev=PageView&noscript=1"
   var btn = document.getElementById('btnAgendar');
   if (btn) {
     btn.addEventListener('click', function(){
-      // Lead ao abrir a agenda (backup, caso nao confirme)
-      if (window.fbq) fbq('track', 'Lead', { content_name: 'Metodo - Abriu Agenda' });
+      // GA4 pra funil interno; Meta so recebe Schedule quando confirmar
       if (window.gtag) gtag('event', 'agendar_click', { lp: document.body.dataset.lp || 'metodo' });
 
       Calendly.initPopupWidget({
