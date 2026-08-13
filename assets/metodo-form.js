@@ -30,10 +30,14 @@
   };
 
   var STEPS = [
-    { type:'intro',
-      title:'Análise Estratégica <strong>Gratuita</strong>',
-      desc:'30 minutos por Google Meet com nosso time. Antes de agendar, precisamos entender melhor seu negócio pra preparar uma análise realmente útil.',
-      cta:'Começar' },
+    { type:'welcome',
+      title:'Aceleramos empresas de <strong>R$100k+</strong> para <strong>recordes de faturamento</strong>.',
+      bullets: [
+        {icon:'🎯', text:'Método próprio que já levou +90 empresas de R$100k pra R$300k/mês'},
+        {icon:'✅', text:'Estratégia sob medida, nada de campanha genérica'},
+        {icon:'📊', text:'Tráfego, CRM, comercial e IA integrados num time só'}
+      ],
+      cta:'COMEÇAR' },
 
     { type:'text', name:'nome', label:'Qual seu <strong>nome e sobrenome?</strong>',
       placeholder:'Ex: João Silva',
@@ -106,10 +110,23 @@
   var current = 0;
 
   function updateProgress(){
-    var totalUseful = STEPS.length;
-    var pct = Math.round(((current+1) / totalUseful) * 100);
-    var bar = q('#qualiProgressBar'); if (bar) bar.style.width = pct + '%';
-    var num = q('#qualiStepNum'); if (num) num.textContent = 'Passo ' + (current+1) + ' de ' + totalUseful;
+    var step = STEPS[current];
+    var bar = q('#qualiProgressBar');
+    var num = q('#qualiStepNum');
+    // Welcome step: esconde progress bar e contador
+    if (step.type === 'welcome') {
+      if (bar && bar.parentElement) bar.parentElement.style.display = 'none';
+      if (num) num.style.display = 'none';
+      return;
+    }
+    if (bar && bar.parentElement) bar.parentElement.style.display = '';
+    if (num) num.style.display = '';
+    // A partir do step 1 conta como "Pergunta X de N-1" (exclui welcome)
+    var totalUseful = STEPS.length - 1;
+    var progressIdx = current; // welcome=0, primeira pergunta=1
+    var pct = Math.round((progressIdx / totalUseful) * 100);
+    if (bar) bar.style.width = pct + '%';
+    if (num) num.textContent = 'Pergunta ' + progressIdx + ' de ' + totalUseful;
   }
 
   function render(){
@@ -117,7 +134,18 @@
     updateProgress();
 
     var html = '';
-    if (step.type === 'intro' || step.type === 'info') {
+    if (step.type === 'welcome') {
+      html += '<div class="quali-body quali-welcome">';
+      html += '<h3 class="quali-welcome-title">'+ step.title +'</h3>';
+      html += '<ul class="quali-welcome-bullets">';
+      step.bullets.forEach(function(b){
+        html += '<li><span class="wb-ico">'+ esc(b.icon) +'</span><span>'+ esc(b.text) +'</span></li>';
+      });
+      html += '</ul>';
+      html += '</div>';
+      html += '<div class="quali-actions"><button type="button" class="quali-btn quali-btn-primary" data-act="next" style="flex:1;">'+ step.cta +'</button></div>';
+    }
+    else if (step.type === 'intro' || step.type === 'info') {
       html += '<div class="quali-body">';
       html += '<h3 class="quali-title">'+ step.title +'</h3>';
       html += '<p class="quali-desc">'+ step.desc +'</p>';
