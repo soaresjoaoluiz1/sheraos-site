@@ -24,7 +24,7 @@
 // ============================================================
 // CONFIG - PLANILHA NOVA (ENTRADA DE LEADS - SHERAOS - V2)
 // ============================================================
-var SHEET_ID  = '1Qw9mA4p6Q79IJYQeeG95a6DlK3ElgNeWXs1JGYDCe4c';
+var SHEET_ID  = '1Qw9mA4p6Q79IJYQeeG95a6DlK3EIgNeWXs1JGYDCe4c';
 var SHEET_NAME = 'LEADS';
 
 // CRM Sheraos webhook (mesmo do form1 v2)
