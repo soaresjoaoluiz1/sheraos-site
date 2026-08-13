@@ -406,38 +406,87 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
   .ajuda-hero-visual { aspect-ratio: 2.5 / 1; }
 }
 
-/* SEÇÃO "O QUE ENTREGAMOS" - 9 servicos em grid 3x3 */
-.entregas-strip { background: #050418; padding: 4rem 1.5rem 5rem; position: relative; overflow: hidden; }
-.entregas-strip::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(99,102,241,.1), transparent 60%); pointer-events:none; }
+/* SEÇÃO "O QUE ENTREGAMOS" - 9 servicos premium com accent por card */
+.entregas-strip { background: #050418; padding: 5rem 1.5rem 5rem; position: relative; overflow: hidden; }
+.entregas-strip::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 70% 50% at 50% 15%, rgba(99,102,241,.15), transparent 60%); pointer-events:none; }
 .entregas-in { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
-.entregas-heading { font-family:'Poppins',sans-serif; font-size: clamp(1.3rem, 3vw, 2.15rem); font-weight:800; color:#fff; text-align:center; line-height:1.2; letter-spacing:-.015em; margin-bottom:.75rem; }
+.entregas-heading { font-family:'Poppins',sans-serif; font-size: clamp(1.5rem, 3vw, 2.35rem); font-weight:800; color:#fff; text-align:center; line-height:1.2; letter-spacing:-.02em; margin-bottom:.75rem; }
 .entregas-heading strong { background: linear-gradient(135deg, #A5F3D0 0%, #34D399 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900; }
-.entregas-sub { text-align:center; color: rgba(255,255,255,.65); font-size: .95rem; margin-bottom: 2.75rem; max-width: 640px; margin-left:auto; margin-right:auto; line-height:1.55; }
-.entregas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.entregas-card { background: #0d0b1f; border: 1px solid rgba(139,92,246,.22); border-radius: 16px; padding: 1.35rem 1.35rem 1.35rem 1.5rem; display:flex; align-items:center; gap:1rem; transition: all .22s; }
-.entregas-card:hover { border-color: rgba(139,92,246,.5); transform: translateY(-2px); background: #12102a; }
-.entregas-card .ent-ico { width: 44px; height: 44px; background: linear-gradient(135deg,#6366F1,#4f46e5); border-radius: 10px; display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; box-shadow: 0 4px 12px rgba(99,102,241,.3); }
-.entregas-card .ent-ico svg { width: 22px; height: 22px; }
-.entregas-card h4 { font-size: 1rem; font-weight: 700; color: #fff; letter-spacing:-.01em; line-height:1.3; margin:0; }
-@media (max-width: 900px){
-  .entregas-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
-  .entregas-card { padding: 1.1rem 1.15rem; }
+.entregas-sub { text-align:center; color: rgba(255,255,255,.65); font-size: 1rem; margin-bottom: 3.25rem; max-width: 640px; margin-left:auto; margin-right:auto; line-height:1.55; }
+.entregas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+
+.entregas-card {
+  --accent: #A5A0FF;
+  --accent-bg: rgba(165,160,255,.1);
+  --accent-border: rgba(165,160,255,.28);
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,.03) 0%, rgba(255,255,255,.008) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem 1.65rem;
+  transition: transform .3s cubic-bezier(.4,0,.2,1), border-color .3s, background .3s;
+  overflow: hidden;
 }
-@media (max-width: 520px){
-  .entregas-strip { padding: 3rem 1rem 3.5rem; }
-  .entregas-sub { margin-bottom: 1.75rem; font-size: .88rem; }
-  .entregas-grid { grid-template-columns: repeat(2, 1fr); gap: .5rem; }
-  .entregas-card {
-    padding: .9rem .65rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: .55rem;
-    min-height: 108px;
-  }
-  .entregas-card .ent-ico { width: 36px; height: 36px; border-radius: 9px; }
-  .entregas-card .ent-ico svg { width: 18px; height: 18px; }
-  .entregas-card h4 { font-size: .8rem; line-height: 1.2; }
+.entregas-card::before {
+  content:''; position:absolute; top:0; left:15%; right:15%; height:1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.entregas-card::after {
+  content:''; position:absolute; top:-40%; right:-40%; width:180px; height:180px;
+  background: radial-gradient(circle, var(--accent-bg), transparent 60%);
+  opacity: 0; transition: opacity .35s; pointer-events:none;
+}
+.entregas-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-border);
+  background: linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.015) 100%);
+}
+.entregas-card:hover::before, .entregas-card:hover::after { opacity: 1; }
+
+.entregas-card .ent-ico {
+  width: 52px; height: 52px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 14px;
+  display:flex; align-items:center; justify-content:center;
+  color: var(--accent);
+  margin-bottom: 1.1rem;
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.entregas-card:hover .ent-ico { transform: scale(1.06) rotate(-4deg); }
+.entregas-card .ent-ico svg { width: 26px; height: 26px; }
+.entregas-card h4 { font-size: 1.08rem; font-weight: 800; color: #fff; letter-spacing:-.015em; line-height:1.25; margin: 0 0 .4rem; }
+.entregas-card .ent-desc { font-size: .87rem; color: rgba(255,255,255,.6); line-height: 1.5; margin: 0; }
+
+/* Accent color por card */
+.entregas-card.acc-indigo   { --accent:#A5A0FF; --accent-bg:rgba(165,160,255,.1);  --accent-border:rgba(165,160,255,.3); }
+.entregas-card.acc-green    { --accent:#34D399; --accent-bg:rgba(52,211,153,.1);   --accent-border:rgba(52,211,153,.3); }
+.entregas-card.acc-cyan     { --accent:#60E5EA; --accent-bg:rgba(96,229,234,.1);   --accent-border:rgba(96,229,234,.3); }
+.entregas-card.acc-amber    { --accent:#FBBF24; --accent-bg:rgba(251,191,36,.1);   --accent-border:rgba(251,191,36,.3); }
+.entregas-card.acc-pink     { --accent:#F9A8D4; --accent-bg:rgba(249,168,212,.1);  --accent-border:rgba(249,168,212,.3); }
+.entregas-card.acc-violet   { --accent:#C084FC; --accent-bg:rgba(192,132,252,.1);  --accent-border:rgba(192,132,252,.3); }
+.entregas-card.acc-emerald  { --accent:#6EE7B7; --accent-bg:rgba(110,231,183,.1);  --accent-border:rgba(110,231,183,.3); }
+.entregas-card.acc-blue     { --accent:#60A5FA; --accent-bg:rgba(96,165,250,.1);   --accent-border:rgba(96,165,250,.3); }
+.entregas-card.acc-orange   { --accent:#FDBA74; --accent-bg:rgba(253,186,116,.1);  --accent-border:rgba(253,186,116,.3); }
+
+@media (max-width: 900px){
+  .entregas-strip { padding: 3.5rem 1rem 4rem; }
+  .entregas-sub { margin-bottom: 2.25rem; font-size: .93rem; }
+  .entregas-grid { grid-template-columns: repeat(2, 1fr); gap: .85rem; }
+  .entregas-card { padding: 1.35rem 1.15rem 1.25rem; }
+  .entregas-card h4 { font-size: .98rem; }
+  .entregas-card .ent-desc { font-size: .82rem; }
+  .entregas-card .ent-ico { width: 44px; height: 44px; margin-bottom: .85rem; }
+  .entregas-card .ent-ico svg { width: 22px; height: 22px; }
+}
+@media (max-width: 430px){
+  .entregas-grid { gap: .65rem; }
+  .entregas-card { padding: 1.15rem 1rem; border-radius: 16px; }
+  .entregas-card h4 { font-size: .92rem; }
+  .entregas-card .ent-desc { font-size: .78rem; line-height: 1.45; }
+  .entregas-card .ent-ico { width: 40px; height: 40px; border-radius: 11px; margin-bottom: .7rem; }
+  .entregas-card .ent-ico svg { width: 20px; height: 20px; }
 }
 
 /* SEÇÃO "SOBRE A SHERAOS" - hero atom + 3 stats */
@@ -851,41 +900,50 @@ src="https://www.facebook.com/tr?id=2071518483727035&ev=PageView&noscript=1"
     <h2 class="entregas-heading">O que <strong>entregamos</strong></h2>
     <p class="entregas-sub">Um único time cuidando de tudo. Nada terceirizado, nada fragmentado.</p>
     <div class="entregas-grid">
-      <div class="entregas-card">
+      <div class="entregas-card acc-indigo">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h4>Estratégia</h4>
+        <p class="ent-desc">Plano completo pra sair do R$100k e chegar em R$300k+/mês</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-green">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <h4>Especialista Dedicado</h4>
+        <p class="ent-desc">Consultor sênior fixo na sua conta, com WhatsApp direto</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-cyan">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="23" y1="6" x2="13.5" y2="15.5"/><polyline points="17 6 23 6 23 12"/><line x1="1" y1="18" x2="10.5" y2="8.5"/><polyline points="7 18 1 18 1 12"/></svg></div>
         <h4>Tráfego Pago</h4>
+        <p class="ent-desc">Meta, Google, TikTok e YouTube geridos ponta a ponta</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-amber">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <h4>Posicionamento de Marca</h4>
+        <p class="ent-desc">Sua marca vira referência no mercado onde atua</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-pink">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
         <h4>Gestão de Redes Sociais</h4>
+        <p class="ent-desc">Conteúdo estratégico que alimenta o funil de vendas</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-violet">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
         <h4>Design e Edição de Vídeo</h4>
+        <p class="ent-desc">Criativos de alta conversão pra todos os canais</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-emerald">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
         <h4>CRM + Agentes de IA</h4>
+        <p class="ent-desc">Automação que qualifica e responde lead 24h por dia</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-blue">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h4>Criação de Sites e LPs</h4>
+        <p class="ent-desc">Páginas rápidas que transformam visita em cliente</p>
       </div>
-      <div class="entregas-card">
+      <div class="entregas-card acc-orange">
         <div class="ent-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         <h4>Sistemas e Integrações</h4>
+        <p class="ent-desc">Conecta suas ferramentas numa operação sem gambiarra</p>
       </div>
     </div>
   </div>
