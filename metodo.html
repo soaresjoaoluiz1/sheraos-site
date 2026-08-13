@@ -70,6 +70,23 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
   .lp-text h1 { font-size: clamp(1.8rem, 7.8vw, 2.1rem); }
 }
 
+/* Faixa de logos de clientes (branca, entre hero e footer) */
+.logos-strip { background: #fff; padding: 3.5rem 1.5rem; }
+.logos-strip-title { text-align: center; font-size: .78rem; font-weight: 800; color: #64748B; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 2rem; }
+.logos-grid { max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem 3rem; }
+.logos-grid img { max-height: 60px; max-width: 140px; width: auto; height: auto; object-fit: contain; filter: grayscale(0.4); opacity: .85; transition: all .3s; }
+.logos-grid img:hover { filter: grayscale(0); opacity: 1; }
+@media (max-width: 700px) {
+  .logos-strip { padding: 2.25rem 1rem; }
+  .logos-strip-title { margin-bottom: 1.5rem; font-size: .7rem; }
+  .logos-grid { gap: 1.5rem 2rem; }
+  .logos-grid img { max-height: 42px; max-width: 95px; }
+}
+@media (max-width: 430px) {
+  .logos-grid { gap: 1.25rem 1.5rem; }
+  .logos-grid img { max-height: 38px; max-width: 82px; }
+}
+
 /* Card de agendamento Calendly */
 .lp-agendar-card { padding: 2.5rem 2rem; text-align: center; }
 .agendar-badge { display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .9rem; background: rgba(255,255,255,.18); border-radius: 100px; font-size: .68rem; font-weight: 800; color: #fff; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1.25rem; }
@@ -315,6 +332,21 @@ src="https://www.facebook.com/tr?id=2071518483727035&ev=PageView&noscript=1"
 
       <p class="lp-privacy">Confirmação no ato. Você recebe o link do Google Meet por email.</p>
     </div>
+  </div>
+</section>
+
+<section class="logos-strip">
+  <div class="logos-strip-title">Empresas que já confiaram na Sheraos</div>
+  <div class="logos-grid">
+    <img src="/assets/logos-clientes/sportset.png" alt="Sportset">
+    <img src="/assets/logos-clientes/anluh.png" alt="Anluh">
+    <img src="/assets/logos-clientes/di-venezia.webp" alt="Pousada Di Venezia">
+    <img src="/assets/logos-clientes/indios-coroados.jpg" alt="Pousada Índios Coroados">
+    <img src="/assets/logos-clientes/mm.png" alt="MM">
+    <img src="/assets/logos-clientes/topoagro.png" alt="TopoAgro">
+    <img src="/assets/logos-clientes/cliente-1.jpg" alt="Cliente Sheraos">
+    <img src="/assets/logos-clientes/cliente-2.jpg" alt="Cliente Sheraos">
+    <img src="/assets/logos-clientes/cliente-3.jpg" alt="Cliente Sheraos">
   </div>
 </section>
 
