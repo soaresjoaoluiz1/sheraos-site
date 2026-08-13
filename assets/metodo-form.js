@@ -5,8 +5,8 @@
    ============================================================ */
 (function(){
 
-  // TROCAR pela URL do webhook novo apos deploy do Apps Script
-  var METODO_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyrBegEs1gM1iFs2xAK8q62kTK3vpnk8WxVejWO1p5bCutc6jOGWgI92YgGJUkxdn3Shw/exec';
+  // Webhook Sheraos - Metodo Form v2 (planilha SHERAOS V2, aba LEADS)
+  var METODO_WEBHOOK = 'https://script.google.com/macros/s/AKfycbwZ3sPxp-9eu6vqblrBPkQcfn7vedkd94MwlODbfqf4u_wKg1-MJy_0KHjUAHOz0V7q/exec';
   var CALENDLY_URL   = 'https://calendly.com/sheraosmarketing/30min';
 
   function getParam(n){ return new URLSearchParams(location.search).get(n) || ''; }

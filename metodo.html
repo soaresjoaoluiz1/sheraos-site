@@ -86,23 +86,15 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
 }
 .logo-cell {
   aspect-ratio: 1 / 1;
-  background: #fff;
-  border: 1px solid #E5E7EB;
   border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  padding: 10px;
-  transition: all .22s;
   overflow: hidden;
+  transition: transform .22s;
 }
-.logo-cell:hover {
-  border-color: #C4B5FD;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(79,70,229,.12);
-}
+.logo-cell:hover { transform: translateY(-2px); }
 .logo-cell img, .logo-cell svg {
-  max-width: 100%; max-height: 100%;
-  width: auto; height: auto;
-  object-fit: contain;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 @media (max-width: 900px) {
   .logos-grid { grid-template-columns: repeat(5, 1fr); max-width: 640px; }
@@ -110,7 +102,7 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
 @media (max-width: 520px) {
   .logos-strip { padding: 1.25rem .75rem; }
   .logos-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 360px; }
-  .logo-cell { border-radius: 8px; padding: 8px; }
+  .logo-cell { border-radius: 8px; }
 }
 
 /* WELCOME step (LAO-style) - primeiro passo do form */
@@ -414,13 +406,25 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
 .entregas-card .ent-ico { width: 44px; height: 44px; background: linear-gradient(135deg,#6366F1,#4f46e5); border-radius: 10px; display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; box-shadow: 0 4px 12px rgba(99,102,241,.3); }
 .entregas-card .ent-ico svg { width: 22px; height: 22px; }
 .entregas-card h4 { font-size: 1rem; font-weight: 700; color: #fff; letter-spacing:-.01em; line-height:1.3; margin:0; }
-@media (max-width: 900px){ .entregas-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px){
+  .entregas-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+  .entregas-card { padding: 1.1rem 1.15rem; }
+}
 @media (max-width: 520px){
   .entregas-strip { padding: 3rem 1rem 3.5rem; }
-  .entregas-sub { margin-bottom: 2rem; font-size: .88rem; }
-  .entregas-grid { grid-template-columns: 1fr; gap: .75rem; }
-  .entregas-card { padding: 1.15rem 1.15rem; }
-  .entregas-card h4 { font-size: .95rem; }
+  .entregas-sub { margin-bottom: 1.75rem; font-size: .88rem; }
+  .entregas-grid { grid-template-columns: repeat(2, 1fr); gap: .5rem; }
+  .entregas-card {
+    padding: .9rem .65rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .55rem;
+    min-height: 108px;
+  }
+  .entregas-card .ent-ico { width: 36px; height: 36px; border-radius: 9px; }
+  .entregas-card .ent-ico svg { width: 18px; height: 18px; }
+  .entregas-card h4 { font-size: .8rem; line-height: 1.2; }
 }
 
 /* SEÇÃO "SOBRE A SHERAOS" - hero atom + 3 stats */
@@ -916,6 +920,6 @@ src="https://www.facebook.com/tr?id=2071518483727035&ev=PageView&noscript=1"
 
 
 <script src="/assets/pixel-events.js?v=1"></script>
-<script src="/assets/metodo-form.js?v=1"></script>
+<script src="/assets/metodo-form.js?v=2"></script>
 </body>
 </html>

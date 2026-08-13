@@ -357,6 +357,80 @@ body { font-family: 'Poppins', 'Inter', -apple-system, sans-serif; }
   .ajuda-hero-visual { aspect-ratio: 2.5 / 1; }
 }
 
+/* SEÇÃO "O QUE ENTREGAMOS" - 9 servicos em grid 3x3 */
+.entregas-strip { background: #050418; padding: 4rem 1.5rem 5rem; position: relative; overflow: hidden; }
+.entregas-strip::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(99,102,241,.1), transparent 60%); pointer-events:none; }
+.entregas-in { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+.entregas-heading { font-family:'Poppins',sans-serif; font-size: clamp(1.3rem, 3vw, 2.15rem); font-weight:800; color:#fff; text-align:center; line-height:1.2; letter-spacing:-.015em; margin-bottom:.75rem; }
+.entregas-heading strong { background: linear-gradient(135deg, #A5F3D0 0%, #34D399 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900; }
+.entregas-sub { text-align:center; color: rgba(255,255,255,.65); font-size: .95rem; margin-bottom: 2.75rem; max-width: 640px; margin-left:auto; margin-right:auto; line-height:1.55; }
+.entregas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.entregas-card { background: #0d0b1f; border: 1px solid rgba(139,92,246,.22); border-radius: 16px; padding: 1.35rem 1.35rem 1.35rem 1.5rem; display:flex; align-items:center; gap:1rem; transition: all .22s; }
+.entregas-card:hover { border-color: rgba(139,92,246,.5); transform: translateY(-2px); background: #12102a; }
+.entregas-card .ent-ico { width: 44px; height: 44px; background: linear-gradient(135deg,#6366F1,#4f46e5); border-radius: 10px; display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; box-shadow: 0 4px 12px rgba(99,102,241,.3); }
+.entregas-card .ent-ico svg { width: 22px; height: 22px; }
+.entregas-card h4 { font-size: 1rem; font-weight: 700; color: #fff; letter-spacing:-.01em; line-height:1.3; margin:0; }
+@media (max-width: 900px){
+  .entregas-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+  .entregas-card { padding: 1.1rem 1.15rem; }
+}
+@media (max-width: 520px){
+  .entregas-strip { padding: 3rem 1rem 3.5rem; }
+  .entregas-sub { margin-bottom: 1.75rem; font-size: .88rem; }
+  .entregas-grid { grid-template-columns: repeat(2, 1fr); gap: .5rem; }
+  .entregas-card {
+    padding: .9rem .65rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .55rem;
+    min-height: 108px;
+  }
+  .entregas-card .ent-ico { width: 36px; height: 36px; border-radius: 9px; }
+  .entregas-card .ent-ico svg { width: 18px; height: 18px; }
+  .entregas-card h4 { font-size: .8rem; line-height: 1.2; }
+}
+
+/* SEÇÃO "SOBRE A SHERAOS" - hero atom + 3 stats */
+.sobre-strip { background: linear-gradient(180deg, #050418 0%, #0a0928 50%, #050418 100%); padding: 5rem 1.5rem 5rem; position: relative; overflow: hidden; }
+.sobre-strip::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(99,102,241,.15), transparent 60%); pointer-events:none; }
+.sobre-in { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
+.sobre-atom { position: relative; width: 300px; height: 300px; margin: 0 auto 2.5rem; }
+.sobre-atom::before, .sobre-atom::after { content:''; position:absolute; inset: 0; border: 1px solid rgba(99,102,241,.25); border-radius: 50%; }
+.sobre-atom::before { transform: rotate(60deg); }
+.sobre-atom::after { transform: rotate(-60deg); border-color: rgba(139,92,246,.2); }
+.sobre-atom-center { position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); width: 130px; height:130px; background: linear-gradient(135deg,#6366F1,#4f46e5); border-radius: 50%; display:flex; align-items:center; justify-content:center; box-shadow: 0 20px 60px rgba(79,70,229,.5); }
+.sobre-atom-center img { width: 70%; height: auto; filter: brightness(0) invert(1); }
+.sobre-atom-icon { position: absolute; width: 48px; height: 48px; background: #0d0b1f; border: 1px solid rgba(139,92,246,.3); border-radius: 12px; display:flex; align-items:center; justify-content:center; color:#fff; font-size: 1.1rem; font-weight:700; }
+.sobre-atom-icon.pos-1 { top: 2%; left: 15%; }
+.sobre-atom-icon.pos-2 { top: 8%; right: 5%; background:#1877F2; border-color:#1877F2; }
+.sobre-atom-icon.pos-3 { top: 46%; right: -8%; background:#000; border-color:#333; }
+.sobre-atom-icon.pos-4 { bottom: 5%; right: 12%; background:linear-gradient(135deg,#833AB4,#E1306C,#F77737); border-color:transparent; }
+.sobre-atom-icon.pos-5 { bottom: -2%; left: 30%; background:#25D366; border-color:#25D366; }
+.sobre-atom-icon.pos-6 { bottom: 20%; left: -6%; background:#0A66C2; border-color:#0A66C2; }
+.sobre-atom-icon.pos-7 { top: 42%; left: -6%; background:#FF0000; border-color:#FF0000; }
+
+.sobre-tag { display:inline-block; font-size: .72rem; font-weight:800; color: rgba(255,255,255,.75); letter-spacing: .18em; text-transform: uppercase; margin-bottom: .85rem; }
+.sobre-title { font-family:'Poppins',sans-serif; font-size: clamp(1.55rem, 3.5vw, 2.4rem); font-weight:800; color:#fff; letter-spacing:-.02em; margin-bottom: 1.25rem; line-height: 1.15; }
+.sobre-title strong { background: linear-gradient(135deg,#C4C1FF,#A5A0FF); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight: 900; }
+.sobre-copy { font-size: 1.02rem; line-height: 1.65; color: rgba(255,255,255,.85); max-width: 720px; margin: 0 auto 3rem; }
+.sobre-copy strong { color:#fff; font-weight: 700; }
+.sobre-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.sobre-stat { background: linear-gradient(180deg,#6366F1 0%,#4f46e5 100%); border-radius: 20px; padding: 1.85rem 1.5rem; color:#fff; }
+.sobre-stat .stat-ico { width:52px; height:52px; background:#0d0b1f; border-radius:14px; display:flex; align-items:center; justify-content:center; margin: 0 auto 1.15rem; color:#fff; }
+.sobre-stat .stat-ico svg { width: 26px; height: 26px; }
+.sobre-stat h4 { font-size: 1.05rem; font-weight: 800; margin-bottom: .5rem; letter-spacing:-.01em; }
+.sobre-stat p { font-size: .87rem; line-height:1.5; color: rgba(255,255,255,.9); }
+@media (max-width: 960px){
+  .sobre-strip { padding: 3.5rem 1rem 4rem; }
+  .sobre-atom { width: 240px; height: 240px; margin-bottom: 2rem; }
+  .sobre-atom-center { width: 100px; height: 100px; }
+  .sobre-atom-icon { width: 38px; height: 38px; font-size: .95rem; }
+  .sobre-copy { font-size: .93rem; margin-bottom: 2rem; }
+  .sobre-stats { grid-template-columns: 1fr; gap: .85rem; }
+  .sobre-stat { padding: 1.5rem 1.25rem; }
+}
+
 /* Card do form multi-step de qualificacao */
 .lp-quali-card { padding: 2.25rem 2rem 2rem; min-height: 480px; display: flex; flex-direction: column; }
 .quali-progress { width: 100%; height: 6px; background: rgba(255,255,255,.2); border-radius: 100px; overflow: hidden; margin-bottom: 1.5rem; }
@@ -810,6 +884,6 @@ src="https://www.facebook.com/tr?id=2071518483727035&ev=PageView&noscript=1"
 
 
 <script src="/assets/pixel-events.js?v=1"></script>
-<script src="/assets/metodo-form.js?v=1"></script>
+<script src="/assets/metodo-form.js?v=2"></script>
 </body>
 </html>
