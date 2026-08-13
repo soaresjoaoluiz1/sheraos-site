@@ -33,9 +33,9 @@
     { type:'welcome',
       title:'Aceleramos empresas de <strong>R$100k+</strong> para <strong>recordes de faturamento</strong>.',
       bullets: [
-        {icon:'🎯', text:'Método próprio que já levou +90 empresas de R$100k pra R$300k/mês'},
-        {icon:'✅', text:'Estratégia sob medida, nada de campanha genérica'},
-        {icon:'📊', text:'Tráfego, CRM, comercial e IA integrados num time só'}
+        {text:'<b>Método próprio</b> que já levou +90 empresas de R$100k para R$300k por mês'},
+        {text:'<b>Estratégia sob medida</b>, nada de campanha genérica'},
+        {text:'<b>Tráfego, CRM, comercial e IA</b> integrados no mesmo time'}
       ],
       cta:'COMEÇAR' },
 
@@ -139,7 +139,7 @@
       html += '<h3 class="quali-welcome-title">'+ step.title +'</h3>';
       html += '<ul class="quali-welcome-bullets">';
       step.bullets.forEach(function(b){
-        html += '<li><span class="wb-ico">'+ esc(b.icon) +'</span><span>'+ esc(b.text) +'</span></li>';
+        html += '<li>'+ b.text +'</li>';
       });
       html += '</ul>';
       html += '</div>';
