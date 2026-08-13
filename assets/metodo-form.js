@@ -276,6 +276,19 @@
     formData.status_qualif = 'qualificado';
     formData.finished_at = new Date().toISOString();
     sendFinal();
+
+    // Meta Pixel: Lead qualificado (formulario preenchido + aceitou investir)
+    if (window.fbq) fbq('track', 'Lead', {
+      content_name: 'Formulario Qualificado LP Metodo',
+      value: 500,
+      currency: 'BRL'
+    });
+    if (window.gtag) gtag('event', 'form_qualified', {
+      lp: formData.lp_origem,
+      faturamento: formData.faturamento,
+      valor_ads: formData.valor_ads_atual
+    });
+
     var bar = q('#qualiProgressBar'); if (bar) bar.style.width = '100%';
     var num = q('#qualiStepNum'); if (num) num.textContent = '✓ 98% concluído...';
     var firstName = formData.nome ? formData.nome.split(' ')[0] : '';
